@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		C832A2A82C0EEFC0007EA2A2 /* VinobleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C832A2A72C0EEFC0007EA2A2 /* VinobleApp.swift */; };
-		C832A2AA2C0EEFC0007EA2A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C832A2A92C0EEFC0007EA2A2 /* ContentView.swift */; };
+		C832A2AA2C0EEFC0007EA2A2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C832A2A92C0EEFC0007EA2A2 /* MainView.swift */; };
 		C832A2AC2C0EEFC1007EA2A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C832A2AB2C0EEFC1007EA2A2 /* Assets.xcassets */; };
 		C832A2AF2C0EEFC1007EA2A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C832A2AE2C0EEFC1007EA2A2 /* Preview Assets.xcassets */; };
 		C832A2B72C0EF0B1007EA2A2 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C832A2B62C0EF0B1007EA2A2 /* Test.swift */; };
 		C832A2BA2C0EF2BA007EA2A2 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = C832A2B92C0EF2BA007EA2A2 /* ComposableArchitecture */; };
+		C85BF5322C130328005E548C /* MainLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85BF5312C130328005E548C /* MainLogin.swift */; };
+		C85BF5362C13037B005E548C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85BF5352C13037B005E548C /* SplashView.swift */; };
+		C85BF5392C13058A005E548C /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85BF5382C13058A005E548C /* ProductView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C832A2A42C0EEFC0007EA2A2 /* Vinoble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vinoble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C832A2A72C0EEFC0007EA2A2 /* VinobleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinobleApp.swift; sourceTree = "<group>"; };
-		C832A2A92C0EEFC0007EA2A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C832A2A92C0EEFC0007EA2A2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C832A2AB2C0EEFC1007EA2A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C832A2AE2C0EEFC1007EA2A2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C832A2B62C0EF0B1007EA2A2 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		C85BF5312C130328005E548C /* MainLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLogin.swift; sourceTree = "<group>"; };
+		C85BF5352C13037B005E548C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		C85BF5382C13058A005E548C /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +62,13 @@
 		C832A2A62C0EEFC0007EA2A2 /* Vinoble */ = {
 			isa = PBXGroup;
 			children = (
+				C85BF5372C130579005E548C /* Product */,
 				C832A2A72C0EEFC0007EA2A2 /* VinobleApp.swift */,
-				C832A2A92C0EEFC0007EA2A2 /* ContentView.swift */,
+				C832A2A92C0EEFC0007EA2A2 /* MainView.swift */,
 				C832A2AB2C0EEFC1007EA2A2 /* Assets.xcassets */,
 				C832A2AD2C0EEFC1007EA2A2 /* Preview Content */,
+				C85BF5312C130328005E548C /* MainLogin.swift */,
+				C85BF5352C13037B005E548C /* SplashView.swift */,
 			);
 			path = Vinoble;
 			sourceTree = "<group>";
@@ -78,6 +87,14 @@
 				C832A2B62C0EF0B1007EA2A2 /* Test.swift */,
 			);
 			path = TCA;
+			sourceTree = "<group>";
+		};
+		C85BF5372C130579005E548C /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				C85BF5382C13058A005E548C /* ProductView.swift */,
+			);
+			path = Product;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,8 +173,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C832A2AA2C0EEFC0007EA2A2 /* ContentView.swift in Sources */,
+				C85BF5322C130328005E548C /* MainLogin.swift in Sources */,
+				C832A2AA2C0EEFC0007EA2A2 /* MainView.swift in Sources */,
+				C85BF5362C13037B005E548C /* SplashView.swift in Sources */,
 				C832A2A82C0EEFC0007EA2A2 /* VinobleApp.swift in Sources */,
+				C85BF5392C13058A005E548C /* ProductView.swift in Sources */,
 				C832A2B72C0EF0B1007EA2A2 /* Test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
