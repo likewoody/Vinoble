@@ -13,7 +13,7 @@ struct MainView: View {
         var body: some View {
             VStack {
                 if isActive {
-                    MainLogin()
+                    ProductView()
                 } else {
                     SplashView()
                 }

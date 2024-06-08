@@ -16,6 +16,7 @@
 		C85BF5322C130328005E548C /* MainLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85BF5312C130328005E548C /* MainLogin.swift */; };
 		C85BF5362C13037B005E548C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85BF5352C13037B005E548C /* SplashView.swift */; };
 		C85BF5392C13058A005E548C /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85BF5382C13058A005E548C /* ProductView.swift */; };
+		C8B7BF532C13D87300003C99 /* ShareColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7BF522C13D87300003C99 /* ShareColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C85BF5312C130328005E548C /* MainLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLogin.swift; sourceTree = "<group>"; };
 		C85BF5352C13037B005E548C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		C85BF5382C13058A005E548C /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
+		C8B7BF522C13D87300003C99 /* ShareColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 		C832A29B2C0EEFC0007EA2A2 = {
 			isa = PBXGroup;
 			children = (
+				C8B7BF512C13D86700003C99 /* Model */,
 				C832A2B52C0EEFD8007EA2A2 /* TCA */,
 				C832A2A62C0EEFC0007EA2A2 /* Vinoble */,
 				C832A2A52C0EEFC0007EA2A2 /* Products */,
@@ -95,6 +98,14 @@
 				C85BF5382C13058A005E548C /* ProductView.swift */,
 			);
 			path = Product;
+			sourceTree = "<group>";
+		};
+		C8B7BF512C13D86700003C99 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C8B7BF522C13D87300003C99 /* ShareColor.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8B7BF532C13D87300003C99 /* ShareColor.swift in Sources */,
 				C85BF5322C130328005E548C /* MainLogin.swift in Sources */,
 				C832A2AA2C0EEFC0007EA2A2 /* MainView.swift in Sources */,
 				C85BF5362C13037B005E548C /* SplashView.swift in Sources */,
