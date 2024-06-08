@@ -34,9 +34,7 @@ struct ProductView: View {
         ]
     }
     
-    
     // MARK: For test
-    
     @State private var wineList: [[String]] = [
         ["Concha Y Toro", "flower_01"],
         ["Merlot", "flower_02"],

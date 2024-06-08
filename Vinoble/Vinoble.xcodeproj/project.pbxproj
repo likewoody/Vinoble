@@ -17,6 +17,9 @@
 		C85BF5362C13037B005E548C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85BF5352C13037B005E548C /* SplashView.swift */; };
 		C85BF5392C13058A005E548C /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85BF5382C13058A005E548C /* ProductView.swift */; };
 		C8B7BF532C13D87300003C99 /* ShareColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7BF522C13D87300003C99 /* ShareColor.swift */; };
+		C8B7BF602C13EFFB00003C99 /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7BF5F2C13EFFB00003C99 /* WishListView.swift */; };
+		C8B7BF662C13F2E600003C99 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7BF652C13F2E600003C99 /* MainTabView.swift */; };
+		C8B7BF682C13F5C800003C99 /* Second4Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7BF672C13F5C800003C99 /* Second4Test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		C85BF5352C13037B005E548C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		C85BF5382C13058A005E548C /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		C8B7BF522C13D87300003C99 /* ShareColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareColor.swift; sourceTree = "<group>"; };
+		C8B7BF5F2C13EFFB00003C99 /* WishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
+		C8B7BF652C13F2E600003C99 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		C8B7BF672C13F5C800003C99 /* Second4Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Second4Test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,8 @@
 		C832A2A62C0EEFC0007EA2A2 /* Vinoble */ = {
 			isa = PBXGroup;
 			children = (
+				C8B7BF642C13F2D100003C99 /* TabView */,
+				C8B7BF5E2C13EFEE00003C99 /* WishList */,
 				C85BF5372C130579005E548C /* Product */,
 				C832A2A72C0EEFC0007EA2A2 /* VinobleApp.swift */,
 				C832A2A92C0EEFC0007EA2A2 /* MainView.swift */,
@@ -106,6 +114,23 @@
 				C8B7BF522C13D87300003C99 /* ShareColor.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C8B7BF5E2C13EFEE00003C99 /* WishList */ = {
+			isa = PBXGroup;
+			children = (
+				C8B7BF5F2C13EFFB00003C99 /* WishListView.swift */,
+			);
+			path = WishList;
+			sourceTree = "<group>";
+		};
+		C8B7BF642C13F2D100003C99 /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+				C8B7BF652C13F2E600003C99 /* MainTabView.swift */,
+				C8B7BF672C13F5C800003C99 /* Second4Test.swift */,
+			);
+			path = TabView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,12 +210,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8B7BF532C13D87300003C99 /* ShareColor.swift in Sources */,
+				C8B7BF682C13F5C800003C99 /* Second4Test.swift in Sources */,
 				C85BF5322C130328005E548C /* MainLogin.swift in Sources */,
 				C832A2AA2C0EEFC0007EA2A2 /* MainView.swift in Sources */,
 				C85BF5362C13037B005E548C /* SplashView.swift in Sources */,
 				C832A2A82C0EEFC0007EA2A2 /* VinobleApp.swift in Sources */,
 				C85BF5392C13058A005E548C /* ProductView.swift in Sources */,
 				C832A2B72C0EF0B1007EA2A2 /* Test.swift in Sources */,
+				C8B7BF602C13EFFB00003C99 /* WishListView.swift in Sources */,
+				C8B7BF662C13F2E600003C99 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
