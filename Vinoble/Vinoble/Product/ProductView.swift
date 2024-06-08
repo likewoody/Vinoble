@@ -8,7 +8,7 @@
 /*
  Author : Woody
  Date : 2024.06.07 Friday
- Description : 1차 UI frame 작업
+ Description : 1차 UI frame 작업 (2024.06.08 Saturday 10:30)
  */
 
 
@@ -25,12 +25,13 @@ struct ProductView: View {
     @FocusState private var isTextFieldFocused: Bool
     
     
-    // MARK: if start view, change navigation color
+    // MARK: if start view, change navigation title
     init() {
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(red: shareColor.burgundyR, green: shareColor.burgundyG, blue: shareColor.burgundyB, alpha: 1)]
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(red: shareColor.burgundyR, green: shareColor.burgundyG, blue: shareColor.burgundyB, alpha: 1), // Title color
+                                                            
+            .font: UIFont.boldSystemFont(ofSize: 24.0) // Title font size
         
-        UIFont.systemFont(ofSize: 22, weight: UIFont.Weight.light)
-//        UINavigationBar.appearance().titleTextAttributes; : [UIFont.systemFontOfSize(19.0)]
+        ]
     }
     
     
@@ -50,31 +51,6 @@ struct ProductView: View {
         
         NavigationView(content: {
             VStack(content: {
-//                HStack(content: {
-//                    
-//                    Spacer(minLength: 140)
-//    //                VStack(alignment: .center,content: {
-//    //                    Text("VINOBLE")
-//    //                        .bold()
-//    //                        .foregroundStyle(Color(red: red, green: green, blue: blue))
-//    //                })
-//                    Text("VINOBLE")
-//                        .bold()
-//                        .foregroundStyle(Color(red: shareColor.burgundyR, green: shareColor.burgundyG, blue: shareColor.burgundyB))
-//                        .multilineTextAlignment(.leading)
-//                        .focused($isTextFieldFocused)
-//                    
-//                    Spacer()
-//                    
-//                    
-//                    
-//    //                Spacer()
-//                    
-//                }) // HStack
-//                .padding([.top, .bottom],15)
-//                .font(.title)
-                
-                
                 // MARK: Search Product
                 RoundedRectangle(cornerRadius: 15)
                     .fill(Color.gray.opacity(0.1))
@@ -202,38 +178,19 @@ struct ProductView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar(content: {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("", systemImage: "person.circle") {
-                        
-                    }
-                    .foregroundStyle(.red)
-//                    .foregroundStyle(Color(red: shareColor.burgundyR, green: shareColor.burgundyG, blue: shareColor.burgundyB))
+                    Button(action: {
+                        // button action
+                    }, label: {
+                        Image(systemName: "person.circle")
+                    })
+                    .foregroundStyle(.gray)
+                    // forground 적용하기 위해서 분리해서 사용
                 }
                 
-                
             }) // toolbar
-
-//            .toolbarBackground(Color(red: shareColor.burgundyR, green: shareColor.burgundyG, blue: shareColor.burgundyB), for: .navigationBar)
-//            .toolbarBackground(.visible, for: .navigationBar)
             
             
         }) // NavigationView
-        
-
-        
-//        NavigationView(content: {
-//            
-//            .navigationTitle("VINOBLE")
-//            .navigationBarTitleDisplayMode(.inline)
-//            .toolbar(content: {
-//                ToolbarItem(placement: .topBarTrailing) {
-//                    Button("", systemImage: "person.circle") {
-//                        
-//                    }
-//                    .foregroundStyle(Color(red: red, green: green, blue: blue))
-//                } // ToolbarItem
-//            }) // toolbar
-//        }) // NaviView
-        
         
     } // body
 } // ProductView
