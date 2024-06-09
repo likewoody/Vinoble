@@ -16,6 +16,9 @@
 		C85BF5322C130328005E548C /* MainLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85BF5312C130328005E548C /* MainLogin.swift */; };
 		C85BF5362C13037B005E548C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85BF5352C13037B005E548C /* SplashView.swift */; };
 		C85BF5392C13058A005E548C /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85BF5382C13058A005E548C /* ProductView.swift */; };
+		E39BAABA2C15ED130016B4A1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39BAAB92C15ED130016B4A1 /* LoginView.swift */; };
+		E39BAABC2C15F7FF0016B4A1 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39BAABB2C15F7FF0016B4A1 /* RegisterView.swift */; };
+		E39BAABE2C15FDF10016B4A1 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39BAABD2C15FDF10016B4A1 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		C85BF5312C130328005E548C /* MainLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLogin.swift; sourceTree = "<group>"; };
 		C85BF5352C13037B005E548C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		C85BF5382C13058A005E548C /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
+		E39BAAB92C15ED130016B4A1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E39BAABB2C15F7FF0016B4A1 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		E39BAABD2C15FDF10016B4A1 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,7 @@
 		C832A2A62C0EEFC0007EA2A2 /* Vinoble */ = {
 			isa = PBXGroup;
 			children = (
+				E39BAAB72C15EBF70016B4A1 /* View */,
 				C85BF5372C130579005E548C /* Product */,
 				C832A2A72C0EEFC0007EA2A2 /* VinobleApp.swift */,
 				C832A2A92C0EEFC0007EA2A2 /* MainView.swift */,
@@ -95,6 +102,16 @@
 				C85BF5382C13058A005E548C /* ProductView.swift */,
 			);
 			path = Product;
+			sourceTree = "<group>";
+		};
+		E39BAAB72C15EBF70016B4A1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E39BAAB92C15ED130016B4A1 /* LoginView.swift */,
+				E39BAABB2C15F7FF0016B4A1 /* RegisterView.swift */,
+				E39BAABD2C15FDF10016B4A1 /* ProfileView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,9 +191,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C85BF5322C130328005E548C /* MainLogin.swift in Sources */,
+				E39BAABE2C15FDF10016B4A1 /* ProfileView.swift in Sources */,
+				E39BAABA2C15ED130016B4A1 /* LoginView.swift in Sources */,
 				C832A2AA2C0EEFC0007EA2A2 /* MainView.swift in Sources */,
 				C85BF5362C13037B005E548C /* SplashView.swift in Sources */,
 				C832A2A82C0EEFC0007EA2A2 /* VinobleApp.swift in Sources */,
+				E39BAABC2C15F7FF0016B4A1 /* RegisterView.swift in Sources */,
 				C85BF5392C13058A005E548C /* ProductView.swift in Sources */,
 				C832A2B72C0EF0B1007EA2A2 /* Test.swift in Sources */,
 			);
