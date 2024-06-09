@@ -12,13 +12,18 @@
  */
 
 import SwiftUI
+import ComposableArchitecture
 
 struct MainTabView: View {
     
     @State var selection: Int = 0
     
-    // for color
-    let shareColor = ShareColor()
+    let store: StoreOf<ProductFeature>
+    
+    // 다른 곳에서도 사용할 수 있게끔 Color를 func으로 만든 것을 불러온다.
+    let shareColor = ShareColor(store: Store(initialState: ProductFeature.State()){
+        ProductFeature()
+    })
     
     var body: some View {
         
@@ -29,7 +34,9 @@ struct MainTabView: View {
                 TabView(selection: $selection,
                         content:  {
                     Group{
-                        ProductView()
+                        ProductView(store: Store(initialState: ProductFeature.State()){
+                            ProductFeature()
+                        })
                             .tabItem {
                                 Image(systemName: "house")
                                 Text("Home")
@@ -62,7 +69,7 @@ struct MainTabView: View {
                             }
                             .tag(4)
                     } // Group
-                    .toolbarBackground(Color(red:shareColor.burgundyR, green: shareColor.burgundyG, blue: shareColor.burgundyB), for: .tabBar)
+                    .toolbarBackground(shareColor.mainColor(), for: .tabBar)
                     .toolbarBackground(.visible, for: .tabBar)
                     .toolbarColorScheme(.dark, for: .tabBar)
                     
@@ -78,14 +85,16 @@ struct MainTabView: View {
                             
                         }label: {
                             Circle()
-                                .foregroundStyle(Color(red: shareColor.burgundyR, green: shareColor.burgundyG, blue: shareColor.burgundyB))
+                                .foregroundStyle(shareColor.mainColor())
                                 .frame(width: 60, height: 60)
                                 .overlay {
                                     Circle()
                                         .frame(width: 42, height: 42)
                                         .foregroundStyle(.white)
                                         .overlay {
-                                            NavigationLink(destination: WishListView()) {
+                                            NavigationLink(destination: WishListView(store: Store(initialState: ProductFeature.State()){
+                                                ProductFeature()
+                                            })) {
                                                 Image("grape")
                                                     .resizable()
                                                     .frame(width: 30, height: 30)
@@ -115,5 +124,7 @@ struct MainTabView: View {
 } // MainTabView
 
 #Preview {
-    MainTabView()
+    MainTabView(store: Store(initialState: ProductFeature.State()){
+        ProductFeature()
+    })
 }

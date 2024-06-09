@@ -7,30 +7,38 @@
 
 /*
  Author : Woody
+ 
+ 1차
  Date : 2024.06.07 Friday
  Description : 1차 UI frame 작업 (2024.06.08 Saturday 10:30)
+ 
+ 2차
+ Data : 2024.06.08 Saturday
+ Description : TCA connect (2024.06.09 TextField binding 완료)
+ 
  */
 
 
 import SwiftUI
+import ComposableArchitecture
 
 struct ProductView: View {
     
-    let shareColor = ShareColor()
+    @Bindable var store: StoreOf<ProductFeature>
     
-    @State private var searchProduct: String = ""
-    // MARK: 0 or 1 (red or white)
-    @State private var selectedWineType: Int = 0
-    @State private var selectedRegion: Int = 0
-    @FocusState private var isTextFieldFocused: Bool
-    
+    // 다른 곳에서도 사용할 수 있게끔 Color를 func으로 만든 것을 불러온다.
+    let shareColor = ShareColor(store: Store(initialState: ProductFeature.State()){
+        ProductFeature()
+    })
     
     // MARK: if start view, change navigation title
-    init() {
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(red: shareColor.burgundyR, green: shareColor.burgundyG, blue: shareColor.burgundyB, alpha: 1), // Title color
+    init(store: StoreOf<ProductFeature>) {
+        // store 속성을 초기화합니다. 예를 들어, 기본값을 사용하거나 인자를 받을 수 있습니다.
+        self.store = store
+
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: shareColor.initColorWithAlpha(), // Title color
                                                             
             .font: UIFont.boldSystemFont(ofSize: 24.0) // Title font size
-        
         ]
     }
     
@@ -46,7 +54,6 @@ struct ProductView: View {
     ]
     
     var body: some View{
-        
         NavigationView(content: {
             VStack(content: {
                 // MARK: Search Product
@@ -62,10 +69,11 @@ struct ProductView: View {
                                 // ****** DB를 불러와 search가 필요함 ******
                                 
                             }
-                            .foregroundStyle(Color(red: shareColor.burgundyR, green: shareColor.burgundyG, blue: shareColor.burgundyB))
+                            .foregroundStyle(shareColor.mainColor())
                             .padding(.leading,12)
                             
-                            TextField("Search Product", text: $searchProduct)
+
+                            TextField("Search Product", text: $store.searchProduct)
 
                         }) // HStack
                     } // overlay
@@ -73,14 +81,14 @@ struct ProductView: View {
                 
                 // MARK: Select type of wine
                 HStack(content: {
-                    Picker(selection: $selectedWineType, label: Text("Wine Type")) {
+                    Picker(selection: $store.selectedWineType, label: Text("Wine Type")) {
                         Text("Red").tag(0)
                         Text("White").tag(1)
                         
                     } // Picker
                     .pickerStyle(.segmented)
                     .onAppear(perform: {
-                        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor : UIColor(Color(red: shareColor.burgundyR, green: shareColor.burgundyG, blue: shareColor.burgundyB))], for: .selected)
+                        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor : UIColor(shareColor.mainColor())], for: .selected)
                         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor : UIColor(Color(.gray).opacity(0.8))], for: .normal)
                     })
                     
@@ -93,45 +101,45 @@ struct ProductView: View {
                     Spacer()
                     Button("All", action: {
                         // All
-                        selectedRegion = 0
+                        store.selectedRegion = 0
                     })
-                    .foregroundStyle(selectedRegion == 0
-                                     ? Color(red: shareColor.burgundyR, green: shareColor.burgundyG, blue: shareColor.burgundyB)
+                    .foregroundStyle(store.selectedRegion == 0
+                                     ? shareColor.mainColor()
                                      : .gray.opacity(0.8)
                     )
                     Spacer()
                     Button("Bordeaux") {
                         // Bordeaux
-                        selectedRegion = 1
+                        store.selectedRegion = 1
                     }
-                    .foregroundStyle(selectedRegion == 1
-                                     ? Color(red: shareColor.burgundyR, green: shareColor.burgundyG, blue: shareColor.burgundyB)
+                    .foregroundStyle(store.selectedRegion == 1
+                                     ? shareColor.mainColor()
                                      : .gray.opacity(0.8)
                     )
                     Spacer()
                     Button("Bourgogne") {
                         // Bourgogne
-                        selectedRegion = 2
+                        store.selectedRegion = 2
                     }
-                    .foregroundStyle(selectedRegion == 2
-                                     ? Color(red: shareColor.burgundyR, green: shareColor.burgundyG, blue: shareColor.burgundyB)
+                    .foregroundStyle(store.selectedRegion == 2
+                                     ? shareColor.mainColor()
                                      : .gray.opacity(0.8)
                     )
                     Spacer()
                     Button("Rhone Valley") {
                         // Bourgogne
-                        selectedRegion = 3
+                        store.selectedRegion = 3
                     }
-                    .foregroundStyle(selectedRegion == 3
-                                     ? Color(red: shareColor.burgundyR, green: shareColor.burgundyG, blue: shareColor.burgundyB)
+                    .foregroundStyle(store.selectedRegion == 3
+                                     ? shareColor.mainColor()
                                      : .gray.opacity(0.8)
                     )
                     Spacer()
                     
                 }) // HStack
-                .onChange(of: selectedWineType) {
+                .onChange(of: store.selectedWineType) {
                     // if select wine type region will be reseted
-                    selectedRegion = 0
+                    store.selectedRegion = 0
                 } // onChange
                 .padding(.bottom,20)
                 
@@ -146,7 +154,7 @@ struct ProductView: View {
                                 NavigationLink(destination: MainView()) {
                                     VStack(content: {
                                         RoundedRectangle(cornerRadius: 20)
-                                            .foregroundStyle(Color(red: shareColor.productR, green: shareColor.productG, blue: shareColor.productB))
+                                            .foregroundStyle(shareColor.productBackGroundColor())
                                             .frame(width: 100, height: 100)
                                             .overlay {
                                                 Image(wine[1])
@@ -189,10 +197,12 @@ struct ProductView: View {
             
             
         }) // NavigationView
-        
     } // body
+    
 } // ProductView
 
 #Preview {
-    ProductView()
+    ProductView(store: Store(initialState: ProductFeature.State()){
+        ProductFeature()
+    })
 }

@@ -1,20 +1,30 @@
 //
-//  ColorStatic.swift
+//  ShareColor.swift
 //  Vinoble
 //
-//  Created by Woody on 6/8/24.
+//  Created by Woody on 6/9/24.
 //
 
 import SwiftUI
+import ComposableArchitecture
 
-struct ShareColor {
-    // Color 설정
-    var burgundyR: Double = 139 / 255.0
-    var burgundyG: Double = 17 / 255.0
-    var burgundyB: Double = 46 / 255.0
+struct ShareColor{
     
-    var productR: Double = 255 / 255.0
-    var productG: Double = 240 / 255.0
-    var productB: Double = 243 / 255.0
+    let store: StoreOf<ProductFeature>
+    
+    
+    
+    // --- Functions ----
+    func initColorWithAlpha() -> UIColor {
+        return UIColor(red: store.burgundyR, green: store.burgundyG, blue: store.burgundyB, alpha: 1)
+    }
+    
+    func mainColor() -> Color{
+        return Color(red: store.burgundyR, green: store.burgundyG, blue:store.burgundyB)
+    }
+    
+    func productBackGroundColor() -> Color{
+        return Color(red: store.productR, green: store.productG, blue:store.productB)
+    }
+    
 }
-

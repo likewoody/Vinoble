@@ -12,10 +12,16 @@
  */
 
 import SwiftUI
+import ComposableArchitecture
 
 struct WishListView: View {
     
-    let shareColor = ShareColor()
+    let store: StoreOf<ProductFeature>
+    
+    // 다른 곳에서도 사용할 수 있게끔 Color를 func으로 만든 것을 불러온다.
+    let shareColor = ShareColor(store: Store(initialState: ProductFeature.State()){
+        ProductFeature()
+    })
     
     // MARK: For test
     @State private var wineList: [[String]] = [
@@ -30,8 +36,10 @@ struct WishListView: View {
     
     
     // MARK: if start view, change navigation title
-    init() {
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(red: shareColor.burgundyR, green: shareColor.burgundyG, blue: shareColor.burgundyB, alpha: 1), // Title color
+    init(store: StoreOf<ProductFeature>) {
+        self.store = store
+        
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: shareColor.initColorWithAlpha(), // Title color
                                                             
             .font: UIFont.boldSystemFont(ofSize: 24.0) // Title font size
         
@@ -45,7 +53,7 @@ struct WishListView: View {
                     VStack(content: {
                         HStack(content: {
                             RoundedRectangle(cornerRadius: 20)
-                                .foregroundStyle(Color(red: shareColor.burgundyR, green: shareColor.burgundyG, blue: shareColor.burgundyB).opacity(0.2))
+                                .foregroundStyle(shareColor.mainColor().opacity(0.2))
                                 .frame(width: 100, height: 100)
                                 .overlay {
                                     Image(wine[3])
@@ -72,5 +80,7 @@ struct WishListView: View {
 } // WishListView
 
 #Preview {
-    WishListView()
+    WishListView(store: Store(initialState: ProductFeature.State()){
+        ProductFeature()
+    })
 }

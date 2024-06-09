@@ -16,7 +16,8 @@
 		C85BF5322C130328005E548C /* MainLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85BF5312C130328005E548C /* MainLogin.swift */; };
 		C85BF5362C13037B005E548C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85BF5352C13037B005E548C /* SplashView.swift */; };
 		C85BF5392C13058A005E548C /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85BF5382C13058A005E548C /* ProductView.swift */; };
-		C8B7BF532C13D87300003C99 /* ShareColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7BF522C13D87300003C99 /* ShareColor.swift */; };
+		C86B200E2C14247A0061663A /* ProductTCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86B200D2C14247A0061663A /* ProductTCA.swift */; };
+		C891DB092C155BF200DF4673 /* ShareColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C891DB082C155BF200DF4673 /* ShareColor.swift */; };
 		C8B7BF602C13EFFB00003C99 /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7BF5F2C13EFFB00003C99 /* WishListView.swift */; };
 		C8B7BF662C13F2E600003C99 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7BF652C13F2E600003C99 /* MainTabView.swift */; };
 		C8B7BF682C13F5C800003C99 /* Second4Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7BF672C13F5C800003C99 /* Second4Test.swift */; };
@@ -32,7 +33,8 @@
 		C85BF5312C130328005E548C /* MainLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLogin.swift; sourceTree = "<group>"; };
 		C85BF5352C13037B005E548C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		C85BF5382C13058A005E548C /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
-		C8B7BF522C13D87300003C99 /* ShareColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareColor.swift; sourceTree = "<group>"; };
+		C86B200D2C14247A0061663A /* ProductTCA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTCA.swift; sourceTree = "<group>"; };
+		C891DB082C155BF200DF4673 /* ShareColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareColor.swift; sourceTree = "<group>"; };
 		C8B7BF5F2C13EFFB00003C99 /* WishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
 		C8B7BF652C13F2E600003C99 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		C8B7BF672C13F5C800003C99 /* Second4Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Second4Test.swift; sourceTree = "<group>"; };
@@ -53,7 +55,7 @@
 		C832A29B2C0EEFC0007EA2A2 = {
 			isa = PBXGroup;
 			children = (
-				C8B7BF512C13D86700003C99 /* Model */,
+				C86B200F2C1428E70061663A /* Model */,
 				C832A2B52C0EEFD8007EA2A2 /* TCA */,
 				C832A2A62C0EEFC0007EA2A2 /* Vinoble */,
 				C832A2A52C0EEFC0007EA2A2 /* Products */,
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				C832A2B62C0EF0B1007EA2A2 /* Test.swift */,
+				C86B200D2C14247A0061663A /* ProductTCA.swift */,
 			);
 			path = TCA;
 			sourceTree = "<group>";
@@ -108,10 +111,10 @@
 			path = Product;
 			sourceTree = "<group>";
 		};
-		C8B7BF512C13D86700003C99 /* Model */ = {
+		C86B200F2C1428E70061663A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C8B7BF522C13D87300003C99 /* ShareColor.swift */,
+				C891DB082C155BF200DF4673 /* ShareColor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,14 +212,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8B7BF532C13D87300003C99 /* ShareColor.swift in Sources */,
 				C8B7BF682C13F5C800003C99 /* Second4Test.swift in Sources */,
 				C85BF5322C130328005E548C /* MainLogin.swift in Sources */,
 				C832A2AA2C0EEFC0007EA2A2 /* MainView.swift in Sources */,
 				C85BF5362C13037B005E548C /* SplashView.swift in Sources */,
+				C891DB092C155BF200DF4673 /* ShareColor.swift in Sources */,
 				C832A2A82C0EEFC0007EA2A2 /* VinobleApp.swift in Sources */,
 				C85BF5392C13058A005E548C /* ProductView.swift in Sources */,
 				C832A2B72C0EF0B1007EA2A2 /* Test.swift in Sources */,
+				C86B200E2C14247A0061663A /* ProductTCA.swift in Sources */,
 				C8B7BF602C13EFFB00003C99 /* WishListView.swift in Sources */,
 				C8B7BF662C13F2E600003C99 /* MainTabView.swift in Sources */,
 			);
