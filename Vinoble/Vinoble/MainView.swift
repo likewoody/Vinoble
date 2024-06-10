@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct MainView: View {
     @State private var isActive = false
@@ -13,7 +14,9 @@ struct MainView: View {
         var body: some View {
             VStack {
                 if isActive {
-                    MainLogin()
+                    ProductView(store: Store(initialState: ProductFeature.State()){
+                        ProductFeature()
+                    })
                 } else {
                     SplashView()
                 }
