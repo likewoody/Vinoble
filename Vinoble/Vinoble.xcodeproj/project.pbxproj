@@ -21,6 +21,8 @@
 		C8B7BF602C13EFFB00003C99 /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7BF5F2C13EFFB00003C99 /* WishListView.swift */; };
 		C8B7BF662C13F2E600003C99 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7BF652C13F2E600003C99 /* MainTabView.swift */; };
 		C8B7BF682C13F5C800003C99 /* Second4Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7BF672C13F5C800003C99 /* Second4Test.swift */; };
+		F2B7884F2C1588DF001CF46D /* MyCellarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B7884E2C1588DF001CF46D /* MyCellarView.swift */; };
+		F2B788552C15987A001CF46D /* NewTasteNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B788542C15987A001CF46D /* NewTasteNoteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		C8B7BF5F2C13EFFB00003C99 /* WishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
 		C8B7BF652C13F2E600003C99 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		C8B7BF672C13F5C800003C99 /* Second4Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Second4Test.swift; sourceTree = "<group>"; };
+		F2B7884E2C1588DF001CF46D /* MyCellarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCellarView.swift; sourceTree = "<group>"; };
+		F2B788542C15987A001CF46D /* NewTasteNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTasteNoteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 		C832A2A62C0EEFC0007EA2A2 /* Vinoble */ = {
 			isa = PBXGroup;
 			children = (
+				F2B7884D2C1588D1001CF46D /* MyCellar */,
 				C8B7BF642C13F2D100003C99 /* TabView */,
 				C8B7BF5E2C13EFEE00003C99 /* WishList */,
 				C85BF5372C130579005E548C /* Product */,
@@ -134,6 +139,15 @@
 				C8B7BF672C13F5C800003C99 /* Second4Test.swift */,
 			);
 			path = TabView;
+			sourceTree = "<group>";
+		};
+		F2B7884D2C1588D1001CF46D /* MyCellar */ = {
+			isa = PBXGroup;
+			children = (
+				F2B7884E2C1588DF001CF46D /* MyCellarView.swift */,
+				F2B788542C15987A001CF46D /* NewTasteNoteView.swift */,
+			);
+			path = MyCellar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,12 +231,14 @@
 				C832A2AA2C0EEFC0007EA2A2 /* MainView.swift in Sources */,
 				C85BF5362C13037B005E548C /* SplashView.swift in Sources */,
 				C891DB092C155BF200DF4673 /* ShareColor.swift in Sources */,
+				F2B7884F2C1588DF001CF46D /* MyCellarView.swift in Sources */,
 				C832A2A82C0EEFC0007EA2A2 /* VinobleApp.swift in Sources */,
 				C85BF5392C13058A005E548C /* ProductView.swift in Sources */,
 				C832A2B72C0EF0B1007EA2A2 /* Test.swift in Sources */,
 				C86B200E2C14247A0061663A /* ProductTCA.swift in Sources */,
 				C8B7BF602C13EFFB00003C99 /* WishListView.swift in Sources */,
 				C8B7BF662C13F2E600003C99 /* MainTabView.swift in Sources */,
+				F2B788552C15987A001CF46D /* NewTasteNoteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +379,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -391,6 +408,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
