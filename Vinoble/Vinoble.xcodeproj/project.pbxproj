@@ -27,6 +27,7 @@
 		F20787872C1690F50011EA76 /* TasteNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20787862C1690F50011EA76 /* TasteNoteView.swift */; };
 		F2B7884F2C1588DF001CF46D /* MyCellarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B7884E2C1588DF001CF46D /* MyCellarView.swift */; };
 		F2B788552C15987A001CF46D /* NewTasteNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B788542C15987A001CF46D /* NewTasteNoteView.swift */; };
+		F2B8DB072C16F7B60083193E /* NewTastingNoteTCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B8DB062C16F7B60083193E /* NewTastingNoteTCA.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		F20787862C1690F50011EA76 /* TasteNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteNoteView.swift; sourceTree = "<group>"; };
 		F2B7884E2C1588DF001CF46D /* MyCellarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCellarView.swift; sourceTree = "<group>"; };
 		F2B788542C15987A001CF46D /* NewTasteNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTasteNoteView.swift; sourceTree = "<group>"; };
+		F2B8DB062C16F7B60083193E /* NewTastingNoteTCA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTastingNoteTCA.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			children = (
 				C832A2B62C0EF0B1007EA2A2 /* Test.swift */,
 				C86B200D2C14247A0061663A /* ProductTCA.swift */,
+				F2B8DB062C16F7B60083193E /* NewTastingNoteTCA.swift */,
 			);
 			path = TCA;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				E3DAE1362C16851900799A06 /* LoginView.swift in Sources */,
 				C832A2B72C0EF0B1007EA2A2 /* Test.swift in Sources */,
 				C86B200E2C14247A0061663A /* ProductTCA.swift in Sources */,
+				F2B8DB072C16F7B60083193E /* NewTastingNoteTCA.swift in Sources */,
 				C8B7BF602C13EFFB00003C99 /* WishListView.swift in Sources */,
 				E3DAE1382C16851900799A06 /* RegisterView.swift in Sources */,
 				C8B7BF662C13F2E600003C99 /* MainTabView.swift in Sources */,
