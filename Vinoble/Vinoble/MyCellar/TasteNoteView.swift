@@ -1,4 +1,4 @@
-//  NewTasteNoteView.swift
+//  TasteNoteView.swift
 //  Vinoble
 //
 //  Created by Diana Kim on 6/9/24.
@@ -6,14 +6,14 @@
 
 /*
  Author : Diana
- Date : 2024.06.09 Sun
+ Date : 2024.06.10 Monday
  Description : 1차 UI frame 작업
  */
 
 import SwiftUI
 import ComposableArchitecture
 
-struct NewTasteNoteView: View {
+struct TasteNoteView: View {
     
     @State var selectedImage: UIImage?
     @State var isShowingImagePicker = false
@@ -75,7 +75,7 @@ struct NewTasteNoteView: View {
                             isShowingImagePicker = true
                         }) {
                             Text("Choose Image")
-                                .font(.system(size: 15, design: .serif))
+                                .font(.system(size: 18, design: .serif))
                                 .foregroundColor(.white)
                                 .padding(.horizontal, 16)
                                 .padding(.vertical, 8)
@@ -111,16 +111,16 @@ struct NewTasteNoteView: View {
                 .padding(.horizontal, 20)
                 .padding(.top, 20)
                 
-                VStack(alignment: .leading, spacing: 13) {
-                             SliderField(value: $sugar, label: "Sugar")
-                             SliderField(value: $wineBody, label: "Body")
-                             SliderField(value: $tannin, label: "Tannin")
-//                             
-//                             TextField("Alcohol (%)", text: $alcohol)
+                VStack(alignment: .leading, spacing: 20) {
+                             SlidersField(value: $sugar, label: "Sugar")
+                             SlidersField(value: $wineBody, label: "Body")
+                             SlidersField(value: $tannin, label: "Tannin")
+                             
+//                             TextField("Alcohol", text: $alcohol)
 //                                 .textFieldStyle(RoundedBorderTextFieldStyle())
 //                                 .font(.system(size: 16))
 //                             
-//                             TextField("pH Level", text: $ph)
+//                             TextField("pH Level(%)", text: $ph)
 //                                 .textFieldStyle(RoundedBorderTextFieldStyle())
 //                                 .font(.system(size: 16))
                          }
@@ -128,43 +128,57 @@ struct NewTasteNoteView: View {
                          .padding(.top, 20)
 
                 // NOTE
-                VStack(alignment: .leading, spacing: 10) {
+                VStack(alignment: .leading, spacing: 13) {
                     Text("Note:")
-                        .font(.system(size: 15, design: .serif))
+                        .font(.system(size: 16, design: .serif))
                     TextEditor(text: $wineNote)
-                        .frame(minHeight: 150) 
+                        .frame(minHeight: 150)
                         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray.opacity(0.3)))
                     HStack {
                         Spacer()
                         Button(action: {
-                            // ADD ACTION
-                            print("Tasting note saved!")
+                            // Update ACTION
+                           
                         }) {
-                            Text("Add")
-                                .font(.system(size: 15, design: .serif))
-                                .bold()
+                            Text("Update")
+                                .font(.system(size: 18, design: .serif))
                                 .foregroundColor(.white)
-                                .padding(.horizontal, 16)
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 8)
+                                .background(Color(shareColor.mainColor()))
+                                .cornerRadius(10)
+                        }
+                        Spacer()
+
+                        Button(action: {
+                            // Delete ACTION
+                           
+                        }) {
+                            Text("Delete")
+                                .font(.system(size: 18, design: .serif))
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 20)
                                 .padding(.vertical, 8)
                                 .background(Color(shareColor.mainColor()))
                                 .cornerRadius(10)
                         }
                         Spacer()
                     }
+                    
                 }
                 .padding(.horizontal, 20)
                 .padding(.top, 30)
                 .padding(.bottom, 30)
           
             }
-            .navigationTitle("New Tasting Note")
+            .navigationTitle("Taste Note")
             .navigationBarTitleDisplayMode(.inline)
         }
     }
 } // tastingnote view
 
 
-struct SliderField: View {
+struct SlidersField: View {
     @Binding var value: Double
     let label: String
     
@@ -179,7 +193,7 @@ struct SliderField: View {
 }
 
 #Preview {
-    NewTasteNoteView(store: Store(initialState: ProductFeature.State()){
+    TasteNoteView(store: Store(initialState: ProductFeature.State()){
         ProductFeature()
     })
 }
