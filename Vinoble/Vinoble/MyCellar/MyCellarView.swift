@@ -43,11 +43,11 @@ struct MyCellarView: View {
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: shareColor.initColorWithAlpha(), // Title color
                                                             
             .font: UIFont.boldSystemFont(ofSize: 24.0) // Title font size
-        
+                                                            
         ]
     }
     
-
+    
     var body: some View {
         NavigationView {
             List {
@@ -79,26 +79,29 @@ struct MyCellarView: View {
             .font(.system(size: 18, design: .serif))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button(action: {
-                            showTastingNote = true
-                        }) {
-                            Image(systemName: "square.and.pencil.circle")
-                        }
-                        .font(.system(size: 25))
-                        .foregroundColor(Color(shareColor.mainColor()))
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        showTastingNote = true
+                    }) {
+                        Image(systemName: "square.and.pencil.circle")
                     }
+                    .font(.system(size: 25))
+                    .foregroundColor(Color(shareColor.mainColor()))
                 }
-            .sheet(isPresented: $showTastingNote) {
-                    NewTasteNoteView(store: store)
             }
-            
+            .sheet(isPresented: $showTastingNote) {
+                NewTasteNoteView(store: store, noteStore: Store(initialState: NewTastingNoteFeature.State()){
+                    NewTastingNoteFeature()
+                })
+                
+            }
         }
+    } // MyCellar View
+    
+    #Preview {
+        MyCellarView(store: Store(initialState: ProductFeature.State()){
+            ProductFeature()
+        })
     }
-} // MyCellar View
-
-#Preview {
-    MyCellarView(store: Store(initialState: ProductFeature.State()){
-        ProductFeature()
-    })
+    
 }
