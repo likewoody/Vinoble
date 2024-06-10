@@ -16,9 +16,13 @@
 		C85BF5322C130328005E548C /* MainLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85BF5312C130328005E548C /* MainLogin.swift */; };
 		C85BF5362C13037B005E548C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85BF5352C13037B005E548C /* SplashView.swift */; };
 		C85BF5392C13058A005E548C /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85BF5382C13058A005E548C /* ProductView.swift */; };
-		E39BAABA2C15ED130016B4A1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39BAAB92C15ED130016B4A1 /* LoginView.swift */; };
-		E39BAABC2C15F7FF0016B4A1 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39BAABB2C15F7FF0016B4A1 /* RegisterView.swift */; };
-		E39BAABE2C15FDF10016B4A1 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39BAABD2C15FDF10016B4A1 /* ProfileView.swift */; };
+		C86B200E2C14247A0061663A /* ProductTCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86B200D2C14247A0061663A /* ProductTCA.swift */; };
+		C891DB092C155BF200DF4673 /* ShareColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C891DB082C155BF200DF4673 /* ShareColor.swift */; };
+		C8B7BF602C13EFFB00003C99 /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7BF5F2C13EFFB00003C99 /* WishListView.swift */; };
+		C8B7BF662C13F2E600003C99 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7BF652C13F2E600003C99 /* MainTabView.swift */; };
+		C8B7BF682C13F5C800003C99 /* Second4Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7BF672C13F5C800003C99 /* Second4Test.swift */; };
+		F2B7884F2C1588DF001CF46D /* MyCellarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B7884E2C1588DF001CF46D /* MyCellarView.swift */; };
+		F2B788552C15987A001CF46D /* NewTasteNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B788542C15987A001CF46D /* NewTasteNoteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,9 +35,13 @@
 		C85BF5312C130328005E548C /* MainLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLogin.swift; sourceTree = "<group>"; };
 		C85BF5352C13037B005E548C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		C85BF5382C13058A005E548C /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
-		E39BAAB92C15ED130016B4A1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		E39BAABB2C15F7FF0016B4A1 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
-		E39BAABD2C15FDF10016B4A1 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		C86B200D2C14247A0061663A /* ProductTCA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTCA.swift; sourceTree = "<group>"; };
+		C891DB082C155BF200DF4673 /* ShareColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareColor.swift; sourceTree = "<group>"; };
+		C8B7BF5F2C13EFFB00003C99 /* WishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
+		C8B7BF652C13F2E600003C99 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		C8B7BF672C13F5C800003C99 /* Second4Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Second4Test.swift; sourceTree = "<group>"; };
+		F2B7884E2C1588DF001CF46D /* MyCellarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCellarView.swift; sourceTree = "<group>"; };
+		F2B788542C15987A001CF46D /* NewTasteNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTasteNoteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +59,7 @@
 		C832A29B2C0EEFC0007EA2A2 = {
 			isa = PBXGroup;
 			children = (
+				C86B200F2C1428E70061663A /* Model */,
 				C832A2B52C0EEFD8007EA2A2 /* TCA */,
 				C832A2A62C0EEFC0007EA2A2 /* Vinoble */,
 				C832A2A52C0EEFC0007EA2A2 /* Products */,
@@ -68,7 +77,9 @@
 		C832A2A62C0EEFC0007EA2A2 /* Vinoble */ = {
 			isa = PBXGroup;
 			children = (
-				E39BAAB72C15EBF70016B4A1 /* View */,
+				F2B7884D2C1588D1001CF46D /* MyCellar */,
+				C8B7BF642C13F2D100003C99 /* TabView */,
+				C8B7BF5E2C13EFEE00003C99 /* WishList */,
 				C85BF5372C130579005E548C /* Product */,
 				C832A2A72C0EEFC0007EA2A2 /* VinobleApp.swift */,
 				C832A2A92C0EEFC0007EA2A2 /* MainView.swift */,
@@ -92,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				C832A2B62C0EF0B1007EA2A2 /* Test.swift */,
+				C86B200D2C14247A0061663A /* ProductTCA.swift */,
 			);
 			path = TCA;
 			sourceTree = "<group>";
@@ -104,14 +116,38 @@
 			path = Product;
 			sourceTree = "<group>";
 		};
-		E39BAAB72C15EBF70016B4A1 /* View */ = {
+		C86B200F2C1428E70061663A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E39BAAB92C15ED130016B4A1 /* LoginView.swift */,
-				E39BAABB2C15F7FF0016B4A1 /* RegisterView.swift */,
-				E39BAABD2C15FDF10016B4A1 /* ProfileView.swift */,
+				C891DB082C155BF200DF4673 /* ShareColor.swift */,
 			);
-			path = View;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C8B7BF5E2C13EFEE00003C99 /* WishList */ = {
+			isa = PBXGroup;
+			children = (
+				C8B7BF5F2C13EFFB00003C99 /* WishListView.swift */,
+			);
+			path = WishList;
+			sourceTree = "<group>";
+		};
+		C8B7BF642C13F2D100003C99 /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+				C8B7BF652C13F2E600003C99 /* MainTabView.swift */,
+				C8B7BF672C13F5C800003C99 /* Second4Test.swift */,
+			);
+			path = TabView;
+			sourceTree = "<group>";
+		};
+		F2B7884D2C1588D1001CF46D /* MyCellar */ = {
+			isa = PBXGroup;
+			children = (
+				F2B7884E2C1588DF001CF46D /* MyCellarView.swift */,
+				F2B788542C15987A001CF46D /* NewTasteNoteView.swift */,
+			);
+			path = MyCellar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,15 +226,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8B7BF682C13F5C800003C99 /* Second4Test.swift in Sources */,
 				C85BF5322C130328005E548C /* MainLogin.swift in Sources */,
-				E39BAABE2C15FDF10016B4A1 /* ProfileView.swift in Sources */,
-				E39BAABA2C15ED130016B4A1 /* LoginView.swift in Sources */,
 				C832A2AA2C0EEFC0007EA2A2 /* MainView.swift in Sources */,
 				C85BF5362C13037B005E548C /* SplashView.swift in Sources */,
+				C891DB092C155BF200DF4673 /* ShareColor.swift in Sources */,
+				F2B7884F2C1588DF001CF46D /* MyCellarView.swift in Sources */,
 				C832A2A82C0EEFC0007EA2A2 /* VinobleApp.swift in Sources */,
-				E39BAABC2C15F7FF0016B4A1 /* RegisterView.swift in Sources */,
 				C85BF5392C13058A005E548C /* ProductView.swift in Sources */,
 				C832A2B72C0EF0B1007EA2A2 /* Test.swift in Sources */,
+				C86B200E2C14247A0061663A /* ProductTCA.swift in Sources */,
+				C8B7BF602C13EFFB00003C99 /* WishListView.swift in Sources */,
+				C8B7BF662C13F2E600003C99 /* MainTabView.swift in Sources */,
+				F2B788552C15987A001CF46D /* NewTasteNoteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +379,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -367,6 +408,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
