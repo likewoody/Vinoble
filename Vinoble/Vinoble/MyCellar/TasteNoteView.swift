@@ -1,4 +1,4 @@
-//  NewTasteNoteView.swift
+//  TasteNoteView.swift
 //  Vinoble
 //
 //  Created by Diana Kim on 6/9/24.
@@ -6,14 +6,14 @@
 
 /*
  Author : Diana
- Date : 2024.06.09 Sun
+ Date : 2024.06.10 Monday
  Description : 1차 UI frame 작업
  */
 
 import SwiftUI
 import ComposableArchitecture
 
-struct NewTasteNoteView: View {
+struct TasteNoteView: View {
     
     @State var selectedImage: UIImage?
     @State var isShowingImagePicker = false
@@ -113,9 +113,9 @@ struct NewTasteNoteView: View {
                 .padding(.top, 20)
                 
                 VStack(alignment: .leading, spacing: 20) {
-                             SliderField(value: $sugar, label: "Sugar")
-                             SliderField(value: $wineBody, label: "Body")
-                             SliderField(value: $tannin, label: "Tannin")
+                             SlidersField(value: $sugar, label: "Sugar")
+                             SlidersField(value: $wineBody, label: "Body")
+                             SlidersField(value: $tannin, label: "Tannin")
                              
                              TextField("Alcohol", text: $alcohol)
                                  .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -133,15 +133,15 @@ struct NewTasteNoteView: View {
                     Text("Note:")
                         .font(.system(size: 16, weight: .bold))
                     TextEditor(text: $wineNote)
-                        .frame(minHeight: 150) 
+                        .frame(minHeight: 150)
                         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray.opacity(0.3)))
                     HStack {
                         Spacer()
                         Button(action: {
-                            // ADD ACTION
-                            print("Tasting note saved!")
+                            // Update ACTION
+                           
                         }) {
-                            Text("Add")
+                            Text("Update")
                                 .font(.system(size: 16, weight: .semibold))
                                 .foregroundColor(.white)
                                 .padding(.horizontal, 16)
@@ -151,6 +151,7 @@ struct NewTasteNoteView: View {
                         }
                         Spacer()
                     }
+                    
                 }
                 .padding(.horizontal, 20)
                 .padding(.top, 30)
@@ -164,7 +165,7 @@ struct NewTasteNoteView: View {
 } // tastingnote view
 
 
-struct SliderField: View {
+struct SlidersField: View {
     @Binding var value: Double
     let label: String
     
