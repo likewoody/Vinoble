@@ -75,7 +75,7 @@ struct TasteNoteView: View {
                             isShowingImagePicker = true
                         }) {
                             Text("Choose Image")
-                                .font(.system(size: 14, weight: .semibold))
+                                .font(.system(size: 18, design: .serif))
                                 .foregroundColor(.white)
                                 .padding(.horizontal, 16)
                                 .padding(.vertical, 8)
@@ -87,21 +87,20 @@ struct TasteNoteView: View {
                     VStack(alignment: .leading, spacing: 20) {
                         TextField("Wine Name",text: $winename)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .font(.system(size: 16))
+                            .font(.system(size: 15, design: .serif))
                         
                         TextField("Wine Price",text: $wineprice)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .font(.system(size: 16))
+                            .font(.system(size: 15, design: .serif))
                         
                         TextField("Wine Year",text: $wineyear)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .font(.system(size: 16))
+                            .font(.system(size: 15, design: .serif))
                         
                         HStack {
                             Picker("Wine Type", selection: $winetype) {
                                 Text("Red")
                                 Text("White")
-                                Text("Rose")
                                 
                             }
                             .pickerStyle(SegmentedPickerStyle())
@@ -117,21 +116,21 @@ struct TasteNoteView: View {
                              SlidersField(value: $wineBody, label: "Body")
                              SlidersField(value: $tannin, label: "Tannin")
                              
-                             TextField("Alcohol", text: $alcohol)
-                                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                                 .font(.system(size: 16))
-                             
-                             TextField("pH", text: $ph)
-                                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                                 .font(.system(size: 16))
+//                             TextField("Alcohol", text: $alcohol)
+//                                 .textFieldStyle(RoundedBorderTextFieldStyle())
+//                                 .font(.system(size: 16))
+//                             
+//                             TextField("pH Level(%)", text: $ph)
+//                                 .textFieldStyle(RoundedBorderTextFieldStyle())
+//                                 .font(.system(size: 16))
                          }
                          .padding(.horizontal, 20)
                          .padding(.top, 20)
 
                 // NOTE
-                VStack(alignment: .leading, spacing: 10) {
+                VStack(alignment: .leading, spacing: 13) {
                     Text("Note:")
-                        .font(.system(size: 16, weight: .bold))
+                        .font(.system(size: 16, design: .serif))
                     TextEditor(text: $wineNote)
                         .frame(minHeight: 150)
                         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray.opacity(0.3)))
@@ -142,9 +141,23 @@ struct TasteNoteView: View {
                            
                         }) {
                             Text("Update")
-                                .font(.system(size: 16, weight: .semibold))
+                                .font(.system(size: 18, design: .serif))
                                 .foregroundColor(.white)
-                                .padding(.horizontal, 16)
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 8)
+                                .background(Color(shareColor.mainColor()))
+                                .cornerRadius(10)
+                        }
+                        Spacer()
+
+                        Button(action: {
+                            // Delete ACTION
+                           
+                        }) {
+                            Text("Delete")
+                                .font(.system(size: 18, design: .serif))
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 20)
                                 .padding(.vertical, 8)
                                 .background(Color(shareColor.mainColor()))
                                 .cornerRadius(10)
@@ -158,7 +171,7 @@ struct TasteNoteView: View {
                 .padding(.bottom, 30)
           
             }
-            .navigationTitle("New Tasting Note")
+            .navigationTitle("Taste Note")
             .navigationBarTitleDisplayMode(.inline)
         }
     }
@@ -172,7 +185,7 @@ struct SlidersField: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text("\(label): \(Int(value))%")
-                .font(.system(size: 14))
+                .font(.system(size: 15, design: .serif))
                 .bold()
             Slider(value: $value, in: 0...100)
         }
@@ -180,7 +193,7 @@ struct SlidersField: View {
 }
 
 #Preview {
-    NewTasteNoteView(store: Store(initialState: ProductFeature.State()){
+    TasteNoteView(store: Store(initialState: ProductFeature.State()){
         ProductFeature()
     })
 }

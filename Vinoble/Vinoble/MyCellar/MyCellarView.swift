@@ -76,6 +76,7 @@ struct MyCellarView: View {
                 .onDelete(perform: deleteItems)
             }
             .navigationTitle("My Cellar")
+            .font(.system(size: 18, design: .serif))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
@@ -84,7 +85,7 @@ struct MyCellarView: View {
                         }) {
                             Image(systemName: "square.and.pencil.circle")
                         }
-                        .font(.system(size: 24))
+                        .font(.system(size: 25))
                         .foregroundColor(Color(shareColor.mainColor()))
                     }
                 }
