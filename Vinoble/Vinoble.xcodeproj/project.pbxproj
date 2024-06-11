@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		741386902C181102006BC952 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7413868F2C181102006BC952 /* ProductDetail.swift */; };
+		741386922C181115006BC952 /* DetailTCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741386912C181115006BC952 /* DetailTCA.swift */; };
+		741386942C181128006BC952 /* Charts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741386932C181128006BC952 /* Charts.swift */; };
+		7413869D2C18420C006BC952 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7413869C2C18420C006BC952 /* SDWebImageSwiftUI */; };
 		C832A2A82C0EEFC0007EA2A2 /* VinobleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C832A2A72C0EEFC0007EA2A2 /* VinobleApp.swift */; };
 		C832A2AA2C0EEFC0007EA2A2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C832A2A92C0EEFC0007EA2A2 /* MainView.swift */; };
 		C832A2AC2C0EEFC1007EA2A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C832A2AB2C0EEFC1007EA2A2 /* Assets.xcassets */; };
@@ -31,6 +35,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7413868F2C181102006BC952 /* ProductDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
+		741386912C181115006BC952 /* DetailTCA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTCA.swift; sourceTree = "<group>"; };
+		741386932C181128006BC952 /* Charts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Charts.swift; sourceTree = "<group>"; };
 		C832A2A42C0EEFC0007EA2A2 /* Vinoble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vinoble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C832A2A72C0EEFC0007EA2A2 /* VinobleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinobleApp.swift; sourceTree = "<group>"; };
 		C832A2A92C0EEFC0007EA2A2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -59,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7413869D2C18420C006BC952 /* SDWebImageSwiftUI in Frameworks */,
 				C832A2BA2C0EF2BA007EA2A2 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,6 +121,7 @@
 		C832A2B52C0EEFD8007EA2A2 /* TCA */ = {
 			isa = PBXGroup;
 			children = (
+				741386912C181115006BC952 /* DetailTCA.swift */,
 				C832A2B62C0EF0B1007EA2A2 /* Test.swift */,
 				C86B200D2C14247A0061663A /* ProductTCA.swift */,
 				F2B8DB062C16F7B60083193E /* NewTastingNoteTCA.swift */,
@@ -123,6 +132,8 @@
 		C85BF5372C130579005E548C /* Product */ = {
 			isa = PBXGroup;
 			children = (
+				741386932C181128006BC952 /* Charts.swift */,
+				7413868F2C181102006BC952 /* ProductDetail.swift */,
 				C85BF5382C13058A005E548C /* ProductView.swift */,
 			);
 			path = Product;
@@ -191,6 +202,7 @@
 			name = Vinoble;
 			packageProductDependencies = (
 				C832A2B92C0EF2BA007EA2A2 /* ComposableArchitecture */,
+				7413869C2C18420C006BC952 /* SDWebImageSwiftUI */,
 			);
 			productName = Vinoble;
 			productReference = C832A2A42C0EEFC0007EA2A2 /* Vinoble.app */;
@@ -222,6 +234,7 @@
 			mainGroup = C832A29B2C0EEFC0007EA2A2;
 			packageReferences = (
 				C832A2B82C0EF2BA007EA2A2 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				7413869B2C18420C006BC952 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = C832A2A52C0EEFC0007EA2A2 /* Products */;
 			projectDirPath = "";
@@ -249,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				741386902C181102006BC952 /* ProductDetail.swift in Sources */,
 				C8B7BF682C13F5C800003C99 /* Second4Test.swift in Sources */,
 				C85BF5322C130328005E548C /* MainLogin.swift in Sources */,
 				C832A2AA2C0EEFC0007EA2A2 /* MainView.swift in Sources */,
@@ -261,10 +275,12 @@
 				E3DAE1362C16851900799A06 /* LoginView.swift in Sources */,
 				C832A2B72C0EF0B1007EA2A2 /* Test.swift in Sources */,
 				C86B200E2C14247A0061663A /* ProductTCA.swift in Sources */,
+				741386922C181115006BC952 /* DetailTCA.swift in Sources */,
 				F2B8DB072C16F7B60083193E /* NewTastingNoteTCA.swift in Sources */,
 				C8B7BF602C13EFFB00003C99 /* WishListView.swift in Sources */,
 				E3DAE1382C16851900799A06 /* RegisterView.swift in Sources */,
 				C8B7BF662C13F2E600003C99 /* MainTabView.swift in Sources */,
+				741386942C181128006BC952 /* Charts.swift in Sources */,
 				F20787872C1690F50011EA76 /* TasteNoteView.swift in Sources */,
 				F2B788552C15987A001CF46D /* NewTasteNoteView.swift in Sources */,
 			);
@@ -474,6 +490,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7413869B2C18420C006BC952 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.4;
+			};
+		};
 		C832A2B82C0EF2BA007EA2A2 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
@@ -485,6 +509,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7413869C2C18420C006BC952 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7413869B2C18420C006BC952 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
 		C832A2B92C0EF2BA007EA2A2 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C832A2B82C0EF2BA007EA2A2 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;

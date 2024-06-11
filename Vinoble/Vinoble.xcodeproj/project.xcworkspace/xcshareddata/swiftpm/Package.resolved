@@ -1,5 +1,5 @@
 {
-  "originHash" : "e7024a9cd3fa1c40fa4003b3b2b186c00ba720c787de8ba274caf8fc530677e8",
+  "originHash" : "12615cccdabb01b968bfa021d282e894e3a8bc4dde59f620e363d8597fc53723",
   "pins" : [
     {
       "identity" : "combine-schedulers",
@@ -8,6 +8,24 @@
       "state" : {
         "revision" : "9dc9cbe4bc45c65164fa653a563d8d8db61b09bb",
         "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "sdwebimage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SDWebImage/SDWebImage.git",
+      "state" : {
+        "revision" : "b8523c1642f3c142b06dd98443ea7c48343a4dfd",
+        "version" : "5.19.3"
+      }
+    },
+    {
+      "identity" : "sdwebimageswiftui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SDWebImage/SDWebImageSwiftUI.git",
+      "state" : {
+        "revision" : "b7af5e6bd9c2987e41730400d1baad13d74a141a",
+        "version" : "3.0.4"
       }
     },
     {
