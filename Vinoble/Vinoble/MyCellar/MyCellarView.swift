@@ -1,5 +1,4 @@
-//
-//  MyCellarView.swift
+
 //  Vinoble
 //
 //  Created by Diana Kim on 6/9/24.
@@ -7,8 +6,13 @@
 
 /*
  Author : Diana
- Date : 2024.06.09 Sunday
- Description : 1차 UI frame 작업
+ Date : 2024.06.09 Sun
+ Description : 1차 UI frame Design
+ 
+ Author : Diana
+ Date : 2024.06.11 Tues
+ Description : core function implementation day 1
+ 
  */
 
 import SwiftUI
@@ -16,43 +20,37 @@ import ComposableArchitecture
 
 struct MyCellarView: View {
     
-    // variables
-    @State private var showTastingNote = false
-    @State private var cellarList: [[String]] = [
-        ["Concha", "bor", "2014", "flower_02"],
-        ["Merlot", "rhone", "2024", "flower_03"],
-        ["Cabernet sauvignon", "misa", "2011", "flower_04"]
-    ]
+    // test variables
+    @State private var showUpdateTastingNote = false
+    @State private var selectedWine : [String]?
     
     let store: StoreOf<ProductFeature>
     
+    @Bindable var noteStore: StoreOf<TastingNoteFeature>
+    
     // Delete Function
     private func deleteItems(at offsets: IndexSet) {
-        cellarList.remove(atOffsets: offsets)
+//        cellarList.remove(atOffsets: offsets)
     }
     
     // Color
-//    let shareColor = ShareColor(store: Store(initialState: ProductFeature.State()){
-//        ProductFeature()
-//    })
+    let shareColor = ShareColor(store: Store(initialState: ProductFeature.State()){
+        ProductFeature()
+    })
     
-    // MARK: Title format
-    init(store: StoreOf<ProductFeature>) {
+    // init
+    init(store: StoreOf<ProductFeature>,noteStore: StoreOf<TastingNoteFeature>) {
         self.store = store
-        
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(.theme), // Title color
-                                                            
-            .font: UIFont.boldSystemFont(ofSize: 24.0) // Title font size
-                                                            
-        ]
+        self.noteStore = noteStore
+        self.noteStore.send(.selectCellar)
     }
     
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(cellarList.indices, id: \.self) { index in
-                    let wine = cellarList[index]
+                ForEach(noteStore.cellarList.indices, id: \.self) { index in
+                    let wine = noteStore.cellarList[index]
                     VStack {
                         HStack {
                             RoundedRectangle(cornerRadius: 20)
@@ -72,36 +70,37 @@ struct MyCellarView: View {
                             }
                         }
                     }
+                    .font(.system(size: 15, design: .serif))
+                    .onTapGesture(perform: {
+                        selectedWine = wine
+                        showUpdateTastingNote = true
+                    })
                 }
                 .onDelete(perform: deleteItems)
             }
-            .navigationTitle("My Cellar")
-            .font(.system(size: 18, design: .serif))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        showTastingNote = true
-                    }) {
-                        Image(systemName: "square.and.pencil.circle")
-                    }
-                    .font(.system(size: 25))
-                    .foregroundColor(.theme)
-                }
+                 ToolbarItem(placement: .principal) {
+                     Text("My Cellar")
+                         .font(.system(size: 23, design: .serif))
+                         .padding(.top, 20)
+                         .foregroundColor(.theme)
+                         .bold()
+                 }
+             }
+            .sheet(isPresented: $showUpdateTastingNote) {
+                UpdateTastingNoteView(store: store, noteStore: noteStore)
             }
-            .sheet(isPresented: $showTastingNote) {
-                NewTasteNoteView(store: store, noteStore: Store(initialState: NewTastingNoteFeature.State()){
-                    NewTastingNoteFeature()
-                })
-                
-            }
-        }
-    } // MyCellar View
-    
-    #Preview {
-        MyCellarView(store: Store(initialState: ProductFeature.State()){
-            ProductFeature()
-        })
-    }
-    
+        } // navigation view
+    } // body
+} // myCellar view
+
+
+
+#Preview {
+    MyCellarView(store: Store(initialState: ProductFeature.State()){
+        ProductFeature()
+    },noteStore: Store(initialState: TastingNoteFeature.State()) {
+        TastingNoteFeature()
+    })
 }
