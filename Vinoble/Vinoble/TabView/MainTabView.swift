@@ -21,10 +21,6 @@ struct MainTabView: View {
     let store: StoreOf<ProductFeature>
     
     // 다른 곳에서도 사용할 수 있게끔 Color를 func으로 만든 것을 불러온다.
-    let shareColor = ShareColor(store: Store(initialState: ProductFeature.State()){
-        ProductFeature()
-    })
-    
     var body: some View {
         
         NavigationView(content: {
@@ -69,7 +65,7 @@ struct MainTabView: View {
                             }
                             .tag(4)
                     } // Group
-                    .toolbarBackground(shareColor.mainColor(), for: .tabBar)
+                    .toolbarBackground(.theme, for: .tabBar)
                     .toolbarBackground(.visible, for: .tabBar)
                     .toolbarColorScheme(.dark, for: .tabBar)
                     
@@ -85,7 +81,7 @@ struct MainTabView: View {
                             
                         }label: {
                             Circle()
-                                .foregroundStyle(shareColor.mainColor())
+                                .foregroundStyle(.theme)
                                 .frame(width: 60, height: 60)
                                 .overlay {
                                     Circle()

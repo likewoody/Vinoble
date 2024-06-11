@@ -29,17 +29,13 @@ struct TasteNoteView: View {
     @State var ph: String = ""
     
     let store: StoreOf<ProductFeature>
-    
-    // color
-    let shareColor = ShareColor(store: Store(initialState: ProductFeature.State()){
-        ProductFeature()
-    })
+
     
     // MARK: Title format
     init(store: StoreOf<ProductFeature>) {
         self.store = store
         UINavigationBar.appearance().titleTextAttributes = [
-            .foregroundColor: shareColor.initColorWithAlpha(),
+            .foregroundColor: UIColor(.theme),
             .font: UIFont.boldSystemFont(ofSize: 24.0)
         ]
     }
@@ -79,7 +75,7 @@ struct TasteNoteView: View {
                                 .foregroundColor(.white)
                                 .padding(.horizontal, 10)
                                 .padding(.vertical, 8)
-                                .background(Color(shareColor.mainColor()))
+                                .background(.theme)
                                 .cornerRadius(10)
                         }
                     }
@@ -145,7 +141,7 @@ struct TasteNoteView: View {
                                 .foregroundColor(.white)
                                 .padding(.horizontal, 20)
                                 .padding(.vertical, 8)
-                                .background(Color(shareColor.mainColor()))
+                                .background(.theme)
                                 .cornerRadius(10)
                         }
                         Spacer()
@@ -159,7 +155,7 @@ struct TasteNoteView: View {
                                 .foregroundColor(.white)
                                 .padding(.horizontal, 20)
                                 .padding(.vertical, 8)
-                                .background(Color(shareColor.mainColor()))
+                                .background(.theme)
                                 .cornerRadius(10)
                         }
                         Spacer()

@@ -21,16 +21,12 @@ struct NewTasteNoteView: View {
     @Bindable var noteStore: StoreOf<NewTastingNoteFeature>
 
     let store: StoreOf<ProductFeature>
-    
-    let shareColor = ShareColor(store: Store(initialState: ProductFeature.State()) {
-        ProductFeature()
-    })
 
     init(store: StoreOf<ProductFeature>, noteStore: StoreOf<NewTastingNoteFeature>) {
         self.noteStore = noteStore
         self.store = store
         UINavigationBar.appearance().titleTextAttributes = [
-            .foregroundColor: shareColor.initColorWithAlpha(),
+            .foregroundColor: UIColor(.theme),
             .font: UIFont.boldSystemFont(ofSize: 24.0)
         ]
     }
@@ -71,8 +67,7 @@ struct NewTasteNoteView: View {
                                 .foregroundColor(.white)
                                 .padding(.horizontal, 16)
                                 .padding(.vertical, 8)
-                                .background(Color(shareColor.mainColor()))
-                                .cornerRadius(10)
+                                .background(.theme)
                         }
                     }
 
@@ -125,7 +120,7 @@ struct NewTasteNoteView: View {
                                 .foregroundColor(.white)
                                 .padding(.horizontal, 16)
                                 .padding(.vertical, 8)
-                                .background(Color(shareColor.mainColor()))
+                                .background(.theme)
                                 .cornerRadius(10)
                         }
                         Spacer()
