@@ -17,6 +17,7 @@
 
 import SwiftUI
 import ComposableArchitecture
+import SDWebImageSwiftUI
 
 struct ProductDetail: View {
     
@@ -29,14 +30,15 @@ struct ProductDetail: View {
     })
     
     // MARK: For test
-    @State private var wineList: [[String]] = [
-        ["flower_01", "Château Gazin Pomerol 2018", ]
-    ]
+    @State private var foodPairings: [String] = ["https://images.vivino.com/backgrounds/foods/thumbs/4_beef_932x810.png", "https://images.vivino.com/backgrounds/foods/thumbs/8_lamb_932x810.png", "https://images.vivino.com/backgrounds/foods/thumbs/20_chicken_932x810.png", "https://images.vivino.com/backgrounds/foods/thumbs/11_venison_932x810.png"]
+    
+    
     @State var pH: Double = 0.5
     @State var sweet: Double = 0.5
     @State var bodies: Double = 0.5
     @State var tannin: Double = 0.5
     @State var alcohol: Double = 0.5
+    @State var rating: Double = 4.7
     
     // MARK: if start view, change navigation title
     init(store: StoreOf<ProductFeature>, store2: StoreOf<DetailFeature>) {
@@ -85,13 +87,29 @@ struct ProductDetail: View {
                                 .font(.system(size: 30))
                                 .multilineTextAlignment(.center)
                             
-                            HStack {
-                                //stars 1
-                                Rectangle()
-                                .fill(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)))
-                                .frame(width: 34, height: 32)
-                                
+//                            HStack {
+//                                
+//                                RatingView(rating: 4.7)
+//                                    .padding(.bottom,5)
+//                                    .foregroundColor(Color(shareColor.mainColor()))
+//                            }
+                            
+                            // rating
+                            HStack(spacing: 2) {
+                                ForEach(0..<5) { index in
+                                    Image(systemName: self.starType(for: index))
+                                        .resizable()
+                                        .frame(width: 20, height: 20)
+                                }
                             }
+                            .accessibilityElement(children: .combine)
+                            .accessibilityLabel(Text("Rated \(rating, specifier: "%.1f") stars"))
+                            .foregroundColor(Color(shareColor.mainColor()))
+                            
+                            Text(String(format: "%.1f", rating))
+                                .font(.largeTitle)
+                                .bold()
+                                .padding(.bottom,5)
                             
                             HStack(content: {
                                 Spacer()
@@ -218,25 +236,29 @@ struct ProductDetail: View {
 
                     }) // HStack
                     .padding(.bottom, 5)
+                    
                     if store2.selectedWineInfo == 0 {
-                        HStack(content: {
-                            Image(systemName: "eyes")
-                            
-                            Image(systemName: "eyes")
-                            
-                            Image(systemName: "eyes")
-                            
-                            Image(systemName: "eyes")
-                        })
-
-                        HStack(content: {
-                            Text("Chicken")
-                            
-                            Text("Cheddar")
-                            
-                            Text("Watermelon")
-                            
-                            Text("Focaccia")
+                        ScrollView(.horizontal, content: {
+//                            LazyHGrid(rows: [GridItem(.adaptive(minimum: 100))], spacing: 10, content: {
+                            HStack{
+                                ForEach(foodPairings, id: \.self) { url in
+                                    AsyncImage(url: URL(string: url)) { phase in
+                                        switch phase {
+                                        case .empty:
+                                            ProgressView() // 로딩 중 표시
+                                        case .success(let image):
+                                            image
+                                                .resizable()
+                                                .scaledToFit()
+                                                .frame(width: 100, height: 100)
+                                        case .failure:
+                                            Color.red // 오류 발생 시 표시
+                                        @unknown default:
+                                            Color.gray
+                                        }
+                                    }
+                                }
+                            }
                         })
                     }
                     
@@ -348,9 +370,22 @@ struct ProductDetail: View {
             .navigationTitle("Detail View")
             .navigationBarTitleDisplayMode(.inline)
             
+        } // NavigationView
+        
+        
+    } // body
+    
+    private func starType(for index: Int) -> String {
+        let fullStarThreshold = index + 1
+        let halfStarThreshold = Double(index) + 0.5
+        
+        if rating >= Double(fullStarThreshold) {
+            return "star.fill"
+        } else if rating >= halfStarThreshold {
+            return "star.leadinghalf.fill"
+        } else {
+            return "star"
         }
-        
-        
     }
     
 }
@@ -358,8 +393,8 @@ struct ProductDetail: View {
 #Preview {
     ProductDetail(
         store: Store(initialState:
-        ProductFeature.State()){
-        ProductFeature()
+            ProductFeature.State()){
+            ProductFeature()
         },
         store2: Store(initialState:
             DetailFeature.State()){
