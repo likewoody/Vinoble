@@ -34,9 +34,9 @@ struct MyCellarView: View {
     }
     
     // Color
-    let shareColor = ShareColor(store: Store(initialState: ProductFeature.State()){
-        ProductFeature()
-    })
+//    let shareColor = ShareColor(store: Store(initialState: ProductFeature.State()){
+//        ProductFeature()
+//    })
     
     // init
     init(store: StoreOf<ProductFeature>,noteStore: StoreOf<TastingNoteFeature>) {

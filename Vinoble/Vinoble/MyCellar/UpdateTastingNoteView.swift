@@ -37,9 +37,9 @@ struct UpdateTastingNoteView: View {
     @Bindable var noteStore: StoreOf<TastingNoteFeature>
     
     // color
-    let shareColor = ShareColor(store: Store(initialState: ProductFeature.State()){
-        ProductFeature()
-    })
+//    let shareColor = ShareColor(store: Store(initialState: ProductFeature.State()){
+//        ProductFeature()
+//    })
     
     // Init
     init(store: StoreOf<ProductFeature>, noteStore: StoreOf<TastingNoteFeature>) {
