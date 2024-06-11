@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		749B84852C16D882008387C1 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749B84842C16D882008387C1 /* ProductDetail.swift */; };
+		749B84872C16F914008387C1 /* DetailTCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749B84862C16F914008387C1 /* DetailTCA.swift */; };
+		749B84892C170FA9008387C1 /* Charts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749B84882C170FA9008387C1 /* Charts.swift */; };
 		C832A2A82C0EEFC0007EA2A2 /* VinobleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C832A2A72C0EEFC0007EA2A2 /* VinobleApp.swift */; };
 		C832A2AA2C0EEFC0007EA2A2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C832A2A92C0EEFC0007EA2A2 /* MainView.swift */; };
 		C832A2AC2C0EEFC1007EA2A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C832A2AB2C0EEFC1007EA2A2 /* Assets.xcassets */; };
@@ -30,6 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		749B84842C16D882008387C1 /* ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
+		749B84862C16F914008387C1 /* DetailTCA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTCA.swift; sourceTree = "<group>"; };
+		749B84882C170FA9008387C1 /* Charts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charts.swift; sourceTree = "<group>"; };
 		C832A2A42C0EEFC0007EA2A2 /* Vinoble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vinoble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C832A2A72C0EEFC0007EA2A2 /* VinobleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinobleApp.swift; sourceTree = "<group>"; };
 		C832A2A92C0EEFC0007EA2A2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -113,6 +119,7 @@
 			children = (
 				C832A2B62C0EF0B1007EA2A2 /* Test.swift */,
 				C86B200D2C14247A0061663A /* ProductTCA.swift */,
+				749B84862C16F914008387C1 /* DetailTCA.swift */,
 			);
 			path = TCA;
 			sourceTree = "<group>";
@@ -121,6 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				C85BF5382C13058A005E548C /* ProductView.swift */,
+				749B84842C16D882008387C1 /* ProductDetail.swift */,
+				749B84882C170FA9008387C1 /* Charts.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -248,10 +257,13 @@
 			files = (
 				C8B7BF682C13F5C800003C99 /* Second4Test.swift in Sources */,
 				C85BF5322C130328005E548C /* MainLogin.swift in Sources */,
+				749B84852C16D882008387C1 /* ProductDetail.swift in Sources */,
 				C832A2AA2C0EEFC0007EA2A2 /* MainView.swift in Sources */,
 				C85BF5362C13037B005E548C /* SplashView.swift in Sources */,
 				C891DB092C155BF200DF4673 /* ShareColor.swift in Sources */,
+				749B84872C16F914008387C1 /* DetailTCA.swift in Sources */,
 				F2B7884F2C1588DF001CF46D /* MyCellarView.swift in Sources */,
+				749B84892C170FA9008387C1 /* Charts.swift in Sources */,
 				C832A2A82C0EEFC0007EA2A2 /* VinobleApp.swift in Sources */,
 				E3DAE1372C16851900799A06 /* ProfileView.swift in Sources */,
 				C85BF5392C13058A005E548C /* ProductView.swift in Sources */,
