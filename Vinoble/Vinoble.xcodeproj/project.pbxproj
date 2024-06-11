@@ -28,6 +28,7 @@
 		E30334462C17EDAE002D6212 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = E30334452C17EDAE002D6212 /* FirebaseAnalytics */; };
 		E30334482C17EDAE002D6212 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E30334472C17EDAE002D6212 /* FirebaseDatabase */; };
 		E303344A2C17EDAE002D6212 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E30334492C17EDAE002D6212 /* FirebaseFirestore */; };
+		E32D49F22C1821E60057A0C9 /* TEST.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32D49F12C1821E60057A0C9 /* TEST.swift */; };
 		E3DAE1362C16851900799A06 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DAE1322C16851900799A06 /* LoginView.swift */; };
 		E3DAE1372C16851900799A06 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DAE1332C16851900799A06 /* ProfileView.swift */; };
 		E3DAE1382C16851900799A06 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DAE1342C16851900799A06 /* RegisterView.swift */; };
@@ -56,6 +57,7 @@
 		E303343C2C17EAC3002D6212 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		E30334402C17EB4F002D6212 /* UserQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserQuery.swift; sourceTree = "<group>"; };
 		E30334422C17EC4D002D6212 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E32D49F12C1821E60057A0C9 /* TEST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEST.swift; sourceTree = "<group>"; };
 		E3DAE1322C16851900799A06 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E3DAE1332C16851900799A06 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		E3DAE1342C16851900799A06 /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				E3DAE1322C16851900799A06 /* LoginView.swift */,
 				E3DAE1332C16851900799A06 /* ProfileView.swift */,
 				E3DAE1342C16851900799A06 /* RegisterView.swift */,
+				E32D49F12C1821E60057A0C9 /* TEST.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				E3DAE1372C16851900799A06 /* ProfileView.swift in Sources */,
 				C85BF5392C13058A005E548C /* ProductView.swift in Sources */,
 				E3DAE1362C16851900799A06 /* LoginView.swift in Sources */,
+				E32D49F22C1821E60057A0C9 /* TEST.swift in Sources */,
 				C832A2B72C0EF0B1007EA2A2 /* Test.swift in Sources */,
 				C86B200E2C14247A0061663A /* ProductTCA.swift in Sources */,
 				F2B8DB072C16F7B60083193E /* NewTastingNoteTCA.swift in Sources */,

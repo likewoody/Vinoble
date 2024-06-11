@@ -12,14 +12,6 @@ struct LoginTCA {
     
     @ObservableState
     struct state: Equatable{
-        var userid: String = ""
-        var userpw: String = ""
-        
-        enum Action: BindableAction {
-            case binding(BindingAction<State>)
-            case insertNewTasteNote
-        }
-
         
     } // struct state
     
