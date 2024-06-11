@@ -14,36 +14,27 @@ import SwiftUI
 import ComposableArchitecture
 
 struct NewTasteNoteView: View {
-    
+
     @State var selectedImage: UIImage?
     @State var isShowingImagePicker = false
-    @State var winename: String = ""
-    @State var wineprice: String = ""
-    @State var wineNote: String = ""
-    @State var wineyear: String = ""
-    @State var winetype: String?
-    @State var sugar: Double = 0
-    @State var wineBody: Double = 0
-    @State var tannin: Double = 0
-    @State var alcohol: String = ""
-    @State var ph: String = ""
     
+    @Bindable var noteStore: StoreOf<NewTastingNoteFeature>
+
     let store: StoreOf<ProductFeature>
     
-    // color
-    let shareColor = ShareColor(store: Store(initialState: ProductFeature.State()){
+    let shareColor = ShareColor(store: Store(initialState: ProductFeature.State()) {
         ProductFeature()
     })
-    
-    // MARK: Title format
-    init(store: StoreOf<ProductFeature>) {
+
+    init(store: StoreOf<ProductFeature>, noteStore: StoreOf<NewTastingNoteFeature>) {
+        self.noteStore = noteStore
         self.store = store
         UINavigationBar.appearance().titleTextAttributes = [
             .foregroundColor: shareColor.initColorWithAlpha(),
             .font: UIFont.boldSystemFont(ofSize: 24.0)
         ]
     }
-    
+
     var body: some View {
         NavigationView {
             VStack {
@@ -66,11 +57,12 @@ struct NewTasteNoteView: View {
                                         .frame(width: 50, height: 50)
                                         .foregroundColor(.gray)
                                 }
+                                
                             }
                             .onTapGesture {
                                 isShowingImagePicker = true
                             }
-                        
+
                         Button(action: {
                             isShowingImagePicker = true
                         }) {
@@ -83,62 +75,49 @@ struct NewTasteNoteView: View {
                                 .cornerRadius(10)
                         }
                     }
-                    
+
                     VStack(alignment: .leading, spacing: 20) {
-                        TextField("Wine Name",text: $winename)
+                        TextField("Wine Name", text: $noteStore.wineName)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .font(.system(size: 15, design: .serif))
+
+                        TextField("Wine Price", text: $noteStore.winePrice)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .font(.system(size: 15, design: .serif))
+
+                        TextField("Wine Year", text: $noteStore.wineYear)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .font(.system(size: 15, design: .serif))
                         
-                        TextField("Wine Price",text: $wineprice)
+                        TextField("Wine Type", text: $noteStore.wineType)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .font(.system(size: 15, design: .serif))
-                        
-                        TextField("Wine Year",text: $wineyear)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .font(.system(size: 15, design: .serif))
-                        
-                        HStack {
-                            Picker("Wine Type", selection: $winetype) {
-                                Text("Red")
-                                Text("White")
-                                
-                            }
-                            .pickerStyle(SegmentedPickerStyle())
-                            .frame(width: 190)
-                        }
+
                     }
                 }
                 .padding(.horizontal, 20)
                 .padding(.top, 20)
-                
-                VStack(alignment: .leading, spacing: 13) {
-                             SliderField(value: $sugar, label: "Sugar")
-                             SliderField(value: $wineBody, label: "Body")
-                             SliderField(value: $tannin, label: "Tannin")
-//                             
-//                             TextField("Alcohol (%)", text: $alcohol)
-//                                 .textFieldStyle(RoundedBorderTextFieldStyle())
-//                                 .font(.system(size: 16))
-//                             
-//                             TextField("pH Level", text: $ph)
-//                                 .textFieldStyle(RoundedBorderTextFieldStyle())
-//                                 .font(.system(size: 16))
-                         }
-                         .padding(.horizontal, 20)
-                         .padding(.top, 20)
 
-                // NOTE
+                VStack(alignment: .leading, spacing: 13) {
+                    SliderField(value: $noteStore.wineSugar, label: "Sugar")
+                    SliderField(value: $noteStore.wineBody, label: "Body")
+                    SliderField(value: $noteStore.wineTannin, label: "Tannin")
+                }
+                .padding(.horizontal, 20)
+                .padding(.top, 20)
+
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Note:")
                         .font(.system(size: 15, design: .serif))
-                    TextEditor(text: $wineNote)
-                        .frame(minHeight: 150) 
+                    TextEditor(text: $noteStore.wineNote)
+                        .frame(minHeight: 150)
                         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray.opacity(0.3)))
                     HStack {
                         Spacer()
                         Button(action: {
-                            // ADD ACTION
-                            print("Tasting note saved!")
+                            
+                            noteStore.send(.insertNewTasteNote)
+                            
                         }) {
                             Text("Add")
                                 .font(.system(size: 15, design: .serif))
@@ -155,19 +134,18 @@ struct NewTasteNoteView: View {
                 .padding(.horizontal, 20)
                 .padding(.top, 30)
                 .padding(.bottom, 30)
-          
+            
             }
             .navigationTitle("New Tasting Note")
             .navigationBarTitleDisplayMode(.inline)
         }
     }
-} // tastingnote view
-
+}
 
 struct SliderField: View {
     @Binding var value: Double
     let label: String
-    
+
     var body: some View {
         VStack(alignment: .leading) {
             Text("\(label): \(Int(value))%")
@@ -179,8 +157,9 @@ struct SliderField: View {
 }
 
 #Preview {
-    NewTasteNoteView(store: Store(initialState: ProductFeature.State()){
+    NewTasteNoteView(store: Store(initialState: ProductFeature.State()) {
         ProductFeature()
+    }, noteStore: Store(initialState: NewTastingNoteFeature.State()) {
+        NewTastingNoteFeature()
     })
 }
-

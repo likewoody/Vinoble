@@ -77,7 +77,7 @@ struct TasteNoteView: View {
                             Text("Choose Image")
                                 .font(.system(size: 18, design: .serif))
                                 .foregroundColor(.white)
-                                .padding(.horizontal, 16)
+                                .padding(.horizontal, 10)
                                 .padding(.vertical, 8)
                                 .background(Color(shareColor.mainColor()))
                                 .cornerRadius(10)
