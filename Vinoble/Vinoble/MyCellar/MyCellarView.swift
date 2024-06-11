@@ -32,15 +32,15 @@ struct MyCellarView: View {
     }
     
     // Color
-    let shareColor = ShareColor(store: Store(initialState: ProductFeature.State()){
-        ProductFeature()
-    })
+//    let shareColor = ShareColor(store: Store(initialState: ProductFeature.State()){
+//        ProductFeature()
+//    })
     
     // MARK: Title format
     init(store: StoreOf<ProductFeature>) {
         self.store = store
         
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: shareColor.initColorWithAlpha(), // Title color
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(.theme), // Title color
                                                             
             .font: UIFont.boldSystemFont(ofSize: 24.0) // Title font size
                                                             
@@ -56,7 +56,7 @@ struct MyCellarView: View {
                     VStack {
                         HStack {
                             RoundedRectangle(cornerRadius: 20)
-                                .foregroundStyle(shareColor.mainColor().opacity(0.2))
+                                .foregroundStyle(.theme.opacity(0.2))
                                 .frame(width: 100, height: 100)
                                 .overlay {
                                     Image(wine[3])
@@ -86,7 +86,7 @@ struct MyCellarView: View {
                         Image(systemName: "square.and.pencil.circle")
                     }
                     .font(.system(size: 25))
-                    .foregroundColor(Color(shareColor.mainColor()))
+                    .foregroundColor(.theme)
                 }
             }
             .sheet(isPresented: $showTastingNote) {

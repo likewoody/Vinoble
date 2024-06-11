@@ -16,42 +16,31 @@
  Data : 2024.06.08 Saturday
  Description : TCA connect (2024.06.09 TextField binding 완료)
  
+ 3차
+ Data : 2024.06.10 Tuesday
+ Description : Python Server를 이용한 MySQL DB 불러오기 (2024.06.11 완료)
+ 
  */
 
 
 import SwiftUI
 import ComposableArchitecture
+import SDWebImageSwiftUI
 
 struct ProductView: View {
     
     @Bindable var store: StoreOf<ProductFeature>
-    
-    // 다른 곳에서도 사용할 수 있게끔 Color를 func으로 만든 것을 불러온다.
-    let shareColor = ShareColor(store: Store(initialState: ProductFeature.State()){
-        ProductFeature()
-    })
     
     // MARK: if start view, change navigation title
     init(store: StoreOf<ProductFeature>) {
         // store 속성을 초기화합니다. 예를 들어, 기본값을 사용하거나 인자를 받을 수 있습니다.
         self.store = store
 
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: shareColor.initColorWithAlpha(), // Title color
-                                                            
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(.theme), // Title color
             .font: UIFont.boldSystemFont(ofSize: 24.0) // Title font size
         ]
     }
     
-    // MARK: For test
-    @State private var wineList: [[String]] = [
-        ["Concha Y Toro", "flower_01"],
-        ["Merlot", "flower_02"],
-        ["Cabernet sauvignon", "flower_03"],
-        ["Pinot noir", "flower_04"],
-        ["Pinot grigio", "flower_05"],
-        ["Riesling", "flower_06"],
-        ["Zinfandel", "flower_01"],
-    ]
     
     var body: some View{
         NavigationView(content: {
@@ -63,13 +52,9 @@ struct ProductView: View {
                     .overlay {
                         HStack(content: {
                             Button("", systemImage: "magnifyingglass") {
-                                // ****** DB를 불러와 search가 필요함 ******
-                                // ****** DB를 불러와 search가 필요함 ******
-                                // ****** DB를 불러와 search가 필요함 ******
-                                // ****** DB를 불러와 search가 필요함 ******
-                                
+                                store.send(.searchProductTapped)
                             }
-                            .foregroundStyle(shareColor.mainColor())
+                            .foregroundStyle(.theme)
                             .padding(.leading,12)
                             
 
@@ -88,9 +73,16 @@ struct ProductView: View {
                     } // Picker
                     .pickerStyle(.segmented)
                     .onAppear(perform: {
-                        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor : UIColor(shareColor.mainColor())], for: .selected)
-                        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor : UIColor(Color(.gray).opacity(0.8))], for: .normal)
-                    })
+                        
+                        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor : UIColor(.theme)], for: .selected)
+                        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor : UIColor(Color(.gray).opacity(0.8))], for: .normal)}
+                              
+                    )
+                    .onChange(of: store.selectedWineType) {
+                        store.selectedRegion = 0
+                        store.send(.wineTypeButtonTapped(store.selectedWineType))
+                        store.send(.fetchProducts)
+                    }
                     
 
                 }) // HStack
@@ -104,7 +96,7 @@ struct ProductView: View {
                         store.selectedRegion = 0
                     })
                     .foregroundStyle(store.selectedRegion == 0
-                                     ? shareColor.mainColor()
+                                     ? .theme
                                      : .gray.opacity(0.8)
                     )
                     Spacer()
@@ -113,7 +105,7 @@ struct ProductView: View {
                         store.selectedRegion = 1
                     }
                     .foregroundStyle(store.selectedRegion == 1
-                                     ? shareColor.mainColor()
+                                     ? .theme
                                      : .gray.opacity(0.8)
                     )
                     Spacer()
@@ -122,7 +114,7 @@ struct ProductView: View {
                         store.selectedRegion = 2
                     }
                     .foregroundStyle(store.selectedRegion == 2
-                                     ? shareColor.mainColor()
+                                     ? .theme
                                      : .gray.opacity(0.8)
                     )
                     Spacer()
@@ -131,15 +123,16 @@ struct ProductView: View {
                         store.selectedRegion = 3
                     }
                     .foregroundStyle(store.selectedRegion == 3
-                                     ? shareColor.mainColor()
+                                     ? .theme
                                      : .gray.opacity(0.8)
                     )
                     Spacer()
                     
                 }) // HStack
-                .onChange(of: store.selectedWineType) {
+                .onChange(of: store.selectedRegion) {
                     // if select wine type region will be reseted
-                    store.selectedRegion = 0
+                    store.send(.wineRegionButtonTapped(store.selectedRegion))
+                    store.send(.fetchProducts)
                 } // onChange
                 .padding(.bottom,20)
                 
@@ -148,36 +141,69 @@ struct ProductView: View {
                 
                 // MARK: Product list
                 
-                    ScrollView {
-                        LazyVGrid(columns: Array(repeating: GridItem(), count: 2), content: {
-                            ForEach(wineList, id:\.self) { wine in
-                                NavigationLink(destination: MainView()) {
-                                    VStack(content: {
-                                        RoundedRectangle(cornerRadius: 20)
-                                            .foregroundStyle(shareColor.productBackGroundColor())
-                                            .frame(width: 100, height: 100)
-                                            .overlay {
-                                                Image(wine[1])
-                                                    .resizable()
-                                                    .frame(width: 50, height: 100)
-                                                    .padding(.bottom, 30)
+                if store.isLoading{
+                    GeometryReader(content: { geometry in
+                        ProgressView()
+                            .offset(x: geometry.size.width / 2, y: geometry.size.height / 2)
+                    }) // GeometryReader
+                }else{
+                    ScrollViewReader(content: { proxy in
+                        ScrollView {
+                            LazyVGrid(columns: Array(repeating: GridItem(), count: 2), content: {
+                                ForEach(store.products, id:\.self) { product in
+                                    NavigationLink(destination: MainView()) {
+                                        VStack(content: {
+                                            RoundedRectangle(cornerRadius: 20)
+                                                .id(product.index)
+                                                .foregroundStyle(.theme.opacity(0.2))
+                                                .frame(width: 120, height: 150)
+                                                .padding(.top, 30)
+                                                .overlay {
+                                                    let url = URL(string: product.wineImage)
+                                                    WebImage(url: url)
+                                                        .resizable()
+                                                        .frame(width: 50, height: 200)
+                                                        .padding(.bottom, 50)
+                                                        
+                                                }
+                                                .padding(.bottom, 5)
 
-                                            }
-                                            
+
+                                            Text(product.name)
+                                                .foregroundStyle(.black)
+                                                .padding(.bottom, 30)
+
+                                        }) // VStack
                                         
-                                        Text(wine[0])
-                                            .foregroundStyle(.black)
-                                            .padding(.bottom, 30)
-                                        
-                                    }) // VStack
-                                    
-                                } // Link
+
+                                    } // Link
+
+                                } // ForEach
+//                                .onChange(of: store.selectedRegion) {
+//                                    proxy.scrollTo(offset: .zero, animated: true)
+//                                }
+//                                .onChange(of: store.selectedWineType) {
+//                                    proxy.scrollTo(0, anchor: .center)
+//                                }
                                 
-                            } // ForEach
+                                
+                            }) // Lazy V Grid
+                            .padding(.top, 50)
+//                            .onChange(of: store.selectedWineType) {
+//                                store.send(.wineTypeButtonTapped(store.selectedWineType))
+//                                proxy.scrollTo(0, anchor: .center)
+//                                
+//                            }                            
                             
-                        }) // Lazy V Grid
+//                            .content.offset(y:0)
+                            
+                        } // ScrollView
                         
-                    } // ScrollView
+                        
+                    }) // ScrollViewReader
+                    
+
+                } // else
                 
             }) // VStack
             .navigationTitle("VINOBLE")
@@ -197,6 +223,9 @@ struct ProductView: View {
             
             
         }) // NavigationView
+        .onAppear(perform: {
+            store.send(.fetchProducts)
+        })
     } // body
     
 } // ProductView
