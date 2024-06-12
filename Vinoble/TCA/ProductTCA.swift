@@ -17,6 +17,8 @@ struct ProductFeature{
         var isLoading: Bool = true
         var minIndex: Int = 0
         
+        var showDrawer: Bool = false
+        
         // products load
 //        var startCount: Int = 0
 //        var lastCount: Int = 4

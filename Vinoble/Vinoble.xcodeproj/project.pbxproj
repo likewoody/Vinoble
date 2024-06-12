@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C80A67AF2C19659200953402 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C80A67AE2C19659200953402 /* GoogleService-Info.plist */; };
 		C832A2A82C0EEFC0007EA2A2 /* VinobleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C832A2A72C0EEFC0007EA2A2 /* VinobleApp.swift */; };
 		C832A2AA2C0EEFC0007EA2A2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C832A2A92C0EEFC0007EA2A2 /* MainView.swift */; };
 		C832A2AC2C0EEFC1007EA2A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C832A2AB2C0EEFC1007EA2A2 /* Assets.xcassets */; };
@@ -37,7 +38,6 @@
 		E3014E8D2C1927C400CE4FD6 /* UserInsert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3014E8C2C1927C400CE4FD6 /* UserInsert.swift */; };
 		E3014E8F2C1927DD00CE4FD6 /* RegularExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3014E8E2C1927DD00CE4FD6 /* RegularExpression.swift */; };
 		E32D4A2B2C18528C0057A0C9 /* UserQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32D4A292C18528C0057A0C9 /* UserQuery.swift */; };
-		E3C091872C1942700004BBA4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3C091862C1942700004BBA4 /* GoogleService-Info.plist */; };
 		E3DAE1362C16851900799A06 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DAE1322C16851900799A06 /* LoginView.swift */; };
 		E3DAE1372C16851900799A06 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DAE1332C16851900799A06 /* ProfileView.swift */; };
 		E3DAE1382C16851900799A06 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DAE1342C16851900799A06 /* RegisterView.swift */; };
@@ -48,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C80A67AE2C19659200953402 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C832A2A72C0EEFC0007EA2A2 /* VinobleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinobleApp.swift; sourceTree = "<group>"; };
 		C832A2A92C0EEFC0007EA2A2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C832A2AB2C0EEFC1007EA2A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,7 +75,6 @@
 		E3014E8E2C1927DD00CE4FD6 /* RegularExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularExpression.swift; sourceTree = "<group>"; };
 		E32D4A292C18528C0057A0C9 /* UserQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserQuery.swift; sourceTree = "<group>"; };
 		E3C091852C1937150004BBA4 /* Vinoble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vinoble.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3C091862C1942700004BBA4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E3DAE1322C16851900799A06 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E3DAE1332C16851900799A06 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		E3DAE1342C16851900799A06 /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -123,8 +123,9 @@
 				C85BF5372C130579005E548C /* Product */,
 				C832A2A72C0EEFC0007EA2A2 /* VinobleApp.swift */,
 				C832A2A92C0EEFC0007EA2A2 /* MainView.swift */,
+				C8BB9B852C19340400093024 /* SQLite.swift */,
 				C832A2AB2C0EEFC1007EA2A2 /* Assets.xcassets */,
-				E3C091862C1942700004BBA4 /* GoogleService-Info.plist */,
+				C80A67AE2C19659200953402 /* GoogleService-Info.plist */,
 				C832A2AD2C0EEFC1007EA2A2 /* Preview Content */,
 				C85BF5312C130328005E548C /* MainLogin.swift */,
 				C85BF5352C13037B005E548C /* SplashView.swift */,
@@ -150,7 +151,6 @@
 				C8956A532C18632E0034F313 /* RecommendDomain.swift */,
 				C86B200D2C14247A0061663A /* ProductTCA.swift */,
 				F2B8DB062C16F7B60083193E /* TastingNoteTCA.swift */,
-				C8BB9B852C19340400093024 /* SQLite.swift */,
 			);
 			path = TCA;
 			sourceTree = "<group>";
@@ -307,8 +307,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C832A2AF2C0EEFC1007EA2A2 /* Preview Assets.xcassets in Resources */,
+				C80A67AF2C19659200953402 /* GoogleService-Info.plist in Resources */,
 				C832A2AC2C0EEFC1007EA2A2 /* Assets.xcassets in Resources */,
-				E3C091872C1942700004BBA4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
