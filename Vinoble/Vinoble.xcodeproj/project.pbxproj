@@ -20,9 +20,17 @@
 		C85BF5362C13037B005E548C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85BF5352C13037B005E548C /* SplashView.swift */; };
 		C85BF5392C13058A005E548C /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85BF5382C13058A005E548C /* ProductView.swift */; };
 		C86B200E2C14247A0061663A /* ProductTCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86B200D2C14247A0061663A /* ProductTCA.swift */; };
+		C8956A4A2C1863070034F313 /* Recommend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8956A492C1863070034F313 /* Recommend.swift */; };
+		C8956A4E2C1863150034F313 /* DetailTCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8956A4D2C1863150034F313 /* DetailTCA.swift */; };
+		C8956A502C18631C0034F313 /* LoginTCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8956A4F2C18631C0034F313 /* LoginTCA.swift */; };
+		C8956A522C1863210034F313 /* NewTasteNoteTCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8956A512C1863210034F313 /* NewTasteNoteTCA.swift */; };
+		C8956A542C18632E0034F313 /* RecommendDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8956A532C18632E0034F313 /* RecommendDomain.swift */; };
+		C8956A572C1863520034F313 /* RecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8956A562C1863520034F313 /* RecommendView.swift */; };
 		C8B7BF602C13EFFB00003C99 /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7BF5F2C13EFFB00003C99 /* WishListView.swift */; };
 		C8B7BF662C13F2E600003C99 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7BF652C13F2E600003C99 /* MainTabView.swift */; };
 		C8B7BF682C13F5C800003C99 /* Second4Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7BF672C13F5C800003C99 /* Second4Test.swift */; };
+		C8BB9B842C19288300093024 /* Keyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BB9B832C19288300093024 /* Keyword.swift */; };
+		C8BB9B862C19340400093024 /* SQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BB9B852C19340400093024 /* SQLite.swift */; };
 		E32D4A2B2C18528C0057A0C9 /* UserQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32D4A292C18528C0057A0C9 /* UserQuery.swift */; };
 		E3DAE1362C16851900799A06 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DAE1322C16851900799A06 /* LoginView.swift */; };
 		E3DAE1372C16851900799A06 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DAE1332C16851900799A06 /* ProfileView.swift */; };
@@ -46,9 +54,17 @@
 		C85BF5352C13037B005E548C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		C85BF5382C13058A005E548C /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		C86B200D2C14247A0061663A /* ProductTCA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTCA.swift; sourceTree = "<group>"; };
+		C8956A492C1863070034F313 /* Recommend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recommend.swift; sourceTree = "<group>"; };
+		C8956A4D2C1863150034F313 /* DetailTCA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTCA.swift; sourceTree = "<group>"; };
+		C8956A4F2C18631C0034F313 /* LoginTCA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTCA.swift; sourceTree = "<group>"; };
+		C8956A512C1863210034F313 /* NewTasteNoteTCA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTasteNoteTCA.swift; sourceTree = "<group>"; };
+		C8956A532C18632E0034F313 /* RecommendDomain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendDomain.swift; sourceTree = "<group>"; };
+		C8956A562C1863520034F313 /* RecommendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendView.swift; sourceTree = "<group>"; };
 		C8B7BF5F2C13EFFB00003C99 /* WishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
 		C8B7BF652C13F2E600003C99 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		C8B7BF672C13F5C800003C99 /* Second4Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Second4Test.swift; sourceTree = "<group>"; };
+		C8BB9B832C19288300093024 /* Keyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyword.swift; sourceTree = "<group>"; };
+		C8BB9B852C19340400093024 /* SQLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLite.swift; sourceTree = "<group>"; };
 		E32D4A292C18528C0057A0C9 /* UserQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserQuery.swift; sourceTree = "<group>"; };
 		E3DAE1322C16851900799A06 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E3DAE1332C16851900799A06 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -95,6 +111,7 @@
 		C832A2A62C0EEFC0007EA2A2 /* Vinoble */ = {
 			isa = PBXGroup;
 			children = (
+				C8956A552C1863440034F313 /* Recommend */,
 				E3DAE1352C16851900799A06 /* View */,
 				F2B7884D2C1588D1001CF46D /* MyCellar */,
 				C8B7BF642C13F2D100003C99 /* TabView */,
@@ -122,8 +139,13 @@
 			isa = PBXGroup;
 			children = (
 				C832A2B62C0EF0B1007EA2A2 /* Test.swift */,
+				C8956A4F2C18631C0034F313 /* LoginTCA.swift */,
+				C8956A4D2C1863150034F313 /* DetailTCA.swift */,
+				C8956A512C1863210034F313 /* NewTasteNoteTCA.swift */,
+				C8956A532C18632E0034F313 /* RecommendDomain.swift */,
 				C86B200D2C14247A0061663A /* ProductTCA.swift */,
 				F2B8DB062C16F7B60083193E /* TastingNoteTCA.swift */,
+				C8BB9B852C19340400093024 /* SQLite.swift */,
 			);
 			path = TCA;
 			sourceTree = "<group>";
@@ -147,9 +169,19 @@
 			isa = PBXGroup;
 			children = (
 				C8445B082C185ED9001E64DF /* UserModel.swift */,
+				C8956A492C1863070034F313 /* Recommend.swift */,
 				C8445B062C185ED5001E64DF /* Product.swift */,
+				C8BB9B832C19288300093024 /* Keyword.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C8956A552C1863440034F313 /* Recommend */ = {
+			isa = PBXGroup;
+			children = (
+				C8956A562C1863520034F313 /* RecommendView.swift */,
+			);
+			path = Recommend;
 			sourceTree = "<group>";
 		};
 		C8B7BF5E2C13EFEE00003C99 /* WishList */ = {
@@ -276,16 +308,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8445B072C185ED5001E64DF /* Product.swift in Sources */,
+				C8956A572C1863520034F313 /* RecommendView.swift in Sources */,
 				C8B7BF682C13F5C800003C99 /* Second4Test.swift in Sources */,
+				C8BB9B862C19340400093024 /* SQLite.swift in Sources */,
 				E32D4A2B2C18528C0057A0C9 /* UserQuery.swift in Sources */,
 				C85BF5322C130328005E548C /* MainLogin.swift in Sources */,
 				C832A2AA2C0EEFC0007EA2A2 /* MainView.swift in Sources */,
+				C8956A4E2C1863150034F313 /* DetailTCA.swift in Sources */,
+				C8956A542C18632E0034F313 /* RecommendDomain.swift in Sources */,
 				C85BF5362C13037B005E548C /* SplashView.swift in Sources */,
+				C8BB9B842C19288300093024 /* Keyword.swift in Sources */,
 				F2B7884F2C1588DF001CF46D /* MyCellarView.swift in Sources */,
 				C832A2A82C0EEFC0007EA2A2 /* VinobleApp.swift in Sources */,
 				E3DAE1372C16851900799A06 /* ProfileView.swift in Sources */,
+				C8956A502C18631C0034F313 /* LoginTCA.swift in Sources */,
+				C8956A522C1863210034F313 /* NewTasteNoteTCA.swift in Sources */,
 				C85BF5392C13058A005E548C /* ProductView.swift in Sources */,
 				E3DAE1362C16851900799A06 /* LoginView.swift in Sources */,
+				C8956A4A2C1863070034F313 /* Recommend.swift in Sources */,
 				C832A2B72C0EF0B1007EA2A2 /* Test.swift in Sources */,
 				C86B200E2C14247A0061663A /* ProductTCA.swift in Sources */,
 				F2B8DB072C16F7B60083193E /* TastingNoteTCA.swift in Sources */,

@@ -1,10 +1,3 @@
-//
-//  ProductView.swift
-//  Vinoble
-//
-//  Created by Woody on 6/7/24.
-//
-
 /*
  Author : Woody
  
@@ -17,8 +10,13 @@
  Description : TCA connect (2024.06.09 TextField binding 완료)
  
  3차
- Data : 2024.06.10 Tuesday
+ Data : 2024.06.10 Monday
  Description : Python Server를 이용한 MySQL DB 불러오기 (2024.06.11 완료)
+
+ 4차
+ Data : 2024.06.10 Tuesday
+ Description : Type button click시 scroll 초기화, 그리고 4개씩 loading 해서 보여주려고 했는데 실패.
+ (1차 top으로 이동)
  
  */
 
@@ -40,7 +38,6 @@ struct ProductView: View {
             .font: UIFont.boldSystemFont(ofSize: 24.0) // Title font size
         ]
     }
-    
     
     var body: some View{
         NavigationView(content: {
@@ -140,7 +137,6 @@ struct ProductView: View {
                 Spacer()
                 
                 // MARK: Product list
-                
                 if store.isLoading{
                     GeometryReader(content: { geometry in
                         ProgressView()
@@ -150,7 +146,8 @@ struct ProductView: View {
                     ScrollViewReader(content: { proxy in
                         ScrollView {
                             LazyVGrid(columns: Array(repeating: GridItem(), count: 2), content: {
-                                ForEach(store.products, id:\.self) { product in
+                                ForEach(store.products, id:\.index) { product in
+                                    
                                     NavigationLink(destination: MainView()) {
                                         VStack(content: {
                                             RoundedRectangle(cornerRadius: 20)
@@ -179,29 +176,36 @@ struct ProductView: View {
                                     } // Link
 
                                 } // ForEach
-//                                .onChange(of: store.selectedRegion) {
-//                                    proxy.scrollTo(offset: .zero, animated: true)
-//                                }
-//                                .onChange(of: store.selectedWineType) {
-//                                    proxy.scrollTo(0, anchor: .center)
-//                                }
+                                
                                 
                                 
                             }) // Lazy V Grid
                             .padding(.top, 50)
-//                            .onChange(of: store.selectedWineType) {
-//                                store.send(.wineTypeButtonTapped(store.selectedWineType))
-//                                proxy.scrollTo(0, anchor: .center)
-//                                
-//                            }                            
-                            
-//                            .content.offset(y:0)
                             
                         } // ScrollView
-                        
+                        .overlay(
+                            Button(action: {
+                                // 10. withAnimation 과함께 함수 작성
+                                withAnimation(.default) {
+                                    // ScrollViewReader의 proxyReader을 넣어줌
+                                    proxy.scrollTo(store.minIndex, anchor: .top)
+                                }
+                            }, label: {
+                                Image(systemName: "arrow.up")
+                                    .font(.system(size: 30))
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .background(.theme)
+                                    .clipShape(Circle())
+                            })
+                            .padding(.trailing)
+                            .padding(.bottom)
+                            
+                            //오른쪽 하단에 버튼 고정
+                            ,alignment: .bottomTrailing
+                        )
                         
                     }) // ScrollViewReader
-                    
 
                 } // else
                 
