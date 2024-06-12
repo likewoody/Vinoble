@@ -12,6 +12,11 @@
  Date : 2024.06.11 Tues
  Description : core function implementation day 1
  
+ Author : Diana
+ Date : 2024.06.12 Wed
+ Description : core function implementation day 2
+ 
+ 
  */
 
 import SwiftUI
@@ -21,25 +26,9 @@ struct UpdateTastingNoteView: View {
     
     @State var selectedImage: UIImage?
     @State var isShowingImagePicker = false
-//    @State var winename: String = ""
-//    @State var wineprice: String = ""
-//    @State var wineNote: String = ""
-//    @State var wineyear: String = ""
-//    @State var winetype: String?
-//    @State var sugar: Double = 0.0
-//    @State var wineBody: Double = 0.0
-//    @State var tannin: Double = 0.0
-//    @State var alcohol: String = ""
-//    @State var ph: Double = 0.0
-    
     let store: StoreOf<ProductFeature>
     
     @Bindable var noteStore: StoreOf<TastingNoteFeature>
-    
-    // color
-//    let shareColor = ShareColor(store: Store(initialState: ProductFeature.State()){
-//        ProductFeature()
-//    })
     
     // Init
     init(store: StoreOf<ProductFeature>, noteStore: StoreOf<TastingNoteFeature>) {
@@ -148,9 +137,21 @@ struct UpdateTastingNoteView: View {
                         HStack {
                             Spacer()
                             Button(action: {
-                                
                                 // Update ACTION
-                               
+                                let updatedWine = Wine(
+                                    wineindex: noteStore.state.seq,
+                                    name: noteStore.state.wineName,
+                                    year: noteStore.state.wineYear,
+                                    price: noteStore.state.winePrice,
+                                    sugar: noteStore.state.wineSugar,
+                                    body: noteStore.state.wineBody,
+                                    tannin: noteStore.state.wineTannin,
+                                    type: noteStore.state.wineType,
+                                    note: noteStore.state.wineNote,
+                                    pH: noteStore.state.winepH,
+                                    alcohol: noteStore.state.wineAlcohol
+                               )
+                               noteStore.send(.updateCellar(updatedWine))
                             }) {
                                 Text("Update Note")
                                     .font(.system(size: 15, design: .serif))
@@ -207,7 +208,7 @@ struct SlidersField: View {
 #Preview {
     UpdateTastingNoteView(store: Store(initialState: ProductFeature.State()){
         ProductFeature()
-    }, noteStore: Store(initialState: TastingNoteFeature.State()) {
+    }, noteStore: Store(initialState: TastingNoteFeature.State(seq: 1)) {
         TastingNoteFeature()
     })
 }
