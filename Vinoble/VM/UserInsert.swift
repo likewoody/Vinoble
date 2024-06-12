@@ -13,6 +13,4 @@ struct UserInsert{
     @Binding var userid: String
     @Binding var userpw: String
     @Binding var result: Bool
-
-    
 }

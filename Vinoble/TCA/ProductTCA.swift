@@ -17,7 +17,11 @@ struct ProductFeature{
         var isLoading: Bool = true
         var minIndex: Int = 0
         
+        
+        // Drawer
         var showDrawer: Bool = false
+        var userEmail: String = ""
+        
         
         // products load
 //        var startCount: Int = 0
