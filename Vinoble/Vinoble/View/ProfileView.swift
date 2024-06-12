@@ -10,6 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     @State private var id = ""
     @State private var password = ""
+    @FocusState private var isFocused: Bool // 키보드를 내릴때 필요한 상태 변수
 
     var body: some View {
         
@@ -35,16 +36,18 @@ struct ProfileView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.bottom, 30)
                     
-                    Text("ID")
+                    Text("Email")
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
-                    TextField("ID", text: $id)
+                    TextField("Email", text: $id)
                         .padding()
                         .background(
                             RoundedRectangle(cornerRadius: 10)
                                 .fill(.gray.opacity(0.2))
                         )
                         .padding(.bottom, 20)
+                        .focused($isFocused)
+                        .textInputAutocapitalization(.never) // 자동 대문자 비활성화
                     
                     Text("Password")
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -57,6 +60,7 @@ struct ProfileView: View {
                                 .fill(.gray.opacity(0.2))
                         )
                         .padding(.bottom, 50)
+                        .focused($isFocused)
                                         
                     Button(action: {
                         // 로그아웃 로직 처리
@@ -86,6 +90,9 @@ struct ProfileView: View {
                 .padding(.leading, 60)
                 .padding(.trailing, 60)
                 .padding(.bottom, 50)
+            } // ZStack
+            .onTapGesture {
+                isFocused = false // 탭하면 포커스 해제
             }
         }
     }
