@@ -119,6 +119,7 @@
 				C85BF5372C130579005E548C /* Product */,
 				C832A2A72C0EEFC0007EA2A2 /* VinobleApp.swift */,
 				C832A2A92C0EEFC0007EA2A2 /* MainView.swift */,
+				C8BB9B852C19340400093024 /* SQLite.swift */,
 				C832A2AB2C0EEFC1007EA2A2 /* Assets.xcassets */,
 				C832A2AD2C0EEFC1007EA2A2 /* Preview Content */,
 				C85BF5312C130328005E548C /* MainLogin.swift */,
@@ -145,7 +146,6 @@
 				C8956A532C18632E0034F313 /* RecommendDomain.swift */,
 				C86B200D2C14247A0061663A /* ProductTCA.swift */,
 				F2B8DB062C16F7B60083193E /* TastingNoteTCA.swift */,
-				C8BB9B852C19340400093024 /* SQLite.swift */,
 			);
 			path = TCA;
 			sourceTree = "<group>";

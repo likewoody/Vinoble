@@ -137,85 +137,88 @@ struct ProductView: View {
                 Spacer()
                 
                 // MARK: Product list
-                if store.isLoading{
-                    GeometryReader(content: { geometry in
-                        ProgressView()
-                            .offset(x: geometry.size.width / 2, y: geometry.size.height / 2)
-                    }) // GeometryReader
-                }else{
-                    ScrollViewReader(content: { proxy in
-                        ScrollView {
-                            LazyVGrid(columns: Array(repeating: GridItem(), count: 2), content: {
-                                ForEach(store.products, id:\.index) { product in
-                                    
-                                    NavigationLink(destination: MainView()) {
-                                        VStack(content: {
-                                            RoundedRectangle(cornerRadius: 20)
-                                                .id(product.index)
-                                                .foregroundStyle(.theme.opacity(0.2))
-                                                .frame(width: 120, height: 150)
-                                                .padding(.top, 30)
-                                                .overlay {
-                                                    let url = URL(string: product.wineImage)
-                                                    WebImage(url: url)
-                                                        .resizable()
-                                                        .frame(width: 50, height: 200)
-                                                        .padding(.bottom, 50)
-                                                        
-                                                }
-                                                .padding(.bottom, 5)
-
-
-                                            Text(product.name)
-                                                .foregroundStyle(.black)
-                                                .padding(.bottom, 30)
-
-                                        }) // VStack
-                                        
-
-                                    } // Link
-
-                                } // ForEach
-                                
-                                
-                                
-                            }) // Lazy V Grid
-                            .padding(.top, 50)
-                            
-                        } // ScrollView
-                        .overlay(
-                            Button(action: {
-                                // 10. withAnimation 과함께 함수 작성
-                                withAnimation(.default) {
-                                    // ScrollViewReader의 proxyReader을 넣어줌
-                                    proxy.scrollTo(store.minIndex, anchor: .top)
-                                }
-                            }, label: {
-                                Image(systemName: "arrow.up")
-                                    .font(.system(size: 30))
-                                    .foregroundColor(.white)
-                                    .padding()
-                                    .background(.theme)
-                                    .clipShape(Circle())
-                            })
-                            .padding(.trailing)
-                            .padding(.bottom)
-                            
-                            //오른쪽 하단에 버튼 고정
-                            ,alignment: .bottomTrailing
-                        )
-                        
-                    }) // ScrollViewReader
-
-                } // else
+//                if store.isLoading{
+//                    GeometryReader(content: { geometry in
+//                        ProgressView()
+//                            .offset(x: geometry.size.width / 2, y: geometry.size.height / 2)
+//                    }) // GeometryReader
+//                }else{
+//                    ScrollViewReader(content: { proxy in
+//                        ScrollView {
+//                            LazyVGrid(columns: Array(repeating: GridItem(), count: 2), content: {
+//                                ForEach(store.products, id:\.index) { product in
+//                                    
+//                                    NavigationLink(destination: MainView()) {
+//                                        VStack(content: {
+//                                            RoundedRectangle(cornerRadius: 20)
+//                                                .id(product.index)
+//                                                .foregroundStyle(.theme.opacity(0.2))
+//                                                .frame(width: 120, height: 150)
+//                                                .padding(.top, 30)
+//                                                .overlay {
+//                                                    let url = URL(string: product.wineImage)
+//                                                    WebImage(url: url)
+//                                                        .resizable()
+//                                                        .frame(width: 50, height: 200)
+//                                                        .padding(.bottom, 50)
+//                                                        
+//                                                }
+//                                                .padding(.bottom, 5)
+//
+//
+//                                            Text(product.name)
+//                                                .foregroundStyle(.black)
+//                                                .padding(.bottom, 30)
+//
+//                                        }) // VStack
+//                                        
+//
+//                                    } // Link
+//
+//                                } // ForEach
+//                                
+//                                
+//                                
+//                            }) // Lazy V Grid
+//                            .padding(.top, 50)
+//                            
+//                        } // ScrollView
+//                        .overlay(
+//                            Button(action: {
+//                                // 10. withAnimation 과함께 함수 작성
+//                                withAnimation(.default) {
+//                                    // ScrollViewReader의 proxyReader을 넣어줌
+//                                    proxy.scrollTo(store.minIndex, anchor: .top)
+//                                }
+//                            }, label: {
+//                                Image(systemName: "arrow.up")
+//                                    .font(.system(size: 30))
+//                                    .foregroundColor(.white)
+//                                    .padding()
+//                                    .background(.theme)
+//                                    .clipShape(Circle())
+//                            })
+//                            .padding(.trailing)
+//                            .padding(.bottom)
+//                            
+//                            //오른쪽 하단에 버튼 고정
+//                            ,alignment: .bottomTrailing
+//                        )
+//                        
+//                    }) // ScrollViewReader
+//
+//                } // else
                 
             }) // VStack
             .navigationTitle("VINOBLE")
             .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
             .toolbar(content: {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
                         // button action
+                        store.showDrawer = true
+
                     }, label: {
                         Image(systemName: "person.circle")
                     })
@@ -224,7 +227,8 @@ struct ProductView: View {
                 }
                 
             }) // toolbar
-            
+                    
+            Drawer(store: store)
             
         }) // NavigationView
         .onAppear(perform: {
@@ -233,6 +237,38 @@ struct ProductView: View {
     } // body
     
 } // ProductView
+
+struct Drawer: View {
+    @Bindable var store: StoreOf<ProductFeature>
+    
+    var body: some View {
+        ZStack {
+            if store.showDrawer{
+                VStack {
+                    Image(systemName: "person")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+
+                    Spacer()
+                } // VStack
+                .padding()
+
+                Spacer()
+            } // if
+            
+        } // ZStack
+        .onAppear(perform: {
+            print("check")
+        })
+        .frame(width: 400)
+        .background(
+            Color.black.opacity(0.5)
+                .ignoresSafeArea(.all, edges: .vertical)
+        ) // background
+            
+        
+    } // body
+}
 
 #Preview {
     ProductView(store: Store(initialState: ProductFeature.State()){
