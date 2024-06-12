@@ -1,10 +1,3 @@
-//
-//  ProductTCA.swift
-//  Vinoble
-//
-//  Created by Woody on 6/8/24.
-//
-
 import ComposableArchitecture
 import Foundation
 
@@ -22,6 +15,7 @@ struct ProductFeature{
         // Products
         var products: [Product] = []
         var isLoading: Bool = true
+        var minIndex: Int = 0
         
         // products load
 //        var startCount: Int = 0
@@ -31,7 +25,7 @@ struct ProductFeature{
     enum Action: BindableAction{
         case binding(BindingAction<State>)
         case fetchProducts
-        case sendProducts([Product])
+        case fetchResponse([Product])
 //        case pageLoading
         case wineTypeButtonTapped(Int)
         case wineRegionButtonTapped(Int)
@@ -48,21 +42,20 @@ struct ProductFeature{
                 return .none
                 
             case .fetchProducts:
-                let searchProduct = state.searchProduct
 //                let startCount = state.startCount
 //                let lastCount = state.lastCount
                 let region = state.selectedRegion
                 let wineType = state.selectedWineType
                 
-                print(searchProduct)
                 return .run { send in
-                    
                     let products = await tryHttpSession(httpURL: "http://127.0.0.1:5000/selectVinoble?region=\(region)&wineType=\(wineType)")
 //                    "http://127.0.0.1:5000/selectVinoble?startCount=\(startCount)&lastCount=\(lastCount)&region=\(region)&wineType=\(wineType)"
-                    await send(.sendProducts(products))
+                    
+                    await send(.fetchResponse(products))
                 } // return
                 
-            case let .sendProducts(products):
+            case let .fetchResponse(products):
+                state.minIndex = products[0].index
                 state.products = products
                 state.isLoading = false
                 
@@ -92,7 +85,7 @@ struct ProductFeature{
                     let products = await tryHttpSession(httpURL: "http://127.0.0.1:5000/searchProduct?searchProduct=\(searchProduct)")
 //                    "http://127.0.0.1:5000/searchProduct?searchProduct=\(searchProduct)&startCount=\(startCount)&lastCount=\(lastCount)"
                     
-                    await send(.sendProducts(products))
+                    await send(.fetchResponse(products))
                 } // return
             }
 
