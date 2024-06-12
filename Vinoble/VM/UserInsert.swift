@@ -10,9 +10,37 @@ import Firebase
 
 struct UserInsert{
     let db = Firestore.firestore()
-    @Binding var userid: String
-    @Binding var userpw: String
+    let date = Date()
+    let formatter = DateFormatter()
     @Binding var result: Bool
 
+    func insertUser(userid: String, userpw: String) async throws -> Bool{
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss" // 원하는 형식 설정
+        formatter.locale = Locale(identifier: "ko_KR") // 한국어 및 한국 시간대 설정
+        
+        result = false
+
+        let formattedDate = formatter.string(from: date)
+        
+        do{
+//            try await Task.sleep(nanoseconds: 5 * 1_000_000_000) // 3초 동안 대기
+
+            try await db.collection("user")
+                .addDocument(data: [
+                "userid" : userid,
+                "userpw" : userpw,
+                "userjoindate" : formattedDate,
+                "userdeldate" : "",
+            ])
+                .getDocument()
+            
+            result = true
+            
+        }catch{
+            result = false
+        }
+        return result
+        
+    } // func insertUser
     
 }

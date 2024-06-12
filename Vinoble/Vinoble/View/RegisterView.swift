@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct RegisterView: View {
-    @State var id = ""
-    @State var password = ""
-    @State var result: Bool = false // Firebase Query Request가 완료 됬는지 확인하는 상태 변수
+    @State private var id = ""
+    @State private var password = ""
+    @State private var result: Bool = true // Firebase Query Request가 완료 됬는지 확인하는 상태 변수
     @State private var passwordcheck = ""
     @State private var isValidEmail = true // 이메일 정규식에 맞는지에 대한 변수
     @State private var isValidPw = true // 이메일 정규식에 맞는지에 대한 변수
     @State private var isCheckPw = true
     @FocusState private var isFocused: Bool // 키보드를 내릴때 필요한 상태 변수
+    @Environment(\.dismiss) private var dismiss // Register 버튼을 클릭하면 screen을 pop 하는 상태변수
+    @State private var showAlert = false // Alert 표시 여부를 관리하는 상태 변수
 
     var body: some View {
         ZStack {
@@ -71,7 +73,6 @@ struct RegisterView: View {
                 Text("Password")
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
-                
                 SecureField("Password", text: $password)
                     .padding()
                     .background(
@@ -122,17 +123,40 @@ struct RegisterView: View {
                 
                 Button(action: {
                     // Register 로직 처리
-                    
+                    Task{
+                        let userQuery = UserQuery(result: $result)
+                        
+                        let isSameEmail = try await userQuery.checkUserEmail(userid: id)
+                        if !isSameEmail {
+                            let userInsert = UserInsert(result: $result)
+                            let result = try await userInsert.insertUser(userid: id, userpw: password)
+                            print(result)
+                            dismiss()
+                        }else{
+                            showAlert = true
+                            result = true
+                            id = ""
+                            password = ""
+                            passwordcheck = ""
+                        }
+                        
+                    } // Task
                 }) {
                     Text("Register")
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(!isValidEmail || id.isEmpty || !isValidPw || password.isEmpty || !isCheckPw || passwordcheck.isEmpty ?
+                        .background(!isValidEmail || id.isEmpty || !isValidPw || password.isEmpty || !isCheckPw || passwordcheck.isEmpty || !result ?
                             .gray : .theme)
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 }
-                .disabled(!isValidEmail || id.isEmpty || !isValidPw || password.isEmpty || !isCheckPw || passwordcheck.isEmpty) // 버튼 비활성화
+                .disabled(!isValidEmail || id.isEmpty || !isValidPw || password.isEmpty || !isCheckPw || passwordcheck.isEmpty || !result) // 버튼 비활성화
+                .alert("Register Failed", isPresented: $showAlert) {               Button("OK") {
+                        showAlert = false // OK 버튼 클릭 시 Alert 닫기
+                    }
+                } message: {
+                    Text("This email address already exists") // Alert 메시지
+                }
                 
             } // VStack
             .padding(.leading, 60)

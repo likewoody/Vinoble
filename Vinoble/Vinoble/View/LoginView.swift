@@ -8,8 +8,8 @@ import SwiftUI
 import ComposableArchitecture
 
 struct LoginView: View {
-    @State var id = ""
-    @State var password = ""
+    @State private var id = ""
+    @State private var password = ""
     @State var result: Bool = false // Firebase Query Request가 완료 됬는지 확인하는 상태 변수
     @State private var showAlert = false // Alert 표시 여부를 관리하는 상태 변수
     @State private var errorMessage: String = "" // Alert창의 메세지를 저장할 상태 변수
@@ -75,8 +75,8 @@ struct LoginView: View {
                     Button {
                         // 로그인 로직
                         Task{
-                            let userQuery = UserQuery(userid: $id, userpw: $password, result: $result)
-                            let userInfo = try await userQuery.fetchUserInfo()
+                            let userQuery = UserQuery(result: $result)
+                            let userInfo = try await userQuery.fetchUserInfo(userid: id, userpw: password)
 
                             if result {
                                 // firebase request 성공
@@ -86,7 +86,6 @@ struct LoginView: View {
                                     self.errorMessage = "Please Check your ID or password"
                                 }else{
                                     // id, pw 제대로 입력
-                                    print("Login success")
                                     self.isLoggedIn = true
                                 }
                             }else{

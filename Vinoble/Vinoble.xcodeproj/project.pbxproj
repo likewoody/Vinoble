@@ -29,13 +29,13 @@
 		C8B7BF602C13EFFB00003C99 /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7BF5F2C13EFFB00003C99 /* WishListView.swift */; };
 		C8B7BF662C13F2E600003C99 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7BF652C13F2E600003C99 /* MainTabView.swift */; };
 		C8B7BF682C13F5C800003C99 /* Second4Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7BF672C13F5C800003C99 /* Second4Test.swift */; };
+		C8BB9B842C19288300093024 /* Keyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BB9B832C19288300093024 /* Keyword.swift */; };
+		C8BB9B862C19340400093024 /* SQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BB9B852C19340400093024 /* SQLite.swift */; };
 		E3014E872C19249B00CE4FD6 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = E3014E862C19249B00CE4FD6 /* FirebaseAnalytics */; };
 		E3014E892C19249B00CE4FD6 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E3014E882C19249B00CE4FD6 /* FirebaseDatabase */; };
 		E3014E8B2C19249B00CE4FD6 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E3014E8A2C19249B00CE4FD6 /* FirebaseFirestore */; };
 		E3014E8D2C1927C400CE4FD6 /* UserInsert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3014E8C2C1927C400CE4FD6 /* UserInsert.swift */; };
 		E3014E8F2C1927DD00CE4FD6 /* RegularExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3014E8E2C1927DD00CE4FD6 /* RegularExpression.swift */; };
-		C8BB9B842C19288300093024 /* Keyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BB9B832C19288300093024 /* Keyword.swift */; };
-		C8BB9B862C19340400093024 /* SQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BB9B852C19340400093024 /* SQLite.swift */; };
 		E32D4A2B2C18528C0057A0C9 /* UserQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32D4A292C18528C0057A0C9 /* UserQuery.swift */; };
 		E3C091872C1942700004BBA4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3C091862C1942700004BBA4 /* GoogleService-Info.plist */; };
 		E3DAE1362C16851900799A06 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DAE1322C16851900799A06 /* LoginView.swift */; };
@@ -68,10 +68,10 @@
 		C8B7BF5F2C13EFFB00003C99 /* WishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
 		C8B7BF652C13F2E600003C99 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		C8B7BF672C13F5C800003C99 /* Second4Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Second4Test.swift; sourceTree = "<group>"; };
-		E3014E8C2C1927C400CE4FD6 /* UserInsert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInsert.swift; sourceTree = "<group>"; };
-		E3014E8E2C1927DD00CE4FD6 /* RegularExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularExpression.swift; sourceTree = "<group>"; };
 		C8BB9B832C19288300093024 /* Keyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyword.swift; sourceTree = "<group>"; };
 		C8BB9B852C19340400093024 /* SQLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLite.swift; sourceTree = "<group>"; };
+		E3014E8C2C1927C400CE4FD6 /* UserInsert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInsert.swift; sourceTree = "<group>"; };
+		E3014E8E2C1927DD00CE4FD6 /* RegularExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularExpression.swift; sourceTree = "<group>"; };
 		E32D4A292C18528C0057A0C9 /* UserQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserQuery.swift; sourceTree = "<group>"; };
 		E3C091852C1937150004BBA4 /* Vinoble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vinoble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C091862C1942700004BBA4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -220,8 +220,8 @@
 			isa = PBXGroup;
 			children = (
 				E3DAE1322C16851900799A06 /* LoginView.swift */,
-				E3DAE1332C16851900799A06 /* ProfileView.swift */,
 				E3DAE1342C16851900799A06 /* RegisterView.swift */,
+				E3DAE1332C16851900799A06 /* ProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
