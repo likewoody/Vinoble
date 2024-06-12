@@ -223,8 +223,8 @@
 			isa = PBXGroup;
 			children = (
 				E3DAE1322C16851900799A06 /* LoginView.swift */,
-				E3DAE1332C16851900799A06 /* ProfileView.swift */,
 				E3DAE1342C16851900799A06 /* RegisterView.swift */,
+				E3DAE1332C16851900799A06 /* ProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

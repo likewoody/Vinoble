@@ -11,12 +11,11 @@ import Firebase
 
 struct UserQuery{
     let db = Firestore.firestore()
-    @Binding var userid: String
-    @Binding var userpw: String
     @Binding var result: Bool
     
-    func fetchUserInfo() async throws -> UserModel { // async throws 추가
+    func fetchUserInfo(userid : String, userpw: String) async throws -> UserModel { // async throws 추가
         var userInfo: UserModel?
+        result = false
 
         do {
             let db = Firestore.firestore()
@@ -39,11 +38,32 @@ struct UserQuery{
             }
         } catch {
             print("Error getting documents: \(error)") // 에러 처리
-            result = false // 데이터 가져오기 실패 시 false 설정
-            // 추가적인 에러 처리 로직 (필요에 따라)
         }
 
         return userInfo ?? UserModel(documentId: "", userid: "", userpw: "", userjoindate: "", userdeldate: "")
+    }
+    
+    func checkUserEmail(userid : String) async throws -> Bool {
+        var isSameEmail: Bool = true
+        result = false
+        
+        do {
+            let db = Firestore.firestore()
+            let querySnapshot = try await db.collection("user") // await 추가
+                .whereField("userid", isEqualTo: userid)
+                .getDocuments() // 에러 발생 가능성 추가 (throws)
+            
+            if querySnapshot.documents.isEmpty{
+                isSameEmail = false  // 같은 이메일이 없음
+            }else{
+                isSameEmail = true // 같은 이메일이 있음
+            }
+
+        } catch {
+            print("Error getting documents: \(error)") // 에러 처리
+        }
+
+        return isSameEmail
     }
     
 } // struct UserQuery
