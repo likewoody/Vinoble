@@ -20,7 +20,9 @@ struct ProductFeature{
         
         // Drawer
         var showDrawer: Bool = false
-        var userEmail: String = ""
+        var userEmail: String = "aaa"
+        var userPassword: String = "aaa"
+        var firebaseResult: Bool = false
         
         
         // products load
@@ -36,6 +38,8 @@ struct ProductFeature{
         case wineTypeButtonTapped(Int)
         case wineRegionButtonTapped(Int)
         case searchProductTapped
+        case fetchUserInfo
+        case fetchResponseUserInfo(String)
     }
     
     var body: some Reducer<State, Action>{
@@ -93,9 +97,29 @@ struct ProductFeature{
                     
                     await send(.fetchResponse(products))
                 } // return
+                
+                
+            case .fetchUserInfo:
+                let firebaseModel = QueryForTCA(store: Store(initialState: ProductFeature.State()){
+                    ProductFeature()
+                })
+                let userEmail = state.userEmail
+                return .run { send in
+                    let result = try await firebaseModel.checkUserEmail(userid: userEmail)
+                    
+                    if result {
+                        print("succesfully got \(userEmail)")
+                        
+                        await send(.fetchResponseUserInfo(userEmail))
+                    }
+                }
+            case let .fetchResponseUserInfo(userEmail):
+                state.userEmail = userEmail
+                
+                return .none
             }
 
-        }
+        } // Reduce
 
     } // body
     

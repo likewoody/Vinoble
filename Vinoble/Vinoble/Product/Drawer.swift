@@ -57,7 +57,7 @@ struct Drawer: View {
             }) // RoundedRectangle
         } // ZStack
         .onAppear(perform: {
-            store.userEmail = "userEmail@naver.com"
+            store.send(.fetchUserInfo)
         })
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     } // body

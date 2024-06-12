@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C80A67AF2C19659200953402 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C80A67AE2C19659200953402 /* GoogleService-Info.plist */; };
+		C814DF452C1983E500CD9A74 /* QueryForTCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = C814DF442C1983E500CD9A74 /* QueryForTCA.swift */; };
 		C832A2A82C0EEFC0007EA2A2 /* VinobleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C832A2A72C0EEFC0007EA2A2 /* VinobleApp.swift */; };
 		C832A2AA2C0EEFC0007EA2A2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C832A2A92C0EEFC0007EA2A2 /* MainView.swift */; };
 		C832A2AC2C0EEFC1007EA2A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C832A2AB2C0EEFC1007EA2A2 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		C80A67AE2C19659200953402 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C814DF442C1983E500CD9A74 /* QueryForTCA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryForTCA.swift; sourceTree = "<group>"; };
 		C832A2A72C0EEFC0007EA2A2 /* VinobleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinobleApp.swift; sourceTree = "<group>"; };
 		C832A2A92C0EEFC0007EA2A2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C832A2AB2C0EEFC1007EA2A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,7 +127,6 @@
 				C85BF5372C130579005E548C /* Product */,
 				C832A2A72C0EEFC0007EA2A2 /* VinobleApp.swift */,
 				C832A2A92C0EEFC0007EA2A2 /* MainView.swift */,
-				C8BB9B852C19340400093024 /* SQLite.swift */,
 				C832A2AB2C0EEFC1007EA2A2 /* Assets.xcassets */,
 				C80A67AE2C19659200953402 /* GoogleService-Info.plist */,
 				C832A2AD2C0EEFC1007EA2A2 /* Preview Content */,
@@ -213,8 +214,10 @@
 			isa = PBXGroup;
 			children = (
 				E32D4A292C18528C0057A0C9 /* UserQuery.swift */,
+				C8BB9B852C19340400093024 /* SQLite.swift */,
 				E3014E8C2C1927C400CE4FD6 /* UserInsert.swift */,
 				E3014E8E2C1927DD00CE4FD6 /* RegularExpression.swift */,
+				C814DF442C1983E500CD9A74 /* QueryForTCA.swift */,
 			);
 			path = VM;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8445B072C185ED5001E64DF /* Product.swift in Sources */,
+				C814DF452C1983E500CD9A74 /* QueryForTCA.swift in Sources */,
 				C8956A572C1863520034F313 /* RecommendView.swift in Sources */,
 				C8B7BF682C13F5C800003C99 /* Second4Test.swift in Sources */,
 				C8BB9B862C19340400093024 /* SQLite.swift in Sources */,
