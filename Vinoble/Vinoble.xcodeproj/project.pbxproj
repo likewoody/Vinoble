@@ -16,6 +16,8 @@
 		74577E112C19A5AE002B362D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 74577E102C19A5AE002B362D /* FirebaseAnalytics */; };
 		74577E132C19A5AE002B362D /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 74577E122C19A5AE002B362D /* FirebaseDatabase */; };
 		74577E152C19A5AE002B362D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 74577E142C19A5AE002B362D /* FirebaseFirestore */; };
+		C80A67AF2C19659200953402 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C80A67AE2C19659200953402 /* GoogleService-Info.plist */; };
+		C814DF452C1983E500CD9A74 /* QueryForTCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = C814DF442C1983E500CD9A74 /* QueryForTCA.swift */; };
 		C832A2A82C0EEFC0007EA2A2 /* VinobleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C832A2A72C0EEFC0007EA2A2 /* VinobleApp.swift */; };
 		C832A2AA2C0EEFC0007EA2A2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C832A2A92C0EEFC0007EA2A2 /* MainView.swift */; };
 		C832A2AC2C0EEFC1007EA2A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C832A2AB2C0EEFC1007EA2A2 /* Assets.xcassets */; };
@@ -29,14 +31,29 @@
 		C85BF5362C13037B005E548C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85BF5352C13037B005E548C /* SplashView.swift */; };
 		C85BF5392C13058A005E548C /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85BF5382C13058A005E548C /* ProductView.swift */; };
 		C86B200E2C14247A0061663A /* ProductTCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86B200D2C14247A0061663A /* ProductTCA.swift */; };
+		C8956A4A2C1863070034F313 /* Recommend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8956A492C1863070034F313 /* Recommend.swift */; };
+		C8956A4E2C1863150034F313 /* DetailTCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8956A4D2C1863150034F313 /* DetailTCA.swift */; };
+		C8956A502C18631C0034F313 /* LoginTCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8956A4F2C18631C0034F313 /* LoginTCA.swift */; };
+		C8956A522C1863210034F313 /* NewTasteNoteTCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8956A512C1863210034F313 /* NewTasteNoteTCA.swift */; };
+		C8956A542C18632E0034F313 /* RecommendDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8956A532C18632E0034F313 /* RecommendDomain.swift */; };
+		C8956A572C1863520034F313 /* RecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8956A562C1863520034F313 /* RecommendView.swift */; };
+		C89CE2042C19727800C95A4D /* Drawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89CE2032C19727800C95A4D /* Drawer.swift */; };
 		C8B7BF602C13EFFB00003C99 /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7BF5F2C13EFFB00003C99 /* WishListView.swift */; };
 		C8B7BF662C13F2E600003C99 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7BF652C13F2E600003C99 /* MainTabView.swift */; };
 		C8B7BF682C13F5C800003C99 /* Second4Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B7BF672C13F5C800003C99 /* Second4Test.swift */; };
+		C8BB9B842C19288300093024 /* Keyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BB9B832C19288300093024 /* Keyword.swift */; };
+		C8BB9B862C19340400093024 /* SQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BB9B852C19340400093024 /* SQLite.swift */; };
+		E3014E872C19249B00CE4FD6 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = E3014E862C19249B00CE4FD6 /* FirebaseAnalytics */; };
+		E3014E892C19249B00CE4FD6 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E3014E882C19249B00CE4FD6 /* FirebaseDatabase */; };
+		E3014E8B2C19249B00CE4FD6 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E3014E8A2C19249B00CE4FD6 /* FirebaseFirestore */; };
+		E3014E8D2C1927C400CE4FD6 /* UserInsert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3014E8C2C1927C400CE4FD6 /* UserInsert.swift */; };
+		E3014E8F2C1927DD00CE4FD6 /* RegularExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3014E8E2C1927DD00CE4FD6 /* RegularExpression.swift */; };
 		E32D4A2B2C18528C0057A0C9 /* UserQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32D4A292C18528C0057A0C9 /* UserQuery.swift */; };
 		E3DAE1362C16851900799A06 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DAE1322C16851900799A06 /* LoginView.swift */; };
 		E3DAE1372C16851900799A06 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DAE1332C16851900799A06 /* ProfileView.swift */; };
 		E3DAE1382C16851900799A06 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DAE1342C16851900799A06 /* RegisterView.swift */; };
 		F20787872C1690F50011EA76 /* UpdateTastingNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20787862C1690F50011EA76 /* UpdateTastingNoteView.swift */; };
+		F2413D902C193A9B00938526 /* CellarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2413D8F2C193A9B00938526 /* CellarModel.swift */; };
 		F2B7884F2C1588DF001CF46D /* MyCellarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B7884E2C1588DF001CF46D /* MyCellarView.swift */; };
 		F2B788552C15987A001CF46D /* TastingNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B788542C15987A001CF46D /* TastingNoteView.swift */; };
 		F2B8DB072C16F7B60083193E /* TastingNoteTCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B8DB062C16F7B60083193E /* TastingNoteTCA.swift */; };
@@ -50,6 +67,8 @@
 		7401CE112C192A6B00FDB4C0 /* DetailTCA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTCA.swift; sourceTree = "<group>"; };
 		7401CE152C199F0A00FDB4C0 /* ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
 		C832A2A42C0EEFC0007EA2A2 /* Vinoble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vinoble.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C80A67AE2C19659200953402 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C814DF442C1983E500CD9A74 /* QueryForTCA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryForTCA.swift; sourceTree = "<group>"; };
 		C832A2A72C0EEFC0007EA2A2 /* VinobleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinobleApp.swift; sourceTree = "<group>"; };
 		C832A2A92C0EEFC0007EA2A2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C832A2AB2C0EEFC1007EA2A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,14 +80,27 @@
 		C85BF5352C13037B005E548C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		C85BF5382C13058A005E548C /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		C86B200D2C14247A0061663A /* ProductTCA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTCA.swift; sourceTree = "<group>"; };
+		C8956A492C1863070034F313 /* Recommend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recommend.swift; sourceTree = "<group>"; };
+		C8956A4D2C1863150034F313 /* DetailTCA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTCA.swift; sourceTree = "<group>"; };
+		C8956A4F2C18631C0034F313 /* LoginTCA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTCA.swift; sourceTree = "<group>"; };
+		C8956A512C1863210034F313 /* NewTasteNoteTCA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTasteNoteTCA.swift; sourceTree = "<group>"; };
+		C8956A532C18632E0034F313 /* RecommendDomain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendDomain.swift; sourceTree = "<group>"; };
+		C8956A562C1863520034F313 /* RecommendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendView.swift; sourceTree = "<group>"; };
+		C89CE2032C19727800C95A4D /* Drawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawer.swift; sourceTree = "<group>"; };
 		C8B7BF5F2C13EFFB00003C99 /* WishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
 		C8B7BF652C13F2E600003C99 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		C8B7BF672C13F5C800003C99 /* Second4Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Second4Test.swift; sourceTree = "<group>"; };
+		C8BB9B832C19288300093024 /* Keyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyword.swift; sourceTree = "<group>"; };
+		C8BB9B852C19340400093024 /* SQLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLite.swift; sourceTree = "<group>"; };
+		E3014E8C2C1927C400CE4FD6 /* UserInsert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInsert.swift; sourceTree = "<group>"; };
+		E3014E8E2C1927DD00CE4FD6 /* RegularExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularExpression.swift; sourceTree = "<group>"; };
 		E32D4A292C18528C0057A0C9 /* UserQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserQuery.swift; sourceTree = "<group>"; };
+		E3C091852C1937150004BBA4 /* Vinoble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vinoble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3DAE1322C16851900799A06 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E3DAE1332C16851900799A06 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		E3DAE1342C16851900799A06 /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		F20787862C1690F50011EA76 /* UpdateTastingNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTastingNoteView.swift; sourceTree = "<group>"; };
+		F2413D8F2C193A9B00938526 /* CellarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellarModel.swift; sourceTree = "<group>"; };
 		F2B7884E2C1588DF001CF46D /* MyCellarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCellarView.swift; sourceTree = "<group>"; };
 		F2B788542C15987A001CF46D /* TastingNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TastingNoteView.swift; sourceTree = "<group>"; };
 		F2B8DB062C16F7B60083193E /* TastingNoteTCA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TastingNoteTCA.swift; sourceTree = "<group>"; };
@@ -84,6 +116,9 @@
 				74577E132C19A5AE002B362D /* FirebaseDatabase in Frameworks */,
 				74577E152C19A5AE002B362D /* FirebaseFirestore in Frameworks */,
 				74577E112C19A5AE002B362D /* FirebaseAnalytics in Frameworks */,
+				E3014E892C19249B00CE4FD6 /* FirebaseDatabase in Frameworks */,
+				E3014E8B2C19249B00CE4FD6 /* FirebaseFirestore in Frameworks */,
+				E3014E872C19249B00CE4FD6 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,22 +132,15 @@
 				C86B200F2C1428E70061663A /* Model */,
 				C832A2B52C0EEFD8007EA2A2 /* TCA */,
 				C832A2A62C0EEFC0007EA2A2 /* Vinoble */,
-				C832A2A52C0EEFC0007EA2A2 /* Products */,
 				C8445B022C185DD3001E64DF /* Recovered References */,
+				E3C091852C1937150004BBA4 /* Vinoble.app */,
 			);
-			sourceTree = "<group>";
-		};
-		C832A2A52C0EEFC0007EA2A2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C832A2A42C0EEFC0007EA2A2 /* Vinoble.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		C832A2A62C0EEFC0007EA2A2 /* Vinoble */ = {
 			isa = PBXGroup;
 			children = (
+				C8956A552C1863440034F313 /* Recommend */,
 				E3DAE1352C16851900799A06 /* View */,
 				F2B7884D2C1588D1001CF46D /* MyCellar */,
 				C8B7BF642C13F2D100003C99 /* TabView */,
@@ -121,6 +149,7 @@
 				C832A2A72C0EEFC0007EA2A2 /* VinobleApp.swift */,
 				C832A2A92C0EEFC0007EA2A2 /* MainView.swift */,
 				C832A2AB2C0EEFC1007EA2A2 /* Assets.xcassets */,
+				C80A67AE2C19659200953402 /* GoogleService-Info.plist */,
 				C832A2AD2C0EEFC1007EA2A2 /* Preview Content */,
 				C85BF5312C130328005E548C /* MainLogin.swift */,
 				C85BF5352C13037B005E548C /* SplashView.swift */,
@@ -143,6 +172,10 @@
 				7401CE102C192A6B00FDB4C0 /* LoginTCA.swift */,
 				7401CE0F2C192A6B00FDB4C0 /* NewTasteNoteTCA.swift */,
 				C832A2B62C0EF0B1007EA2A2 /* Test.swift */,
+				C8956A4F2C18631C0034F313 /* LoginTCA.swift */,
+				C8956A4D2C1863150034F313 /* DetailTCA.swift */,
+				C8956A512C1863210034F313 /* NewTasteNoteTCA.swift */,
+				C8956A532C18632E0034F313 /* RecommendDomain.swift */,
 				C86B200D2C14247A0061663A /* ProductTCA.swift */,
 				F2B8DB062C16F7B60083193E /* TastingNoteTCA.swift */,
 			);
@@ -162,6 +195,7 @@
 				7401CE0B2C1929C800FDB4C0 /* Charts.swift */,
 				7401CE0C2C1929C800FDB4C0 /* ProductDetail.swift */,
 				C85BF5382C13058A005E548C /* ProductView.swift */,
+				C89CE2032C19727800C95A4D /* Drawer.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -170,10 +204,21 @@
 			isa = PBXGroup;
 			children = (
 				C8445B082C185ED9001E64DF /* UserModel.swift */,
+				C8956A492C1863070034F313 /* Recommend.swift */,
 				C8445B062C185ED5001E64DF /* Product.swift */,
 				7401CE152C199F0A00FDB4C0 /* ProductDetail.swift */,
+				F2413D8F2C193A9B00938526 /* CellarModel.swift */,
+				C8BB9B832C19288300093024 /* Keyword.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C8956A552C1863440034F313 /* Recommend */ = {
+			isa = PBXGroup;
+			children = (
+				C8956A562C1863520034F313 /* RecommendView.swift */,
+			);
+			path = Recommend;
 			sourceTree = "<group>";
 		};
 		C8B7BF5E2C13EFEE00003C99 /* WishList */ = {
@@ -197,6 +242,10 @@
 			isa = PBXGroup;
 			children = (
 				E32D4A292C18528C0057A0C9 /* UserQuery.swift */,
+				C8BB9B852C19340400093024 /* SQLite.swift */,
+				E3014E8C2C1927C400CE4FD6 /* UserInsert.swift */,
+				E3014E8E2C1927DD00CE4FD6 /* RegularExpression.swift */,
+				C814DF442C1983E500CD9A74 /* QueryForTCA.swift */,
 			);
 			path = VM;
 			sourceTree = "<group>";
@@ -205,8 +254,8 @@
 			isa = PBXGroup;
 			children = (
 				E3DAE1322C16851900799A06 /* LoginView.swift */,
-				E3DAE1332C16851900799A06 /* ProfileView.swift */,
 				E3DAE1342C16851900799A06 /* RegisterView.swift */,
+				E3DAE1332C16851900799A06 /* ProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -245,7 +294,7 @@
 				74577E142C19A5AE002B362D /* FirebaseFirestore */,
 			);
 			productName = Vinoble;
-			productReference = C832A2A42C0EEFC0007EA2A2 /* Vinoble.app */;
+			productReference = E3C091852C1937150004BBA4 /* Vinoble.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -276,8 +325,9 @@
 				C832A2B82C0EF2BA007EA2A2 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				C8445B032C185E84001E64DF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				74577E0F2C19A5AE002B362D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+
 			);
-			productRefGroup = C832A2A52C0EEFC0007EA2A2 /* Products */;
+			productRefGroup = C832A29B2C0EEFC0007EA2A2;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -292,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C832A2AF2C0EEFC1007EA2A2 /* Preview Assets.xcassets in Resources */,
+				C80A67AF2C19659200953402 /* GoogleService-Info.plist in Resources */,
 				C832A2AC2C0EEFC1007EA2A2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,26 +355,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8445B072C185ED5001E64DF /* Product.swift in Sources */,
+				C814DF452C1983E500CD9A74 /* QueryForTCA.swift in Sources */,
+				C8956A572C1863520034F313 /* RecommendView.swift in Sources */,
 				C8B7BF682C13F5C800003C99 /* Second4Test.swift in Sources */,
+				C8BB9B862C19340400093024 /* SQLite.swift in Sources */,
 				E32D4A2B2C18528C0057A0C9 /* UserQuery.swift in Sources */,
 				7401CE122C192A6B00FDB4C0 /* NewTasteNoteTCA.swift in Sources */,
 				C85BF5322C130328005E548C /* MainLogin.swift in Sources */,
 				C832A2AA2C0EEFC0007EA2A2 /* MainView.swift in Sources */,
+				C89CE2042C19727800C95A4D /* Drawer.swift in Sources */,
+				C8956A4E2C1863150034F313 /* DetailTCA.swift in Sources */,
+				C8956A542C18632E0034F313 /* RecommendDomain.swift in Sources */,
 				C85BF5362C13037B005E548C /* SplashView.swift in Sources */,
+				C8BB9B842C19288300093024 /* Keyword.swift in Sources */,
 				F2B7884F2C1588DF001CF46D /* MyCellarView.swift in Sources */,
 				C832A2A82C0EEFC0007EA2A2 /* VinobleApp.swift in Sources */,
 				E3DAE1372C16851900799A06 /* ProfileView.swift in Sources */,
-				7401CE132C192A6B00FDB4C0 /* LoginTCA.swift in Sources */,
+				C8956A502C18631C0034F313 /* LoginTCA.swift in Sources */,
+				C8956A522C1863210034F313 /* NewTasteNoteTCA.swift in Sources */,
 				C85BF5392C13058A005E548C /* ProductView.swift in Sources */,
 				E3DAE1362C16851900799A06 /* LoginView.swift in Sources */,
+				C8956A4A2C1863070034F313 /* Recommend.swift in Sources */,
 				C832A2B72C0EF0B1007EA2A2 /* Test.swift in Sources */,
 				C86B200E2C14247A0061663A /* ProductTCA.swift in Sources */,
+				E3014E8D2C1927C400CE4FD6 /* UserInsert.swift in Sources */,
 				F2B8DB072C16F7B60083193E /* TastingNoteTCA.swift in Sources */,
 				C8B7BF602C13EFFB00003C99 /* WishListView.swift in Sources */,
+				F2413D902C193A9B00938526 /* CellarModel.swift in Sources */,
 				E3DAE1382C16851900799A06 /* RegisterView.swift in Sources */,
 				7401CE142C192A6B00FDB4C0 /* DetailTCA.swift in Sources */,
 				C8B7BF662C13F2E600003C99 /* MainTabView.swift in Sources */,
 				7401CE162C199F0A00FDB4C0 /* ProductDetail.swift in Sources */,
+				E3014E8F2C1927DD00CE4FD6 /* RegularExpression.swift in Sources */,
 				F20787872C1690F50011EA76 /* UpdateTastingNoteView.swift in Sources */,
 				7401CE0D2C1929C800FDB4C0 /* Charts.swift in Sources */,
 				C8445B092C185ED9001E64DF /* UserModel.swift in Sources */,
@@ -560,6 +623,14 @@
 				minimumVersion = 3.0.4;
 			};
 		};
+		E3014E852C19249B00CE4FD6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.27.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -587,6 +658,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C8445B032C185E84001E64DF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		E3014E862C19249B00CE4FD6 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3014E852C19249B00CE4FD6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		E3014E882C19249B00CE4FD6 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3014E852C19249B00CE4FD6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		E3014E8A2C19249B00CE4FD6 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3014E852C19249B00CE4FD6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

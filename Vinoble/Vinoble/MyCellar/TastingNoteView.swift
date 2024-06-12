@@ -11,7 +11,7 @@
   
  Author : Diana
  Date : 2024.06.11 Tues
- Description : core function implementation day 1 (db insert)
+ Description : CRUD function implementation day 1 
  */
 
 import SwiftUI
@@ -25,11 +25,6 @@ struct TastingNoteView: View {
     @Bindable var noteStore: StoreOf<TastingNoteFeature>
 
     let store: StoreOf<ProductFeature>
-    
-    // color
-//    let shareColor = ShareColor(store: Store(initialState: ProductFeature.State()) {
-//        ProductFeature()
-//    })
     
     // init
     init(store: StoreOf<ProductFeature>, noteStore: StoreOf<TastingNoteFeature>) {
@@ -74,10 +69,11 @@ struct TastingNoteView: View {
                                     .foregroundColor(.white)
                                     .padding(.horizontal, 16)
                                     .padding(.vertical, 8)
-                                    .background(.theme)
+                                    .background(.gray)
                                     .bold()
                                     .cornerRadius(10)
                             }
+                            .disabled(true)
                         }
                         
                         // Info TextField (Name, Price, Type)
@@ -197,7 +193,7 @@ struct SliderField: View {
 #Preview {
     TastingNoteView(store: Store(initialState: ProductFeature.State()) {
         ProductFeature()
-    }, noteStore: Store(initialState: TastingNoteFeature.State()) {
+    }, noteStore: Store(initialState: TastingNoteFeature.State(seq : 1)) {
         TastingNoteFeature()
     })
 }
