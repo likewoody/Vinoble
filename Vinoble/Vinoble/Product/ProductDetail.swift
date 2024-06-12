@@ -22,15 +22,27 @@ import SDWebImageSwiftUI
 struct ProductDetail: View {
     
     @Bindable var store: StoreOf<ProductFeature>
-    @Bindable var store2: StoreOf<DetailFeature>
+//    @Bindable var store2: StoreOf<DetailFeature>
     
-    // 다른 곳에서도 사용할 수 있게끔 Color를 func으로 만든 것을 불러온다.
-    let shareColor = ShareColor(store: Store(initialState: ProductFeature.State()){
-        ProductFeature()
-    })
+//    // 다른 곳에서도 사용할 수 있게끔 Color를 func으로 만든 것을 불러온다.
+//    let shareColor = ShareColor(store: Store(initialState: ProductFeature.State()){
+//        ProductFeature()
+//    })
     
     // MARK: For test
-    @State private var foodPairings: [String] = ["https://images.vivino.com/backgrounds/foods/thumbs/4_beef_932x810.png", "https://images.vivino.com/backgrounds/foods/thumbs/8_lamb_932x810.png", "https://images.vivino.com/backgrounds/foods/thumbs/20_chicken_932x810.png", "https://images.vivino.com/backgrounds/foods/thumbs/11_venison_932x810.png"]
+    @State var foodPairings: [String] = ["https://images.vivino.com/backgrounds/foods/thumbs/4_beef_932x810.png", "https://images.vivino.com/backgrounds/foods/thumbs/8_lamb_932x810.png", "https://images.vivino.com/backgrounds/foods/thumbs/20_chicken_932x810.png", "https://images.vivino.com/backgrounds/foods/thumbs/11_venison_932x810.png"]
+    @State var foodnames: [String] =
+        ["beef",
+         "lamb",
+         "chicken",
+         "venison"]
+    
+    @State var foodArray = [
+        ["https://images.vivino.com/backgrounds/foods/thumbs/4_beef_932x810.png", "beef"],
+        ["https://images.vivino.com/backgrounds/foods/thumbs/8_lamb_932x810.png","lamb"],
+        ["https://images.vivino.com/backgrounds/foods/thumbs/20_chicken_932x810.png","chicken"],
+        ["https://images.vivino.com/backgrounds/foods/thumbs/11_venison_932x810.png", "venison"]
+    ]
     
     
     @State var pH: Double = 0.5
@@ -41,15 +53,19 @@ struct ProductDetail: View {
     @State var rating: Double = 4.7
     
     // MARK: if start view, change navigation title
-    init(store: StoreOf<ProductFeature>, store2: StoreOf<DetailFeature>) {
+    init(store: StoreOf<ProductFeature>) {
         // store 속성을 초기화합니다. 예를 들어, 기본값을 사용하거나 인자를 받을 수 있습니다.
         self.store = store
-        self.store2 = store2
+//        self.store2 = store2
         
 
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: shareColor.initColorWithAlpha(), // Title color
-                                                            
-            .font: UIFont.boldSystemFont(ofSize: 24.0)	 // Title font size
+//        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: shareColor.initColorWithAlpha(), // Title color
+//                                                            
+//            .font: UIFont.boldSystemFont(ofSize: 24.0)	 // Title font size
+//        ]
+        
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(.theme), // Title color
+            .font: UIFont.boldSystemFont(ofSize: 24.0) // Title font size
         ]
     }
     
@@ -104,7 +120,7 @@ struct ProductDetail: View {
                             }
                             .accessibilityElement(children: .combine)
                             .accessibilityLabel(Text("Rated \(rating, specifier: "%.1f") stars"))
-                            .foregroundColor(Color(shareColor.mainColor()))
+                            .foregroundColor(Color(.theme))
                             
                             Text(String(format: "%.1f", rating))
                                 .font(.largeTitle)
@@ -116,7 +132,7 @@ struct ProductDetail: View {
                                 
                                 Text("ALCOHOL")
                                     .bold()
-                                    .foregroundColor(Color(shareColor.mainColor()))
+                                    .foregroundColor(Color(.theme))
                                     .font(.system(size: 17))
                                 
                                 
@@ -125,7 +141,7 @@ struct ProductDetail: View {
                                 
                                 Text("YEAR")
                                     .bold()
-                                    .foregroundColor(Color(shareColor.mainColor()))
+                                    .foregroundColor(Color(.theme))
                                     .font(.system(size: 17))
                                     .padding(.trailing)
                                 
@@ -160,14 +176,14 @@ struct ProductDetail: View {
                                 
                                 Text("REGION")
                                     .bold()
-                                    .foregroundColor(Color(shareColor.mainColor()))
+                                    .foregroundColor(Color(.theme))
                                     .font(.system(size: 17))
                                 
                                 Spacer()
                                 
                                 Text("VOLUME")
                                     .bold()
-                                    .foregroundColor(Color(shareColor.mainColor()))
+                                    .foregroundColor(Color(.theme))
                                     .font(.system(size: 17))
                                 
                                 Spacer()
@@ -195,7 +211,7 @@ struct ProductDetail: View {
                             
                             Text("PRICE")
                                 .bold()
-                                .foregroundColor(Color(shareColor.mainColor()))
+                                .foregroundColor(Color(.theme))
                                 .font(.system(size: 17))
                                 .multilineTextAlignment(.center)
                                 .padding(.bottom,5)
@@ -213,7 +229,7 @@ struct ProductDetail: View {
                     
                     Text("ABOUT THE PRODUCT")
                         .bold()
-                        .foregroundColor(Color(shareColor.mainColor()))
+                        .foregroundColor(Color(.theme))
                         .font(.system(size: 24))
                         .padding(.bottom)
                     
@@ -221,149 +237,154 @@ struct ProductDetail: View {
                         .padding(EdgeInsets(top: 0, leading: 10, bottom: 30, trailing: 10))
                     
                     HStack(content: {
-                        Picker(selection: $store2.selectedWineInfo, label: Text("Wine Info")) {
-                            Text("Food Pairings").tag(0)
-                            Text("Flavor Profile").tag(1)
-                            Text("Description").tag(2)
-                            
-                        } // Picker
-                        .pickerStyle(.segmented)
-                        .onAppear(perform: {
-                            UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor : UIColor(shareColor.mainColor())], for: .selected)
-                            UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor : UIColor(Color(.gray).opacity(0.8))], for: .normal)
-                        })
+//                        Picker(selection: $store2.selectedWineInfo, label: Text("Wine Info")) {
+//                            Text("Food Pairings").tag(0)
+//                            Text("Flavor Profile").tag(1)
+//                            Text("Description").tag(2)
+//                            
+//                        } // Picker
+//                        .pickerStyle(.segmented)
+//                        .onAppear(perform: {
+//                            UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor : UIColor(.theme)], for: .selected)
+//                            UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor : UIColor(Color(.gray).opacity(0.8))], for: .normal)
+//                        })
                         
 
                     }) // HStack
                     .padding(.bottom, 5)
                     
-                    if store2.selectedWineInfo == 0 {
-                        ScrollView(.horizontal, content: {
-//                            LazyHGrid(rows: [GridItem(.adaptive(minimum: 100))], spacing: 10, content: {
-                            HStack{
-                                ForEach(foodPairings, id: \.self) { url in
-                                    AsyncImage(url: URL(string: url)) { phase in
-                                        switch phase {
-                                        case .empty:
-                                            ProgressView() // 로딩 중 표시
-                                        case .success(let image):
-                                            image
-                                                .resizable()
-                                                .scaledToFit()
-                                                .frame(width: 100, height: 100)
-                                        case .failure:
-                                            Color.red // 오류 발생 시 표시
-                                        @unknown default:
-                                            Color.gray
-                                        }
-                                    }
-                                }
-                            }
-                        })
-                    }
+//                    if store2.selectedWineInfo == 0 {
+//                        ScrollView(.horizontal, content: {
+////                            LazyHGrid(rows: [GridItem(.adaptive(minimum: 100))], spacing: 10, content: {
+//                                    
+//                                HStack{
+//                                    ForEach(foodArray, id: \.self) { url in
+//                                        VStack{
+//                                            AsyncImage(url: URL(string: url[0])) { phase in
+//                                                switch phase {
+//                                                case .empty:
+//                                                    ProgressView() // 로딩 중 표시
+//                                                case .success(let image):
+//                                                    image
+//                                                        .resizable()
+//                                                        .scaledToFit()
+//                                                        .frame(width: 100, height: 100)
+//                                                    
+//                                                case .failure:
+//                                                    Color.red // 오류 발생 시 표시
+//                                                @unknown default:
+//                                                    Color.gray
+//                                                }
+//                                            }
+//                                            Text(url[1])
+//                                        }
+//                                }
+//                            }
+//                        })
+//                    }
                     
-                    if store2.selectedWineInfo == 1 {
-//                        // Pentagon Graph
-//                        WithViewStore(self.store2) { viewStore2 in
-//                            PentagonGraphShape(
-//                                pH: viewStore2.pH,
-//                                sweet: viewStore2.sweet,
-//                                body: viewStore2.body,
-//                                tannin: viewStore2.tannin,
-//                                alcohol: viewStore2.alcohol
-//                            )
-//                            .stroke(Color.blue, lineWidth: 2)
-//                            .frame(width: 200, height: 200)
-//                        }
-                    }
-                   
-                    if store2.selectedWineInfo == 2 {
-                        HStack(content: {
-
-                            Spacer()
-                            
-                            Image(systemName: "bolt.shield")
-                                                    
-                            Text("Winery")
-                            
-                            Spacer()
-                            
-                            Text("Screaming Eagle")
-                                
-                            Spacer()
-                        })
-                        
-                        Divider()
-                            .background(Color(.black))
-                        
-                        HStack(content: {
-                            Spacer()
-                            
-                            Image(systemName: "wineglass")
-                            
-                            Text("Grapes")
-                            
-                            Spacer()
-                            
-                            Text("Cabernet Sauvignon")
-                                
-                            Spacer()
-                        })
-                        
-                        Divider()
-                            .background(Color(.black))
-                        
-                        HStack(content: {
-                            Spacer()
-                            
-                            Image(systemName: "location")
-                            
-                            Text("Region")
-                            
-                            Spacer()
-                            
-                            Text("United States / California / North Coast")
-                                
-                            Spacer()
-                        })
-                        
-                        Divider()
-                            .background(Color(.black))
-                        
-                        HStack(content: {
-                            Spacer()
-                            
-                            Image(systemName: "flame")
-                            
-                            Text("Wine Style")
-                            
-                            Spacer()
-                            
-                            Text("Red")
-                                
-                            Spacer()
-                        })
-                        
-                        Divider()
-                            .background(Color(.black))
-                        
-                        HStack(content: {
-                            Spacer()
-                            
-                            Image(systemName: "eyes")
-                            
-                            Text("Allergens")
-                            
-                            Spacer()
-                            
-                            Text("Contains sulfites")
-                                
-                            Spacer()
-                        })
-                        
-                        Divider()
-                            .background(Color(.black))
-                    }
+//                    if store2.selectedWineInfo == 1 {
+////                        // Pentagon Graph
+////                        WithViewStore(self.store2) { viewStore2 in
+////                            PentagonGraphShape(
+////                                pH: viewStore2.pH,
+////                                sweet: viewStore2.sweet,
+////                                body: viewStore2.body,
+////                                tannin: viewStore2.tannin,
+////                                alcohol: viewStore2.alcohol
+////                            )
+////                            .stroke(Color.blue, lineWidth: 2)
+////                            .frame(width: 200, height: 200)
+////                        }
+//                    }
+//                   
+//                    if store2.selectedWineInfo == 2 {
+//                        HStack(content: {
+//
+//                            Spacer()
+//                            
+//                            Image(systemName: "bolt.shield")
+//                                                    
+//                            Text("Winery")
+//                            
+//                            Spacer()
+//                            
+//                            Text("Screaming Eagle")
+//                                
+//                            Spacer()
+//                        })
+//                        
+//                        Divider()
+//                            .background(Color(.black))
+//                        
+//                        HStack(content: {
+//                            Spacer()
+//                            
+//                            Image(systemName: "wineglass")
+//                            
+//                            Text("Grapes")
+//                            
+//                            Spacer()
+//                            
+//                            Text("Cabernet Sauvignon")
+//                                
+//                            Spacer()
+//                        })
+//                        
+//                        Divider()
+//                            .background(Color(.black))
+//                        
+//                        HStack(content: {
+//                            Spacer()
+//                            
+//                            Image(systemName: "location")
+//                            
+//                            Text("Region")
+//                            
+//                            Spacer()
+//                            
+//                            Text("United States / California / North Coast")
+//                                
+//                            Spacer()
+//                        })
+//                        
+//                        Divider()
+//                            .background(Color(.black))
+//                        
+//                        HStack(content: {
+//                            Spacer()
+//                            
+//                            Image(systemName: "flame")
+//                            
+//                            Text("Wine Style")
+//                            
+//                            Spacer()
+//                            
+//                            Text("Red")
+//                                
+//                            Spacer()
+//                        })
+//                        
+//                        Divider()
+//                            .background(Color(.black))
+//                        
+//                        HStack(content: {
+//                            Spacer()
+//                            
+//                            Image(systemName: "eyes")
+//                            
+//                            Text("Allergens")
+//                            
+//                            Spacer()
+//                            
+//                            Text("Contains sulfites")
+//                                
+//                            Spacer()
+//                        })
+//                        
+//                        Divider()
+//                            .background(Color(.black))
+//                    }
                 })
                 .padding()
             }
@@ -395,10 +416,10 @@ struct ProductDetail: View {
         store: Store(initialState:
             ProductFeature.State()){
             ProductFeature()
-        },
-        store2: Store(initialState:
-            DetailFeature.State()){
-            DetailFeature()
-        }
-    )
+        })
+//        store2: Store(initialState:
+//            DetailFeature.State()){
+//            DetailFeature()
+//        }
+//    )
 }
