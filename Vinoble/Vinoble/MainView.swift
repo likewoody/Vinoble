@@ -14,9 +14,10 @@ struct MainView: View {
         var body: some View {
             VStack {
                 if isActive {
-                    ProductView(store: Store(initialState: ProductFeature.State()){
-                        ProductFeature()
-                    })
+//                    ProductView(store: Store(initialState: ProductFeature.State()){
+//                        ProductFeature()
+//                    })
+                    LoginView()
                 } else {
                     SplashView()
                 }

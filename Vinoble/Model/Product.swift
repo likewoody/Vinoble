@@ -7,12 +7,10 @@
 
 import Foundation
 
-
 struct Product: Codable{
     var index, year: Int
     var rating, bodyPercent, tanning, sugar, pH: Double
     var wineImage, name, wineType, winery, region, price, grapeTypes, description, alcohol, food1, food2, food3, food4, food5: String
-//    var compareFoods
     
     init(index: Int, year: Int, rating: Double, bodyPercent: Double, tanning: Double, sugar: Double, pH: Double, wineImage: String, name: String, wineType: String, winery: String, region: String, price: String, grapeTypes: String, description: String, alcohol: String, food1: String, food2: String, food3: String, food4: String, food5: String) {
         self.index = index
