@@ -181,16 +181,8 @@ struct ProductView: View {
                                                                 .padding(.bottom, 50)
                                                             
                                                             Button {
-//                                                                // action
-                                                                if store.likeState[product.index] == nil {
-                                                                    store.likeState[product.index] = 0
-                                                                }
-                                                                if store.likeState[product.index] == 0 {
-                                                                    store.likeState[product.index] = 1
-                                                                } else {
-                                                                    store.likeState[product.index] = 0
-                                                                }
-//                                                                store.likeState[product.index] ?? false
+                                                                // action
+                                                                store.send(.likeButtonTapped(product.index))
                                                                 
                                                             } label: {
                                                                 ZStack {
