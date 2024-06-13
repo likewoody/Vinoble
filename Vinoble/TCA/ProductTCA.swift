@@ -6,6 +6,7 @@ struct ProductFeature{
     
     @ObservableState
     struct State: Equatable{
+        
         var searchProduct: String = ""
         // MARK: 0 or 1 (red or white)
         var selectedWineType: Int = 0
@@ -26,21 +27,36 @@ struct ProductFeature{
         
         
         // products load
-        var startCount: Int = 0
         var lastCount: Int = 6
+        
+        // wish
+        var isLike: Bool = false
+//        var currentID: Int = 0
+//        var wishlist: [WishListModel] = []
+        var likeState: [Int:Int] = [:]
+        
+        // drag
+        var offset: CGSize = CGSize()
+        var isDrag: Bool = false
+        
     }
     
     enum Action: BindableAction{
         case binding(BindingAction<State>)
         case fetchProducts
         case fetchResponse([Product])
-//        case pageLoading
         case wineTypeButtonTapped(Int)
         case wineRegionButtonTapped(Int)
         case searchProductTapped
         case fetchUserInfo
         case fetchResponseUserInfo(String)
+        case dismissPaging
+//        case likeButtonTapped(Int)
+//        case sqliteWishList
+        case addPageLoading
     }
+    
+    @Dependency(\.dismiss) var dismiss
     
     var body: some Reducer<State, Action>{
         
@@ -52,15 +68,13 @@ struct ProductFeature{
                 return .none
                 
             case .fetchProducts:
-                let startCount = state.startCount
                 let lastCount = state.lastCount
                 let region = state.selectedRegion
                 let wineType = state.selectedWineType
                 
                 return .run { send in
-//                    let products = await tryHttpSession(httpURL: "http://192.168.10.15:5000/selectVinoble?region=\(region)&wineType=\(wineType)")
                     
-                    let products = await tryHttpSession(httpURL: "http://192.168.10.15:5000/selectVinoble?startCount=\(startCount)&lastCount=\(lastCount)&region=\(region)&wineType=\(wineType)")
+                    let products = await tryHttpSession(httpURL: "http://192.168.10.15:5000/selectVinoble?lastCount=\(lastCount)&region=\(region)&wineType=\(wineType)")
                     
                     await send(.fetchResponse(products))
                 } // return
@@ -72,10 +86,16 @@ struct ProductFeature{
                 
                 return .none
                 
-//            case .pageLoading:
-//                state.startCount += 4
-//                state.lastCount += 4
-//                return .none
+            case .searchProductTapped:
+                let lastCount = state.lastCount
+                let searchProduct = state.searchProduct
+                
+                return .run { send in
+                    
+                    let products = await tryHttpSession(httpURL: "http://192.168.10.15:5000/searchProduct?lastCount=\(lastCount)&searchProduct=\(searchProduct)")
+                    
+                    await send(.fetchResponse(products))
+                } // return
                 
             case let .wineTypeButtonTapped(wineType):
                 state.selectedWineType = wineType
@@ -84,21 +104,6 @@ struct ProductFeature{
             case let .wineRegionButtonTapped(region):
                 state.selectedRegion = region
                 return .none
-                
-
-            case .searchProductTapped:
-//                let startCount = state.startCount
-//                let lastCount = state.lastCount
-                let searchProduct = state.searchProduct
-                
-                return .run { send in
-                    
-                    let products = await tryHttpSession(httpURL: "http://127.0.0.1:5000/searchProduct?searchProduct=\(searchProduct)")
-//                    "http://127.0.0.1:5000/searchProduct?searchProduct=\(searchProduct)&startCount=\(startCount)&lastCount=\(lastCount)"
-                    
-                    await send(.fetchResponse(products))
-                } // return
-                
                 
             case .fetchUserInfo:
                 let firebaseModel = QueryForTCA(store: Store(initialState: ProductFeature.State()){
@@ -109,8 +114,6 @@ struct ProductFeature{
                     let result = try await firebaseModel.checkUserEmail(userid: userEmail)
                     
                     if result {
-                        print("succesfully got \(userEmail)")
-                        
                         await send(.fetchResponseUserInfo(userEmail))
                     }
                 }
@@ -118,8 +121,38 @@ struct ProductFeature{
                 state.userEmail = userEmail
                 
                 return .none
-            }
+                
+            case .dismissPaging:
+                state.showDrawer = false
+                return .run {_ in await self.dismiss()}
+                
+//            case .sqliteWishList:
+//                let query = WishList()
+//                state.wishlist = query.queryDB()
+//                
+//                if state.wishlist.isEmpty && state.userEmail == "aaa" {
+//                    for i in 0..<1082{
+//                        _ = query.insertDB(wishlist: 0)
+//                        state.likeState[i] = 0
+//                    }
+//                }
+//                return .none
+//            case .initLikeCondition:
+//                for i in 0..<1085{
+//                    state.likeState[i] = false
+//                }
+//                    
+//                return .none
 
+            case .addPageLoading:
+                state.lastCount += 2
+                state.isLoading = true
+
+                return .run { send in
+                    await send(.fetchProducts)
+                }
+            } // Switch
+        
         } // Reduce
 
     } // body

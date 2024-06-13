@@ -22,6 +22,10 @@
  Data : 2024.06.11 Wednesday
  Description : Finished Profile button
  
+ 6차
+ Data : 2024.06.12 Thursday
+ Description : adding like button & draggesture
+ 
  */
 
 
@@ -44,10 +48,8 @@ struct ProductView: View {
     }
     
     var body: some View{
-        NavigationView(content: {
-            
+        NavigationStack{
             VStack(content: {
-                
                 if store.showDrawer{
                     Drawer(store: store)
                 } else {
@@ -65,6 +67,12 @@ struct ProductView: View {
                                 
 
                                 TextField("Search Product", text: $store.searchProduct)
+                                
+                                Button("Search") {
+                                    store.send(.searchProductTapped)
+                                }
+                                .padding()
+                                .foregroundStyle(.theme)
 
                             }) // HStack
                         } // overlay
@@ -156,7 +164,7 @@ struct ProductView: View {
                             ScrollView {
                                 LazyVGrid(columns: Array(repeating: GridItem(), count: 2), content: {
                                     ForEach(store.products, id:\.index) { product in
-    
+                                        
                                         NavigationLink(destination: MainView()) {
                                             VStack(content: {
                                                 RoundedRectangle(cornerRadius: 20)
@@ -165,13 +173,39 @@ struct ProductView: View {
                                                     .frame(width: 120, height: 150)
                                                     .padding(.top, 30)
                                                     .overlay {
-                                                        let url = URL(string: product.wineImage)
-                                                        WebImage(url: url)
-                                                            .resizable()
-                                                            .frame(width: 50, height: 200)
-                                                            .padding(.bottom, 50)
-    
-                                                    }
+                                                        ZStack {
+                                                            let url = URL(string: product.wineImage)
+                                                            WebImage(url: url)
+                                                                .resizable()
+                                                                .frame(width: 50, height: 200)
+                                                                .padding(.bottom, 50)
+                                                            
+                                                            Button {
+//                                                                // action
+                                                                if store.likeState[product.index] == nil {
+                                                                    store.likeState[product.index] = 0
+                                                                }
+                                                                if store.likeState[product.index] == 0 {
+                                                                    store.likeState[product.index] = 1
+                                                                } else {
+                                                                    store.likeState[product.index] = 0
+                                                                }
+//                                                                store.likeState[product.index] ?? false
+                                                                
+                                                            } label: {
+                                                                ZStack {
+                                                                    Image(systemName: store.likeState[product.index] == 1 ? "heart.fill" : "heart")
+                                                                }
+                                                                .font(.system(size: 24))
+                                                                .position(x:100, y:190)
+                                                                .foregroundStyle(.theme)
+                                                                
+                                                            } // label
+
+
+                                                        } // ZStack
+                                                            
+                                                    } // overlay
                                                     .padding(.bottom, 5)
     
     
@@ -180,16 +214,26 @@ struct ProductView: View {
                                                     .padding(.bottom, 30)
     
                                             }) // VStack
-    
+                                            .gesture(
+                                                DragGesture(minimumDistance: 0, coordinateSpace: .global)
+                                                    .onChanged({ gesture in
+                                                        store.offset = gesture.translation
+                                                    })
+                                                    .onEnded({ gesture in
+                                                        if gesture.translation.height < -50 {
+                                                            store.send(.addPageLoading)
+                                                            
+                                                        }
+                                                    })
+                                            ) // gesture
     
                                         } // Link
     
                                     } // ForEach
     
-    
-    
                                 }) // Lazy V Grid
                                 .padding(.top, 50)
+                                
     
                             } // ScrollView
                             .overlay(
@@ -212,9 +256,23 @@ struct ProductView: View {
     
                                 //오른쪽 하단에 버튼 고정
                                 ,alignment: .bottomTrailing
-                            )
+                                
+                                    
+                            ) // overlay
+                            .onChange(of: store.lastCount) {
+                                if store.lastCount > 6 {
+                                    withAnimation(.default) {
+                                        print("get in ")
+                                        // ScrollViewReader의 proxyReader을 넣어줌
+                                        proxy.scrollTo(store.lastCount, anchor: .bottom)
+                                    }
+                                }
+                                print(store.lastCount)
+                            }
+                            
     
                         }) // ScrollViewReader
+                        
     
                     } // else
                 }
@@ -237,10 +295,10 @@ struct ProductView: View {
                 }
                 
             }) // toolbar
+            .animation(.easeIn(duration: 0.1))
             
             
-            
-        }) // NavigationView
+        } // NavigationView
         .onAppear(perform: {
             store.send(.fetchProducts)
         })
