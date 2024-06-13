@@ -206,23 +206,16 @@ struct ProductDetail: View {
                             Spacer()
                             
                             // Create Taste Note
-                            Button {
-                                // 로직
-                                Task{
-
-                                } // Task
-                                
-                            } label: {
-                                Text("Create Taste Note")
-                                    .frame(maxWidth: .infinity)
-                                    .padding()
-                                    .background(.theme)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(10)
-                                    .bold()
-                            }
-                            .padding(.bottom, 20)
-                            
+                           
+                            Text("Create Taste Note")
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color.theme)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                                .bold()
+                        
+                        
                             
                             Text("ABOUT THE PRODUCT")
                                 .bold()
@@ -280,18 +273,20 @@ struct ProductDetail: View {
                             }
                             
                             if store.selectedWineInfo == 1 {
-        //                        // Pentagon Graph
-        //                        WithViewStore(self.store2) { viewStore2 in
-        //                            PentagonGraphShape(
-        //                                pH: viewStore2.pH,
-        //                                sweet: viewStore2.sweet,
-        //                                body: viewStore2.body,
-        //                                tannin: viewStore2.tannin,
-        //                                alcohol: viewStore2.alcohol
-        //                            )
-        //                            .stroke(Color.blue, lineWidth: 2)
-        //                            .frame(width: 200, height: 200)
-        //                        }
+                             // Sliders (Sugar, Body, Tannin)
+                                VStack(alignment: .leading, spacing: 13) {
+                                    SlidersField(value: $store.detailProduct[0].sugar, label: "Sugar")
+                                        .disabled(true) // Sugar 슬라이더를 비활성화
+                                    SlidersField(value: $store.detailProduct[0].bodyPercent, label: "Body")
+                                        .disabled(true) // Body 슬라이더를 비활성화
+                                    SlidersField(value: $store.detailProduct[0].tanning, label: "Tannin")
+                                        .disabled(true) // Tannin 슬라이더를 비활성화
+                                    SlidersField(value: $store.detailProduct[0].pH, label: "pH")
+                                        .disabled(true) // pH 슬라이더를 비활성화
+                                        }
+                                         .padding(.horizontal, 20)
+                                         .padding(.top, 20)
+                                         
                             }
                            
                             if store.selectedWineInfo == 2 {
@@ -381,6 +376,36 @@ struct ProductDetail: View {
                                 Divider()
                                     .background(Color(.black))
                             }
+
+                            
+                            Text("ABOUT WINERY")
+                                .bold()
+                                .foregroundColor(Color(.theme))
+                                .font(.system(size: 24))
+                                .padding()
+                            
+                            HStack(alignment: .center, content: {
+                                AsyncImage(url: URL(string: "https://cdn-icons-png.flaticon.com/512/197/197560.png")) { phase in
+                                        switch phase {
+                                        case .empty:
+                                            ProgressView() // 로딩 중 표시
+                                        case .success(let image):
+                                            image
+                                                .resizable()
+                                                .scaledToFit()
+                                        case .failure:
+                                            Color.red // 오류 발생 시 표시
+                                        @unknown default:
+                                            Color.gray
+                                        }
+                                    }
+                                    .frame(width: 30, height: 30) // 원하는 크기로 프레임 설정
+                                
+                                Text("\(store.detailProduct[0].winery), France")
+                                
+                                Spacer()
+                            })
+                            
                         })
                         .padding()
                     }
