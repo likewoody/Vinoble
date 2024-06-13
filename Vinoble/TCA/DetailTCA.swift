@@ -19,27 +19,17 @@ struct DetailFeature {
 
         
         // Products
-        var products: [Product] = []
+        var detailProduct: [Detailproduct] = []
         var isLoading: Bool = true
         
-//        var index: Int
-//        var wineImage: String = ""
-//        var name: String = ""
-//        var rating: Double
-//        var winery: String = ""
-//        var wineType: String = ""
-//        var alcohol: String = ""
-//        var year: Int
-//        var price: String = ""
-//        var bodyPercent: Double
-//        var tanning = Double
+        var foodArray = [["",""]]
         
     }
     
     enum Action: BindableAction{
         case binding(BindingAction<State>)
-        case fetchProducts
-        case sendProducts([Product])
+        case fetchDetailProducts
+        case fetchResponse([Detailproduct])
         
     }
     
@@ -48,36 +38,39 @@ struct DetailFeature {
         
         Reduce{ state, action in
             switch action {
-                
             case .binding(_):
                 return .none
                 
-                
-            
-            case .fetchProducts:
-
+            case .fetchDetailProducts:
                 return .run { send in
-                    
-                    let products = await tryHttpSession(httpURL: "http://127.0.0.1:5000/detailview")
-                    await send(.sendProducts(products))
+                    let detailProduct = await tryHttpSession(httpURL: "http://127.0.0.1:5000/detailview")
+                    await send(.fetchResponse(detailProduct))
                 }
                 
-            case .sendProducts(let products):
-                state.products = products
-                state.isLoading = false
+            case let .fetchResponse(detailProduct):
+                state.detailProduct = detailProduct
+                                
+                state.foodArray = [
+                    [detailProduct[0].food1, detailProduct[0].foodname1],
+                    [detailProduct[0].food2, detailProduct[0].foodname2],
+                    [detailProduct[0].food3, detailProduct[0].foodname3],
+                    [detailProduct[0].food4, detailProduct[0].foodname4],
+                    [detailProduct[0].food5, detailProduct[0].foodname5]
+                ]
                 
+                state.isLoading = false
                 return .none
             }
         }
     } // Body
     
     // --- Fucntions ----
-    func tryHttpSession(httpURL: String) async -> [Product] {
+    func tryHttpSession(httpURL: String) async -> [Detailproduct] {
         do {
             let (data, _) = try await URLSession.shared.data(from: URL(string: httpURL)!)
-            let products = try JSONDecoder().decode([Product].self, from: data)
+            let detailProducts = try JSONDecoder().decode([Detailproduct].self, from: data)
             
-            return products
+            return detailProducts
 //            await send(.sendProducts(products))
             
         } catch {
