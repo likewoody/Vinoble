@@ -30,9 +30,7 @@ struct ProductFeature{
         var lastCount: Int = 6
         
         // wish
-        var isLike: Bool = false
-//        var currentID: Int = 0
-//        var wishlist: [WishListModel] = []
+        var wishlist: [WishListModel] = []
         var likeState: [Int:Int] = [:]
         
         // drag
@@ -51,8 +49,8 @@ struct ProductFeature{
         case fetchUserInfo
         case fetchResponseUserInfo(String)
         case dismissPaging
-//        case likeButtonTapped(Int)
-//        case sqliteWishList
+        case likeButtonTapped(Int)
+        case sqliteWishList
         case addPageLoading
     }
     
@@ -126,23 +124,30 @@ struct ProductFeature{
                 state.showDrawer = false
                 return .run {_ in await self.dismiss()}
                 
-//            case .sqliteWishList:
-//                let query = WishList()
-//                state.wishlist = query.queryDB()
-//                
-//                if state.wishlist.isEmpty && state.userEmail == "aaa" {
-//                    for i in 0..<1082{
-//                        _ = query.insertDB(wishlist: 0)
-//                        state.likeState[i] = 0
-//                    }
-//                }
-//                return .none
-//            case .initLikeCondition:
-//                for i in 0..<1085{
-//                    state.likeState[i] = false
-//                }
-//                    
-//                return .none
+            case let .likeButtonTapped(id):
+                let query = WishList()
+                
+                if let _ = state.likeState[id] {
+                    _ = query.updateDB(wishlist: 0, id: id+1)
+                    state.likeState[id] = 0
+                } else{
+                    _ = query.updateDB(wishlist: 1, id: id+1)
+                    state.likeState[id] = 1
+                }
+                return .none
+                
+            case .sqliteWishList:
+                let query = WishList()
+                state.wishlist = query.queryDB()
+                
+                if state.wishlist.isEmpty && state.userEmail == "aaa" {
+                    // 처음 들어오는 데이터라면 데이터의 갯수만큼 데이터를 넣어준다.
+                    for i in 0..<1082{
+                        _ = query.insertDB(wishlist: 0)
+                        state.likeState[i] = 0
+                    }
+                }
+                return .none
 
             case .addPageLoading:
                 state.lastCount += 2

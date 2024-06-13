@@ -101,6 +101,7 @@ class WishList: ObservableObject {
         
         
         if sqlite3_step(stmt) == SQLITE_DONE {
+            print("successfully updated DB!")
             return true
         } else {
             print("실패")
