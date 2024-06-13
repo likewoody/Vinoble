@@ -12,6 +12,16 @@
  Author : Diana
  Date : 2024.06.11 Tues
  Description : CRUD function implementation day 1 
+ 
+ Author : Diana
+ Date : 2024.06.12 Wed
+ Description : CRUD function implementation day 2
+ 
+ Author : Diana
+ Date : 2024.06.13 Thurs
+ Description : CRUD function implementation day 3
+ - insert function complete
+
  */
 
 import SwiftUI
@@ -21,9 +31,7 @@ struct TastingNoteView: View {
 
     @State var selectedImage: UIImage?
     @State var isShowingImagePicker = false
-    
     @Bindable var noteStore: StoreOf<TastingNoteFeature>
-
     let store: StoreOf<ProductFeature>
     
     // init
