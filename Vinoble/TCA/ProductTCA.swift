@@ -26,8 +26,8 @@ struct ProductFeature{
         
         
         // products load
-//        var startCount: Int = 0
-//        var lastCount: Int = 4
+        var startCount: Int = 0
+        var lastCount: Int = 6
     }
     
     enum Action: BindableAction{
@@ -52,14 +52,15 @@ struct ProductFeature{
                 return .none
                 
             case .fetchProducts:
-//                let startCount = state.startCount
-//                let lastCount = state.lastCount
+                let startCount = state.startCount
+                let lastCount = state.lastCount
                 let region = state.selectedRegion
                 let wineType = state.selectedWineType
                 
                 return .run { send in
-                    let products = await tryHttpSession(httpURL: "http://127.0.0.1:5000/selectVinoble?region=\(region)&wineType=\(wineType)")
-//                    "http://127.0.0.1:5000/selectVinoble?startCount=\(startCount)&lastCount=\(lastCount)&region=\(region)&wineType=\(wineType)"
+//                    let products = await tryHttpSession(httpURL: "http://192.168.10.15:5000/selectVinoble?region=\(region)&wineType=\(wineType)")
+                    
+                    let products = await tryHttpSession(httpURL: "http://192.168.10.15:5000/selectVinoble?startCount=\(startCount)&lastCount=\(lastCount)&region=\(region)&wineType=\(wineType)")
                     
                     await send(.fetchResponse(products))
                 } // return
