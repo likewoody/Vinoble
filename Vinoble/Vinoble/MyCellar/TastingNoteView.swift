@@ -121,6 +121,7 @@ struct TastingNoteView: View {
                             TextField("Wine Name", text: $noteStore.wineName)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .font(.system(size: 15, design: .serif))
+                                .bold()
                             
                             TextField("Wine Year", text: $noteStore.wineYear)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -172,7 +173,7 @@ struct TastingNoteView: View {
                             .bold()
                         TextEditor(text: $noteStore.wineNote)
                             .frame(minHeight: 150)
-                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray.opacity(0.3)))
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.theme.opacity(0.5)))
                         HStack {
                             Spacer()
                             Button(action: {
@@ -195,7 +196,6 @@ struct TastingNoteView: View {
                     .padding(.horizontal, 20)
                     .padding(.top, 10)
                     .padding(.bottom, 20)
-                    
                 }
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
