@@ -19,6 +19,7 @@
  Author : Diana
  Date : 2024.06.14 Fri
  Description : finishing up 
+ - userid value received
  */
 
 import ComposableArchitecture
@@ -70,8 +71,8 @@ struct TastingNoteFeature {
 
     enum Action: BindableAction, Equatable {
         case binding(BindingAction<State>)
-        case insertCellar
-        case selectCellar
+        case insertCellar(String)
+        case selectCellar(String)
         case deleteCellar(Wine)
         case updatecellarResponse(Result<String, NSError>)
         case insertcellarResponse(Result<String, NSError>)
@@ -88,9 +89,9 @@ struct TastingNoteFeature {
                 return .none
                 
             // QUERY
-            case .selectCellar:
+            case let .selectCellar(userid):
                 return .run { send in
-                    let url = URL(string: "http://192.168.10.15:5000/select")!
+                    let url = URL(string: "http://192.168.10.15:5000/select?userid=\(userid)")!
                     do {
                         let (data, response) = try await URLSession.shared.data(from: url)
                         if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
@@ -111,7 +112,7 @@ struct TastingNoteFeature {
                 }
                 
             // INSERT
-            case .insertCellar:
+            case let .insertCellar(userid):
                 
                 state.result = "Wine Name: \(state.wineName), Wine Year: \(state.wineYear), Wine Price: \(state.winePrice), Wine Alcohol: \(state.wineAlcohol), Wine Note: \(state.wineNote), Sugar: \(state.wineSugar), Body: \(state.wineBody), Tannin: \(state.wineTannin), pH: \(state.winepH), Type: \(state.wineType), Image: \(state.wineImage)"
                 
@@ -132,7 +133,8 @@ struct TastingNoteFeature {
                         URLQueryItem(name: "wineNote", value: wine.note),
                         URLQueryItem(name: "winepH", value: String(wine.pH)),
                         URLQueryItem(name: "wineAlcohol", value: wine.alcohol),
-                        URLQueryItem(name: "wineImage", value: wine.image)
+                        URLQueryItem(name: "wineImage", value: wine.image),
+                        URLQueryItem(name: "userid", value: userid)
 
                     ]
                     var request = URLRequest(url: components.url!)
@@ -242,17 +244,17 @@ struct TastingNoteFeature {
     
                 
             // insert cellar
-            case let .insertcellarResponse(.success(response)):
-                state.result = response
-                return .none
+            case let .insertcellarResponse(result):
+                switch result {
+                case.success:
+                    state.insertSuccess = true
+                    return .none
+                case.failure:
+                    state.insertSuccess = false
+                    return .none
+                }
                 
-                
-                
-            case let .insertcellarResponse(.failure(error)):
-                state.result = "Error: \(error.localizedDescription)"
-                return .none
-                
-                
+            
                 
             // fetch cellar
             case let .fetchCellarListResponse(.success(cellarList)):

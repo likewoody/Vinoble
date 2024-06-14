@@ -27,6 +27,8 @@
  Date : 2024.06.14 Fri
  Description : finishing up
  - passing on values from detail view
+ - navigation complete 
+ - userid received using UserDefaults
  */
 
 
@@ -43,6 +45,7 @@ struct MyCellarView: View {
     @Bindable var noteStore: StoreOf<TastingNoteFeature>
     @State private var isDeleteConfirmationShown = false
     @State private var deletionIndex: Int?
+    let userid = UserDefaults.standard.string(forKey: "userEmail") ?? "qwe@qwe.qwe"
     
     private func deleteItems(at offsets: IndexSet) {
         isDeleteConfirmationShown = true
@@ -53,7 +56,7 @@ struct MyCellarView: View {
     init(store: StoreOf<ProductFeature>, noteStore: StoreOf<TastingNoteFeature>) {
         self.store = store
         self.noteStore = noteStore
-        self.noteStore.send(.selectCellar)
+        self.noteStore.send(.selectCellar(userid))
     }
     
     var body: some View {
@@ -122,7 +125,7 @@ struct MyCellarView: View {
         }
         .onChange(of: showUpdateTastingNote){ isPresented in
             if !isPresented {
-                noteStore.send(.selectCellar)
+                noteStore.send(.selectCellar(userid))
                 noteStore.state.reset()
             }
         }
