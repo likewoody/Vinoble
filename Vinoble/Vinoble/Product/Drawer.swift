@@ -44,8 +44,9 @@ struct Drawer: View {
                                 
                                 NavigationLink(destination: LoginView()) {
                                     Text("Log Out")
-                                        .
                                 }
+                                .padding(.bottom, 60)
+                                .padding(.leading, 240)
                                 
                             }) // VStack
                             
