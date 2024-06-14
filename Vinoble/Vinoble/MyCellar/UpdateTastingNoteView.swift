@@ -88,6 +88,7 @@ struct UpdateTastingNoteView: View {
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .font(.system(size: 15, design: .serif))
                                 .bold()
+                                .disabled(true)
                             
                             TextField("Wine Year",text: $noteStore.wineYear)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())

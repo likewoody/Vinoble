@@ -10,7 +10,7 @@ import Foundation
 struct Detailproduct: Codable{
     
     var index: Int, year: Int
-    var rating, bodyPercent, tanning, sugar, pH: Double
+    var rating, bodyPercent, tanning, sugar, pH, lat, lng: Double
     var wineImage, name, wineType, winery, region, price, grapeTypes, description, alcohol, food1, food2, food3, food4, food5: String
     var foodname1: String
     var foodname2: String
@@ -18,7 +18,7 @@ struct Detailproduct: Codable{
     var foodname4: String
     var foodname5: String
     
-    init(index: Int, year: Int, rating: Double, bodyPercent: Double, tanning: Double, sugar: Double, pH: Double, wineImage: String, name: String, wineType: String, winery: String, region: String, price: String, grapeTypes: String, description: String, alcohol: String, food1: String, food2: String, food3: String, food4: String, food5: String, foodname1: String, foodname2: String, foodname3: String, foodname4: String, foodname5: String) {
+    init(index: Int, year: Int, rating: Double, bodyPercent: Double, tanning: Double, sugar: Double, pH: Double, lat: Double, lng: Double, wineImage: String, name: String, wineType: String, winery: String, region: String, price: String, grapeTypes: String, description: String, alcohol: String, food1: String, food2: String, food3: String, food4: String, food5: String, foodname1: String, foodname2: String, foodname3: String, foodname4: String, foodname5: String) {
         self.index = index
         self.year = year
         self.rating = rating
@@ -26,6 +26,8 @@ struct Detailproduct: Codable{
         self.tanning = tanning
         self.sugar = sugar
         self.pH = pH
+        self.lat = lat
+        self.lng = lng
         self.wineImage = wineImage
         self.name = name
         self.wineType = wineType
@@ -46,7 +48,6 @@ struct Detailproduct: Codable{
         self.foodname4 = foodname4
         self.foodname5 = foodname5
     }
-        
 }
 
 extension Detailproduct: Hashable{
