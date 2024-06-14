@@ -27,7 +27,7 @@ struct ProductFeature{
         
         
         // products load
-        var lastCount: Int = 6
+//        var lastCount: Int = 6
         
         // wish
         var wishlist: [WishListModel] = []
@@ -37,6 +37,9 @@ struct ProductFeature{
         var offset: CGSize = CGSize()
         var isDrag: Bool = false
         
+//        @Presents var detail: DetailFeature.State?
+        
+//        var path = StackState<DetailFeature.State>()
     }
     
     enum Action: BindableAction{
@@ -51,10 +54,12 @@ struct ProductFeature{
         case dismissPaging
         case likeButtonTapped(Int)
         case sqliteWishList
-        case addPageLoading
+//        case addPageLoading
+
     }
     
     @Dependency(\.dismiss) var dismiss
+//    @Environment(\.presentActions)
     
     var body: some Reducer<State, Action>{
         
@@ -66,13 +71,14 @@ struct ProductFeature{
                 return .none
                 
             case .fetchProducts:
-                let lastCount = state.lastCount
                 let region = state.selectedRegion
                 let wineType = state.selectedWineType
                 
+                print(state.userEmail)
+                
                 return .run { send in
                     
-                    let products = await tryHttpSession(httpURL: "http://192.168.10.15:5000/selectVinoble?lastCount=\(lastCount)&region=\(region)&wineType=\(wineType)")
+                    let products = await tryHttpSession(httpURL: "http://192.168.10.15:5000/selectVinoble?region=\(region)&wineType=\(wineType)")
                     
                     await send(.fetchResponse(products))
                 } // return
@@ -85,12 +91,11 @@ struct ProductFeature{
                 return .none
                 
             case .searchProductTapped:
-                let lastCount = state.lastCount
                 let searchProduct = state.searchProduct
                 
+                
                 return .run { send in
-                    
-                    let products = await tryHttpSession(httpURL: "http://192.168.10.15:5000/searchProduct?lastCount=\(lastCount)&searchProduct=\(searchProduct)")
+                    let products = await tryHttpSession(httpURL: "http://192.168.10.15:5000/searchProduct?searchProduct=\(searchProduct)")
                     
                     await send(.fetchResponse(products))
                 } // return
@@ -142,20 +147,28 @@ struct ProductFeature{
                 
                 if state.wishlist.isEmpty && state.userEmail == "aaa" {
                     // 처음 들어오는 데이터라면 데이터의 갯수만큼 데이터를 넣어준다.
-                    for i in 0..<1082{
+                    for i in 0..<state.products.count{
                         _ = query.insertDB(wishlist: 0)
                         state.likeState[i] = 0
                     }
                 }
+                
+                for i in 0..<state.products.count{
+                    if state.likeState[i] == 1 {
+                        state.likeState[i] = 0
+                    } else {
+                        state.likeState[i] = 1
+                    }
+                }
                 return .none
 
-            case .addPageLoading:
-                state.lastCount += 2
-                state.isLoading = true
-
-                return .run { send in
-                    await send(.fetchProducts)
-                }
+//            case .addPageLoading:
+//                state.lastCount += 2
+//                state.isLoading = true
+//
+//                return .run { send in
+//                    await send(.fetchProducts)
+//                }
             } // Switch
         
         } // Reduce
@@ -181,3 +194,6 @@ struct ProductFeature{
     }
     
 } // ProductFeature
+                              
+                              
+

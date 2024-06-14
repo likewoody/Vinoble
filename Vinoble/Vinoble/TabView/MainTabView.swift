@@ -20,6 +20,7 @@ struct MainTabView: View {
     
     let store: StoreOf<ProductFeature>
     
+    
     // 다른 곳에서도 사용할 수 있게끔 Color를 func으로 만든 것을 불러온다.
     var body: some View {
         
@@ -87,8 +88,9 @@ struct MainTabView: View {
                                         .frame(width: 42, height: 42)
                                         .foregroundStyle(.white)
                                         .overlay {
-                                            NavigationLink(destination: WishListView(store: Store(initialState: ProductFeature.State()){
-                                                ProductFeature()
+                                            NavigationLink(destination:
+                                                RecommendView(store: Store(initialState: RecommendDomain.State()){
+                                                    RecommendDomain()
                                             })) {
                                                 Image("grape")
                                                     .resizable()
