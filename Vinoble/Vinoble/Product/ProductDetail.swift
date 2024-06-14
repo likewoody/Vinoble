@@ -55,7 +55,7 @@ struct ProductDetail: View {
     }
     
     var body: some View{
-        NavigationView {
+        NavigationStack {
 
             // TCA를 사용하니 데이터를 늦게 가져와서 ProgressView()로 처리
             if store.isLoading{
@@ -425,14 +425,14 @@ struct ProductDetail: View {
     
 }
 
-//#Preview {
-//    ProductDetail(
-//        store: Store(initialState:
-//                        DetailFeature.State()){
-//            DetailFeature()
-//        },
-//        noteStore: Store(initialState: TastingNoteFeature.State()) {
-//            TastingNoteFeature()
-//        }
-//    )
-//}
+#Preview {
+    ProductDetail(
+        store: Store(initialState:
+                        DetailFeature.State()){
+            DetailFeature()
+        },
+        noteStore: Store(initialState: TastingNoteFeature.State()) {
+            TastingNoteFeature()
+        }, index: 900
+    )
+}
