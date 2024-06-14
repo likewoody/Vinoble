@@ -115,7 +115,9 @@ struct LoginView: View {
                         MainTabView(store: Store(initialState: ProductFeature.State()){
                             ProductFeature()
                         })
+                        .navigationBarBackButtonHidden(true)
                     }
+                    
                     
                     VStack {
                         Text("Don't have an account yet?")

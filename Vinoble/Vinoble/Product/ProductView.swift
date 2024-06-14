@@ -37,17 +37,6 @@ struct ProductView: View {
     
     @Bindable var store: StoreOf<ProductFeature>
     
-    // MARK: if start view, change navigation title
-//    init(store: StoreOf<ProductFeature>) {
-//        // store 속성을 초기화합니다. 예를 들어, 기본값을 사용하거나 인자를 받을 수 있습니다.
-//        self.store = store
-////        self.userEmail = userEmail
-//
-//        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(.theme), // Title color
-//            .font: UIFont.boldSystemFont(ofSize: 24.0) // Title font size
-//        ]
-//    }
-    
     var body: some View{
         NavigationStack{
             VStack(content: {
@@ -185,16 +174,14 @@ struct ProductView: View {
                             ScrollView {
                                 LazyVGrid(columns: Array(repeating: GridItem(), count: 2), content: {
                                     ForEach(store.products, id:\.index) { product in
-                                        
-                                        
                                         NavigationLink(destination: ProductDetail(
                                             store: Store(initialState: DetailFeature.State()){
                                                 DetailFeature()
                                             },
                                             noteStore: Store(initialState: TastingNoteFeature.State()){
                                                 TastingNoteFeature()
-                                            }
-                                        )) {
+                                            }, index: product.index)
+                                        ) {
                                             VStack(content: {
                                                 RoundedRectangle(cornerRadius: 20)
                                                     .id(product.index)
@@ -203,17 +190,11 @@ struct ProductView: View {
                                                     .padding(.top, 30)
                                                     .overlay {
                                                         ZStack {
-                                                            
                                                             let url = URL(string: product.wineImage)
-                                                            Button {
-                                                                UserDefaults.standard.set(product.index, forKey: "index")
-                                                                UserDefaults.standard.integer(forKey: "index")
-                                                            } label: {
-                                                                WebImage(url: url)
-                                                                    .resizable()
-                                                                    .frame(width: 50, height: 200)
-                                                                    .padding(.bottom, 50)
-                                                            } // Button
+                                                            WebImage(url: url)
+                                                                .resizable()
+                                                                .frame(width: 50, height: 200)
+                                                                .padding(.bottom, 50)
                                                             
                                                             Button {
                                                                 // action
@@ -229,22 +210,14 @@ struct ProductView: View {
                                                                 }
                                                             } // Button
                                                             .offset(x: 40, y: 70)
-
                                                         } // ZStack
-                                                            
                                                     } // overlay
                                                     .padding(.bottom, 5)
-                                                    
-    
-    
+                                                
                                                 Text(product.name)
                                                     .foregroundStyle(.black)
                                                     .padding(.bottom, 30)
-    
                                             }) // VStack
-
-                                            
-//                                            .backgroundColor
 //                                            .gesture(
 //                                                DragGesture(minimumDistance: 0, coordinateSpace: .global)
 //                                                    .onChanged({ gesture in
@@ -259,12 +232,7 @@ struct ProductView: View {
 //                                            ) // gesture
 
                                         } // NavigationLink
-//                                        .onSubmit() {
-//                                            UserDefaults.standard.set(product.index, forKey: "index")
-//                                            let index = UserDefaults.standard.integer(forKey: "index")
-//                                            
-//                                            print(index)
-//                                        }
+
                                         
                                     } // ForEach
     
@@ -296,16 +264,16 @@ struct ProductView: View {
                                 
                                     
                             ) // overlay
-                            .onChange(of: store.lastCount) {
-                                if store.lastCount > 6 {
-                                    withAnimation(.default) {
-                                        print("get in ")
-                                        // ScrollViewReader의 proxyReader을 넣어줌
-                                        proxy.scrollTo(store.lastCount, anchor: .bottom)
-                                    }
-                                }
-                                print(store.lastCount)
-                            }
+//                            .onChange(of: store.lastCount) {
+//                                if store.lastCount > 6 {
+//                                    withAnimation(.default) {
+//                                        print("get in ")
+//                                        // ScrollViewReader의 proxyReader을 넣어줌
+//                                        proxy.scrollTo(store.lastCount, anchor: .bottom)
+//                                    }
+//                                }
+//                                print(store.lastCount)
+//                            }
                             
     
                         }) // ScrollViewReader
@@ -316,25 +284,8 @@ struct ProductView: View {
 
             }) // VStack
             .animation(.easeIn(duration: 0.1))
-//            .navigationTitle("VINOBLE")
-//            .navigationBarTitleDisplayMode(.inline)
-//            .toolbar(content: {
-//                ToolbarItem(placement: .topBarTrailing) {
-//                    Button(action: {
-//                        // button action
-//                        store.showDrawer.toggle()
-//
-//                    }, label: {
-//                        Image(systemName: "person.circle")
-//                    })
-//                    .foregroundStyle(.gray)
-//                    // forground 적용하기 위해서 분리해서 사용
-//                }
-//                
-//            }) // toolbar
             
         } // NavigationStack
-        .navigationBarBackButtonHidden(true)
         .onAppear(perform: {
             store.send(.fetchProducts)
         })

@@ -44,6 +44,7 @@ struct Drawer: View {
                                 
                                 NavigationLink(destination: LoginView()) {
                                     Text("Log Out")
+                                        .
                                 }
                                 
                             }) // VStack

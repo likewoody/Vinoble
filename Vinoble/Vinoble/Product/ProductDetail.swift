@@ -30,6 +30,7 @@ struct ProductDetail: View {
     
     @Bindable var store: StoreOf<DetailFeature>
     let noteStore: StoreOf<TastingNoteFeature>
+    let index: Int
     
 //    // 다른 곳에서도 사용할 수 있게끔 Color를 func으로 만든 것을 불러온다.
 //    let shareColor = ShareColor(store: Store(initialState: ProductFeature.State()){
@@ -37,10 +38,11 @@ struct ProductDetail: View {
 //    })
 
     // MARK: if start view, change navigation title
-    init(store: StoreOf<DetailFeature>, noteStore: StoreOf<TastingNoteFeature>) {
+    init(store: StoreOf<DetailFeature>, noteStore: StoreOf<TastingNoteFeature>, index: Int) {
         // store 속성을 초기화합니다. 예를 들어, 기본값을 사용하거나 인자를 받을 수 있습니다.
         self.store = store
         self.noteStore = noteStore
+        self.index = index
 
 //        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: shareColor.initColorWithAlpha(), // Title color
 //                                                            
@@ -393,8 +395,7 @@ struct ProductDetail: View {
             }
         } // NavigationView
         .onAppear(perform: {
-            UserDefaults.standard.set(400, forKey: "index") // session 설정하기
-            store.send(.fetchDetailProducts)
+            store.send(.fetchDetailProducts(index))
         })
 
         
@@ -424,14 +425,14 @@ struct ProductDetail: View {
     
 }
 
-#Preview {
-    ProductDetail(
-        store: Store(initialState:
-                        DetailFeature.State()){
-            DetailFeature()
-        },
-        noteStore: Store(initialState: TastingNoteFeature.State()) {
-            TastingNoteFeature()
-        }
-    )
-}
+//#Preview {
+//    ProductDetail(
+//        store: Store(initialState:
+//                        DetailFeature.State()){
+//            DetailFeature()
+//        },
+//        noteStore: Store(initialState: TastingNoteFeature.State()) {
+//            TastingNoteFeature()
+//        }
+//    )
+//}

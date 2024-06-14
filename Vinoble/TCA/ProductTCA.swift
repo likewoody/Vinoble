@@ -27,7 +27,7 @@ struct ProductFeature{
         
         
         // products load
-        var lastCount: Int = 6
+//        var lastCount: Int = 6
         
         // wish
         var wishlist: [WishListModel] = []
@@ -36,6 +36,8 @@ struct ProductFeature{
         // drag
         var offset: CGSize = CGSize()
         var isDrag: Bool = false
+        
+//        @Presents var detail: DetailFeature.State?
         
 //        var path = StackState<DetailFeature.State>()
     }
@@ -52,11 +54,8 @@ struct ProductFeature{
         case dismissPaging
         case likeButtonTapped(Int)
         case sqliteWishList
-        case addPageLoading
-        
+//        case addPageLoading
 
-        // for test
-//        case path(StackAction<DetailFeature.State, DetailFeature.Action>)
     }
     
     @Dependency(\.dismiss) var dismiss
@@ -72,14 +71,14 @@ struct ProductFeature{
                 return .none
                 
             case .fetchProducts:
-                let lastCount = state.lastCount
                 let region = state.selectedRegion
                 let wineType = state.selectedWineType
-                state.userEmail = UserDefaults.standard.string(forKey: "userEmail") ?? ""
+                
+                print(state.userEmail)
                 
                 return .run { send in
                     
-                    let products = await tryHttpSession(httpURL: "http://192.168.10.15:5000/selectVinoble?lastCount=\(lastCount)&region=\(region)&wineType=\(wineType)")
+                    let products = await tryHttpSession(httpURL: "http://192.168.10.15:5000/selectVinoble?region=\(region)&wineType=\(wineType)")
                     
                     await send(.fetchResponse(products))
                 } // return
@@ -92,13 +91,11 @@ struct ProductFeature{
                 return .none
                 
             case .searchProductTapped:
-                let lastCount = 0
-                state.lastCount = 6
                 let searchProduct = state.searchProduct
                 
                 
                 return .run { send in
-                    let products = await tryHttpSession(httpURL: "http://192.168.10.15:5000/searchProduct?lastCount=\(lastCount)&searchProduct=\(searchProduct)")
+                    let products = await tryHttpSession(httpURL: "http://192.168.10.15:5000/searchProduct?searchProduct=\(searchProduct)")
                     
                     await send(.fetchResponse(products))
                 } // return
@@ -165,26 +162,13 @@ struct ProductFeature{
                 }
                 return .none
 
-            case .addPageLoading:
-                state.lastCount += 2
-                state.isLoading = true
-
-                return .run { send in
-                    await send(.fetchProducts)
-                }
-                
-            // as navigaion link
-//            case let .path(action):
-//                case .element(action:
-////                    .(.moveToNextButtonDidTap)):
-////                    state.path.append(.captureImageScene())
-//                    return .none
-//                case .element(id: _, action: .captureImage(.recognizeDidEnd(let data))):
-//                    state.path.append(.listOfRecognizedMedicinesScene(.init(dataPassed: data)))
-//                    return .none
-//                   default:
-//                     return .none
-            
+//            case .addPageLoading:
+//                state.lastCount += 2
+//                state.isLoading = true
+//
+//                return .run { send in
+//                    await send(.fetchProducts)
+//                }
             } // Switch
         
         } // Reduce
@@ -212,29 +196,4 @@ struct ProductFeature{
 } // ProductFeature
                               
                               
-//extension ProductFeature {
-//  @Reducer
-//  struct Path {
-//      @ObservableState
-//      enum State: Equatable {
-//          case registerNewMedicationScene(RegisterNewMedicationReducer.State = .init())
-//          case captureImageScene(CaptureMedicinesReducer.State = .init())
-//      }
-//  
-//      enum Action {
-//          case registerNewMedication(RegisterNewMedicationReducer.Action)
-//          case captureImage(CaptureMedicinesReducer.Action)
-//          ...
-//         }
-//  
-//      var body: some ReducerOf<Self> {
-//          Scope(state: \.registerNewMedicationScene, action: \.registerNewMedication) {
-//              RegisterNewMedicationReducer()
-//          }
-//          Scope(state: \.captureImageScene, action: \.captureImage) {
-//              CaptureMedicinesReducer()
-//          }
-//          ...
-//      }
-//  }
-//}
+
