@@ -21,67 +21,99 @@
  Date : 2024.06.13 Thurs
  Description : CRUD function implementation day 3
  - insert function complete
-
+ 
+ Author : Diana
+ Date : 2024.06.13 Fri
+ Description : finishing up
+ - passing on values from detail view
  */
+
 
 import SwiftUI
 import ComposableArchitecture
+import SDWebImageSwiftUI
 
 struct TastingNoteView: View {
-
     @State var selectedImage: UIImage?
     @State var isShowingImagePicker = false
-    @Bindable var noteStore: StoreOf<TastingNoteFeature>
-    let store: StoreOf<ProductFeature>
-    
-    // init
-    init(store: StoreOf<ProductFeature>, noteStore: StoreOf<TastingNoteFeature>) {
-        self.noteStore = noteStore
-        self.store = store
-    }
 
+    // Receive the wine details
+    let wineName: String
+    let wineYear: String
+    let winePrice: String
+    let wineType: String
+    let wineSugar: Double
+    let wineBody: Double
+    let wineTannin: Double
+    let winepH: Double
+    let wineAlcohol: String
+    let wineImage: String
+
+    // Use @Bindable to make the noteStore mutable
+    @Bindable var noteStore: StoreOf<TastingNoteFeature>
+
+    // init
+    init(noteStore: StoreOf<TastingNoteFeature>, wineName: String, wineYear: String, winePrice: String, wineType: String, wineSugar: Double, wineBody: Double, wineTannin: Double, winepH: Double, wineAlcohol: String, wineImage: String) {
+        self.noteStore = noteStore
+        self.wineName = wineName
+        self.wineYear = wineYear
+        self.winePrice = winePrice
+        self.wineType = wineType
+        self.wineSugar = wineSugar
+        self.wineBody = wineBody
+        self.wineTannin = wineTannin
+        self.winepH = winepH
+        self.wineAlcohol = wineAlcohol
+        self.wineImage = wineImage
+
+        // Update the noteStore values IMMEDIATELY in the init() method
+        self.noteStore.wineName = wineName
+        self.noteStore.wineYear = wineYear
+        self.noteStore.winePrice = winePrice
+        self.noteStore.wineType = wineType
+        self.noteStore.wineSugar = wineSugar
+        self.noteStore.wineBody = wineBody
+        self.noteStore.wineTannin = wineTannin
+        self.noteStore.winepH = winepH
+        self.noteStore.wineAlcohol = wineAlcohol
+        self.noteStore.wineImage = wineImage
+    }
+    
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack {
                     HStack(alignment: .top, spacing: 20) {
                         VStack(alignment: .leading, spacing: 10) {
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(Color.gray.opacity(0.3))
-                                .frame(width: 130, height: 205)
+                            RoundedRectangle(cornerRadius:10)
+                                .fill(Color.gray.opacity(0))
+                                .frame(width: 110, height: 215)
                                 .overlay {
-                                    if let selectedImage {
-                                        Image(uiImage: selectedImage)
-                                            .resizable()
-                                            .scaledToFill()
-                                            .frame(width: 130, height: 160)
-                                            .cornerRadius(10)
-                                    } else {
-                                        Image(systemName: "photo")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(width: 50, height: 50)
-                                            .foregroundColor(.gray)
-                                    }
-                                    
+                                    WebImage(url: URL(string: noteStore.wineImage))
+                                        .resizable()
+                                        .indicator(.activity)
+                                        .scaledToFill()
+                                        .frame(width: 60, height: 60)
                                 }
                                 .onTapGesture {
                                     isShowingImagePicker = true
                                 }
                             
-                            Button(action: {
-                                isShowingImagePicker = true
-                            }) {
-                                Text("Choose Image")
-                                    .font(.system(size: 15, design: .serif))
-                                    .foregroundColor(.white)
-                                    .padding(.horizontal, 16)
-                                    .padding(.vertical, 8)
-                                    .background(.gray)
-                                    .bold()
-                                    .cornerRadius(10)
-                            }
-                            .disabled(true)
+//                            Button(action: {
+//                                isShowingImagePicker = true
+//                            }) {
+//                                Text("Choose Image")
+//                                    .font(.system(size: 15, design: .serif))
+//                                    .foregroundColor(.white)
+//                                    .padding(.horizontal, 16)
+//                                    .padding(.vertical, 8)
+//                                    .background(.gray)
+//                                    .bold()
+//                                    .cornerRadius(10)
+//                            }
+//                            .disabled(true)
+                            
+                            
                         }
                         
                         // Info TextField (Name, Price, Type)
@@ -89,6 +121,7 @@ struct TastingNoteView: View {
                             TextField("Wine Name", text: $noteStore.wineName)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .font(.system(size: 15, design: .serif))
+                                .bold()
                             
                             TextField("Wine Year", text: $noteStore.wineYear)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -104,14 +137,14 @@ struct TastingNoteView: View {
                             
                             HStack {
                                 Picker("Wine Type", selection: $noteStore.wineType) {
-                                    Text("Red").tag("Red")
-                                    Text("White").tag("White")
+                                    Text("Red").tag("red")
+                                    Text("White").tag("white")
                                     
                                 }
                                 .pickerStyle(SegmentedPickerStyle())
-                                .frame(width: 190)
+                                .frame(width: 220)
                                 .background(
-                                    Color(noteStore.wineType == "Red" ? .theme : .white)
+                                    Color(noteStore.wineType == "red" ? .theme : .white)
                                         .opacity(0.1)
                                         .cornerRadius(8)
                                 )
@@ -120,7 +153,7 @@ struct TastingNoteView: View {
                         }
                     }
                     .padding(.horizontal, 20)
-                    .padding(.top, 20)
+                    .padding(.top, 35)
                     
                     // Sliders (Sugar, Body, Tannin)
                     VStack(alignment: .leading, spacing: 13) {
@@ -140,7 +173,7 @@ struct TastingNoteView: View {
                             .bold()
                         TextEditor(text: $noteStore.wineNote)
                             .frame(minHeight: 150)
-                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray.opacity(0.3)))
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.theme.opacity(0.5)))
                         HStack {
                             Spacer()
                             Button(action: {
@@ -163,7 +196,6 @@ struct TastingNoteView: View {
                     .padding(.horizontal, 20)
                     .padding(.top, 10)
                     .padding(.bottom, 20)
-                    
                 }
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
@@ -179,8 +211,6 @@ struct TastingNoteView: View {
         } // navigation view
     } // body
 } // tastingnote view
-
-
 
 // Slider Function + design
 struct SliderField: View {
@@ -198,10 +228,22 @@ struct SliderField: View {
     }
 }
 
+// Preview with sample data
 #Preview {
-    TastingNoteView(store: Store(initialState: ProductFeature.State()) {
-        ProductFeature()
-    }, noteStore: Store(initialState: TastingNoteFeature.State(seq : 1)) {
-        TastingNoteFeature()
-    })
+    TastingNoteView(
+        noteStore: Store(
+            initialState: TastingNoteFeature.State(seq: 1),
+            reducer: { TastingNoteFeature() }
+        ),
+        wineName: "Example Wine",
+        wineYear: "2020",
+        winePrice: "$25.99",
+        wineType: "red",
+        wineSugar: 50.0,
+        wineBody: 60.0,
+        wineTannin: 40.0,
+        winepH: 3.5,
+        wineAlcohol: "13.5%",
+        wineImage: "https://images.vivino.com/thumbs/BrbHdEB8TqK2N61pvLoQeQ_pb_x600.png"
+    )
 }

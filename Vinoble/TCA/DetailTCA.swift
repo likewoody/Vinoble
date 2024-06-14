@@ -23,7 +23,7 @@ struct DetailFeature {
         var isLoading: Bool = true
         
         var foodArray = [["",""]]
-        
+
     }
     
     enum Action: BindableAction{
@@ -42,8 +42,13 @@ struct DetailFeature {
                 return .none
                 
             case .fetchDetailProducts:
+                
+//                let index = 1000
+                let index = UserDefaults.standard.integer(forKey: "index")  // session 받아오기
+                
                 return .run { send in
-                    let detailProduct = await tryHttpSession(httpURL: "http://127.0.0.1:5000/detailview")
+                    let detailProduct = await tryHttpSession(httpURL: "http://192.168.10.15:5000/detailview?index=\(index)")
+//                    let detailProduct = await tryHttpSession(httpURL: "http://127.0.0.1:5000/detailview?index=\(index)")
                     await send(.fetchResponse(detailProduct))
                 }
                 

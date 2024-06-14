@@ -23,6 +23,9 @@
  - update function complete
  - calling image from cellarlist complete
  
+ Author : Diana
+ Date : 2024.06.13 Fri
+ Description : finishing up
  */
 
 import SwiftUI
@@ -60,7 +63,6 @@ struct UpdateTastingNoteView: View {
                                         .indicator(.activity)
                                         .scaledToFill()
                                         .frame(width: 60, height: 60)
-//                                        .cornerRadius(20)
                                 }
                                 .onTapGesture {
                                     isShowingImagePicker = true
@@ -85,6 +87,7 @@ struct UpdateTastingNoteView: View {
                             TextField("Wine Name",text: $noteStore.wineName)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .font(.system(size: 15, design: .serif))
+                                .bold()
                             
                             TextField("Wine Year",text: $noteStore.wineYear)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -100,14 +103,14 @@ struct UpdateTastingNoteView: View {
                             
                             HStack {
                                 Picker("Wine Type", selection: $noteStore.wineType) {
-                                    Text("Red").tag("Red")
-                                    Text("White").tag("White")
+                                    Text("Red").tag("red")
+                                    Text("White").tag("white")
                                     
                                 }
                                 .pickerStyle(SegmentedPickerStyle())
-                                .frame(width: 190)
+                                .frame(width: 200)
                                 .background(
-                                    Color(noteStore.wineType == "Red" ? .theme : .white)
+                                    Color(noteStore.wineType == "red" ? .theme : .white)
                                         .opacity(0.1)
                                         .cornerRadius(8)
                                 )
@@ -115,7 +118,7 @@ struct UpdateTastingNoteView: View {
                         }
                     }
                     .padding(.horizontal, 20)
-                    .padding(.top, 20)
+                    .padding(.top, 30)
                     
                     // Sliders (Sugar, Body, Tannin)
                     VStack(alignment: .leading, spacing: 13) {
@@ -134,7 +137,7 @@ struct UpdateTastingNoteView: View {
                             .bold()
                         TextEditor(text: $noteStore.wineNote)
                             .frame(minHeight: 150)
-                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray.opacity(0.3)))
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.theme.opacity(0.5)))
                         HStack {
                             Spacer()
                             Button(action: {
