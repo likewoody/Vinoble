@@ -38,18 +38,39 @@ struct ProductView: View {
     @Bindable var store: StoreOf<ProductFeature>
     
     // MARK: if start view, change navigation title
-    init(store: StoreOf<ProductFeature>) {
-        // store 속성을 초기화합니다. 예를 들어, 기본값을 사용하거나 인자를 받을 수 있습니다.
-        self.store = store
-
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(.theme), // Title color
-            .font: UIFont.boldSystemFont(ofSize: 24.0) // Title font size
-        ]
-    }
+//    init(store: StoreOf<ProductFeature>) {
+//        // store 속성을 초기화합니다. 예를 들어, 기본값을 사용하거나 인자를 받을 수 있습니다.
+//        self.store = store
+////        self.userEmail = userEmail
+//
+//        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(.theme), // Title color
+//            .font: UIFont.boldSystemFont(ofSize: 24.0) // Title font size
+//        ]
+//    }
     
     var body: some View{
         NavigationStack{
             VStack(content: {
+                HStack {
+                    Spacer(minLength: 150)
+                    Text("VINOBLE")
+                        .bold()
+                        .foregroundStyle(.theme)
+                    
+                    Spacer()
+                    Button(action: {
+                        // button action
+                        store.showDrawer.toggle()
+
+                    }, label: {
+                        Image(systemName: "person.circle")
+                    })
+                    .foregroundStyle(.gray)
+                    .padding(.trailing, 30)
+                    // forground 적용하기 위해서 분리해서 사용
+                }
+                .font(.system(size: 24))
+                
                 if store.showDrawer{
                     Drawer(store: store)
                 } else {
@@ -165,7 +186,15 @@ struct ProductView: View {
                                 LazyVGrid(columns: Array(repeating: GridItem(), count: 2), content: {
                                     ForEach(store.products, id:\.index) { product in
                                         
-                                        NavigationLink(destination: MainView()) {
+                                        
+                                        NavigationLink(destination: ProductDetail(
+                                            store: Store(initialState: DetailFeature.State()){
+                                                DetailFeature()
+                                            },
+                                            noteStore: Store(initialState: TastingNoteFeature.State()){
+                                                TastingNoteFeature()
+                                            }
+                                        )) {
                                             VStack(content: {
                                                 RoundedRectangle(cornerRadius: 20)
                                                     .id(product.index)
@@ -174,31 +203,38 @@ struct ProductView: View {
                                                     .padding(.top, 30)
                                                     .overlay {
                                                         ZStack {
+                                                            
                                                             let url = URL(string: product.wineImage)
-                                                            WebImage(url: url)
-                                                                .resizable()
-                                                                .frame(width: 50, height: 200)
-                                                                .padding(.bottom, 50)
+                                                            Button {
+                                                                UserDefaults.standard.set(product.index, forKey: "index")
+                                                                UserDefaults.standard.integer(forKey: "index")
+                                                            } label: {
+                                                                WebImage(url: url)
+                                                                    .resizable()
+                                                                    .frame(width: 50, height: 200)
+                                                                    .padding(.bottom, 50)
+                                                            } // Button
                                                             
                                                             Button {
                                                                 // action
                                                                 store.send(.likeButtonTapped(product.index))
-                                                                
                                                             } label: {
                                                                 ZStack {
+                                                                    Circle()
+                                                                        .foregroundColor(.clear)
+                                                                        .frame(width: 40, height: 40)
                                                                     Image(systemName: store.likeState[product.index] == 1 ? "heart.fill" : "heart")
+                                                                        .foregroundColor(.theme)
+                                                                        .font(.system(size: 24))
                                                                 }
-                                                                .font(.system(size: 24))
-                                                                .position(x:100, y:190)
-                                                                .foregroundStyle(.theme)
-                                                                
-                                                            } // label
-
+                                                            } // Button
+                                                            .offset(x: 40, y: 70)
 
                                                         } // ZStack
                                                             
                                                     } // overlay
                                                     .padding(.bottom, 5)
+                                                    
     
     
                                                 Text(product.name)
@@ -206,21 +242,30 @@ struct ProductView: View {
                                                     .padding(.bottom, 30)
     
                                             }) // VStack
-                                            .gesture(
-                                                DragGesture(minimumDistance: 0, coordinateSpace: .global)
-                                                    .onChanged({ gesture in
-                                                        store.offset = gesture.translation
-                                                    })
-                                                    .onEnded({ gesture in
-                                                        if gesture.translation.height < -50 {
-                                                            store.send(.addPageLoading)
-                                                            
-                                                        }
-                                                    })
-                                            ) // gesture
-    
-                                        } // Link
-    
+
+                                            
+//                                            .backgroundColor
+//                                            .gesture(
+//                                                DragGesture(minimumDistance: 0, coordinateSpace: .global)
+//                                                    .onChanged({ gesture in
+//                                                        store.offset = gesture.translation
+//                                                    })
+//                                                    .onEnded({ gesture in
+//                                                        if gesture.translation.height < -50 {
+//                                                            store.send(.addPageLoading)
+//                                                            
+//                                                        }
+//                                                    })
+//                                            ) // gesture
+
+                                        } // NavigationLink
+//                                        .onSubmit() {
+//                                            UserDefaults.standard.set(product.index, forKey: "index")
+//                                            let index = UserDefaults.standard.integer(forKey: "index")
+//                                            
+//                                            print(index)
+//                                        }
+                                        
                                     } // ForEach
     
                                 }) // Lazy V Grid
@@ -270,27 +315,26 @@ struct ProductView: View {
                 }
 
             }) // VStack
-            .navigationTitle("VINOBLE")
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarBackButtonHidden(true)
-            .toolbar(content: {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button(action: {
-                        // button action
-                        store.showDrawer.toggle()
-
-                    }, label: {
-                        Image(systemName: "person.circle")
-                    })
-                    .foregroundStyle(.gray)
-                    // forground 적용하기 위해서 분리해서 사용
-                }
-                
-            }) // toolbar
             .animation(.easeIn(duration: 0.1))
+//            .navigationTitle("VINOBLE")
+//            .navigationBarTitleDisplayMode(.inline)
+//            .toolbar(content: {
+//                ToolbarItem(placement: .topBarTrailing) {
+//                    Button(action: {
+//                        // button action
+//                        store.showDrawer.toggle()
+//
+//                    }, label: {
+//                        Image(systemName: "person.circle")
+//                    })
+//                    .foregroundStyle(.gray)
+//                    // forground 적용하기 위해서 분리해서 사용
+//                }
+//                
+//            }) // toolbar
             
-            
-        } // NavigationView
+        } // NavigationStack
+        .navigationBarBackButtonHidden(true)
         .onAppear(perform: {
             store.send(.fetchProducts)
         })

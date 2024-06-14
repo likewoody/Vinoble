@@ -43,7 +43,7 @@ struct DetailFeature {
                 
             case .fetchDetailProducts:
                 return .run { send in
-                    let detailProduct = await tryHttpSession(httpURL: "http://127.0.0.1:5000/detailview")
+                    let detailProduct = await tryHttpSession(httpURL: "http://192.168.10.15:5000/detailview")
                     await send(.fetchResponse(detailProduct))
                 }
                 

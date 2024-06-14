@@ -37,6 +37,7 @@ struct ProductFeature{
         var offset: CGSize = CGSize()
         var isDrag: Bool = false
         
+//        var path = StackState<DetailFeature.State>()
     }
     
     enum Action: BindableAction{
@@ -52,9 +53,14 @@ struct ProductFeature{
         case likeButtonTapped(Int)
         case sqliteWishList
         case addPageLoading
+        
+
+        // for test
+//        case path(StackAction<DetailFeature.State, DetailFeature.Action>)
     }
     
     @Dependency(\.dismiss) var dismiss
+//    @Environment(\.presentActions)
     
     var body: some Reducer<State, Action>{
         
@@ -69,6 +75,7 @@ struct ProductFeature{
                 let lastCount = state.lastCount
                 let region = state.selectedRegion
                 let wineType = state.selectedWineType
+                state.userEmail = UserDefaults.standard.string(forKey: "userEmail") ?? ""
                 
                 return .run { send in
                     
@@ -85,11 +92,12 @@ struct ProductFeature{
                 return .none
                 
             case .searchProductTapped:
-                let lastCount = state.lastCount
+                let lastCount = 0
+                state.lastCount = 6
                 let searchProduct = state.searchProduct
                 
+                
                 return .run { send in
-                    
                     let products = await tryHttpSession(httpURL: "http://192.168.10.15:5000/searchProduct?lastCount=\(lastCount)&searchProduct=\(searchProduct)")
                     
                     await send(.fetchResponse(products))
@@ -142,9 +150,17 @@ struct ProductFeature{
                 
                 if state.wishlist.isEmpty && state.userEmail == "aaa" {
                     // 처음 들어오는 데이터라면 데이터의 갯수만큼 데이터를 넣어준다.
-                    for i in 0..<1082{
+                    for i in 0..<state.products.count{
                         _ = query.insertDB(wishlist: 0)
                         state.likeState[i] = 0
+                    }
+                }
+                
+                for i in 0..<state.products.count{
+                    if state.likeState[i] == 1 {
+                        state.likeState[i] = 0
+                    } else {
+                        state.likeState[i] = 1
                     }
                 }
                 return .none
@@ -156,6 +172,19 @@ struct ProductFeature{
                 return .run { send in
                     await send(.fetchProducts)
                 }
+                
+            // as navigaion link
+//            case let .path(action):
+//                case .element(action:
+////                    .(.moveToNextButtonDidTap)):
+////                    state.path.append(.captureImageScene())
+//                    return .none
+//                case .element(id: _, action: .captureImage(.recognizeDidEnd(let data))):
+//                    state.path.append(.listOfRecognizedMedicinesScene(.init(dataPassed: data)))
+//                    return .none
+//                   default:
+//                     return .none
+            
             } // Switch
         
         } // Reduce
@@ -181,3 +210,31 @@ struct ProductFeature{
     }
     
 } // ProductFeature
+                              
+                              
+//extension ProductFeature {
+//  @Reducer
+//  struct Path {
+//      @ObservableState
+//      enum State: Equatable {
+//          case registerNewMedicationScene(RegisterNewMedicationReducer.State = .init())
+//          case captureImageScene(CaptureMedicinesReducer.State = .init())
+//      }
+//  
+//      enum Action {
+//          case registerNewMedication(RegisterNewMedicationReducer.Action)
+//          case captureImage(CaptureMedicinesReducer.Action)
+//          ...
+//         }
+//  
+//      var body: some ReducerOf<Self> {
+//          Scope(state: \.registerNewMedicationScene, action: \.registerNewMedication) {
+//              RegisterNewMedicationReducer()
+//          }
+//          Scope(state: \.captureImageScene, action: \.captureImage) {
+//              CaptureMedicinesReducer()
+//          }
+//          ...
+//      }
+//  }
+//}
