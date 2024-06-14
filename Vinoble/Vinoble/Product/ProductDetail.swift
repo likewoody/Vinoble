@@ -304,93 +304,58 @@ struct ProductDetail: View {
                             }
                            
                             if store.selectedWineInfo == 2 {
-                                HStack(content: {
-
-                                    Spacer()
-                                    
-                                    Image(systemName: "bolt.shield")
-                                                            
-                                    Text("Winery")
-                                    
-                                    Spacer()
-                                    
-                                    Text(store.detailProduct[0].winery)
-                                        
-                                    Spacer()
-                                })
-                                
+                                VStack(spacing: 10) {
+                                    HStack(content: {
+                                        Image(systemName: "bolt.shield")
+                                        Text("Winery")
+                                        Spacer()
+                                        Text(store.detailProduct[0].winery)
+                                        Spacer()
+                                    })
+                                }
                                 Divider()
                                     .background(Color(.black))
                                 
                                 HStack(content: {
-                                    Spacer()
-                                    
                                     Image(systemName: "wineglass")
-                                    
                                     Text("Grapes")
-                                    
                                     Spacer()
-                                    
                                     Text(store.detailProduct[0].grapeTypes)
-                                        
                                     Spacer()
                                 })
-                                
                                 Divider()
                                     .background(Color(.black))
                                 
                                 HStack(content: {
-                                    Spacer()
-                                    
                                     Image(systemName: "location")
-                                    
                                     Text("Region")
-                                    
                                     Spacer()
-                                    
                                     Text(store.detailProduct[0].region)
-                                        
                                     Spacer()
                                 })
-                                
                                 Divider()
                                     .background(Color(.black))
                                 
                                 HStack(content: {
-                                    Spacer()
-                                    
                                     Image(systemName: "flame")
-                                    
                                     Text("Wine Type")
-                                    
                                     Spacer()
-                                    
                                     Text(store.detailProduct[0].wineType)
-                                        
                                     Spacer()
                                 })
-                                
                                 Divider()
                                     .background(Color(.black))
                                 
                                 HStack(content: {
-                                    Spacer()
-                                    
                                     Image(systemName: "eyes")
-                                    
                                     Text("Allergens")
-                                    
                                     Spacer()
-                                    
                                     Text("Contains sulfites")
-                                        
                                     Spacer()
                                 })
-                                
                                 Divider()
                                     .background(Color(.black))
                             }
-
                             
                             Text("ABOUT WINERY")
                                 .bold()
@@ -428,6 +393,7 @@ struct ProductDetail: View {
             }
         } // NavigationView
         .onAppear(perform: {
+            UserDefaults.standard.set(400, forKey: "index") // session 설정하기
             store.send(.fetchDetailProducts)
         })
 
