@@ -23,6 +23,9 @@
  - update function complete
  - calling image from cellarlist complete
  
+ Author : Diana
+ Date : 2024.06.13 Fri
+ Description : finishing up
  */
 
 import SwiftUI
@@ -100,14 +103,14 @@ struct UpdateTastingNoteView: View {
                             
                             HStack {
                                 Picker("Wine Type", selection: $noteStore.wineType) {
-                                    Text("Red").tag("Red")
-                                    Text("White").tag("White")
+                                    Text("Red").tag("red")
+                                    Text("White").tag("white")
                                     
                                 }
                                 .pickerStyle(SegmentedPickerStyle())
-                                .frame(width: 190)
+                                .frame(width: 200)
                                 .background(
-                                    Color(noteStore.wineType == "Red" ? .theme : .white)
+                                    Color(noteStore.wineType == "red" ? .theme : .white)
                                         .opacity(0.1)
                                         .cornerRadius(8)
                                 )
@@ -115,7 +118,7 @@ struct UpdateTastingNoteView: View {
                         }
                     }
                     .padding(.horizontal, 20)
-                    .padding(.top, 20)
+                    .padding(.top, 30)
                     
                     // Sliders (Sugar, Body, Tannin)
                     VStack(alignment: .leading, spacing: 13) {

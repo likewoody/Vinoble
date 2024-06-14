@@ -15,7 +15,10 @@
  Author : Diana
  Date : 2024.06.13 Thurs
  Description : .update function complete
-
+ 
+ Author : Diana
+ Date : 2024.06.14 Fri
+ Description : finishing up 
  */
 
 import ComposableArchitecture
@@ -93,9 +96,11 @@ struct TastingNoteFeature {
                         if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
                             let cellarList = try JSONDecoder().decode([Wine].self, from: data)
                             await send(.fetchCellarListResponse(.success(cellarList)))
+                            print(cellarList)
                         } else {
                             let error = NSError(domain: "", code: (response as? HTTPURLResponse)?.statusCode ?? 500, userInfo: nil)
                             await send(.fetchCellarListResponse(.failure(error)))
+                            print(error)
                         }
                     } catch {
                         let error = NSError(domain: "", code: 500, userInfo: [NSLocalizedDescriptionKey: error.localizedDescription])
@@ -112,7 +117,7 @@ struct TastingNoteFeature {
                 
                 print(state.result)
                 
-                let wine = Wine( wineindex: state.seq, name: state.wineName, year: state.wineYear, price: state.winePrice, sugar: state.wineSugar, body: state.wineBody, tannin: state.wineTannin, type: state.wineType, note: state.wineNote, pH: state.winepH, alcohol: state.wineAlcohol, image: state.wineImage)
+                let wine = Wine(wineindex: state.seq, name: state.wineName, year: state.wineYear, price: state.winePrice, sugar: state.wineSugar, body: state.wineBody, tannin: state.wineTannin, type: state.wineType, note: state.wineNote, pH: state.winepH, alcohol: state.wineAlcohol, image: state.wineImage)
                 
                 return .run { send in
                     var components = URLComponents(string: "http://192.168.10.15:5000/insert")!
