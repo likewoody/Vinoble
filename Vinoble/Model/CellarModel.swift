@@ -5,13 +5,6 @@
 //  Created by Diana Kim on 6/12/24.
 //
 
-/*
- Author : Diana
- Date : 2024.06.12 Wed
- Description: Cellar Model
-*/
-
-
 import Foundation
 struct Wine: Codable, Hashable {
     let wineindex: Int
@@ -20,8 +13,9 @@ struct Wine: Codable, Hashable {
     let type, note: String
     let pH: Double
     let alcohol: String
+    let image: String
 
-    init(wineindex: Int, name: String, year: String, price: String, sugar: Double, body: Double, tannin: Double, type: String, note: String, pH: Double, alcohol: String) {
+    init(wineindex: Int, name: String, year: String, price: String, sugar: Double, body: Double, tannin: Double, type: String, note: String, pH: Double, alcohol: String, image: String) {
         self.wineindex = wineindex
         self.name = name
         self.year = year
@@ -33,6 +27,7 @@ struct Wine: Codable, Hashable {
         self.note = note
         self.pH = pH
         self.alcohol = alcohol
+        self.image = image
     }
 }
 

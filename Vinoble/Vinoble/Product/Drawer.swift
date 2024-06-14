@@ -10,15 +10,13 @@ import ComposableArchitecture
 
 struct Drawer: View {
     @Bindable var store: StoreOf<ProductFeature>
-    @Environment(\.dismiss) var dismiss
-    
     
     var body: some View {
         ZStack {
             Color.black.opacity(0.2) // Drawer 배경
                 .ignoresSafeArea(.all)
                 .onTapGesture {
-                    store.showDrawer = false
+                    store.send(.dismissPaging)
                 }
             VStack(content: {
                 RoundedRectangle(cornerRadius: 25.0)
@@ -44,8 +42,7 @@ struct Drawer: View {
                             
                             Spacer()
                             Button("Log Out") {
-                                store.showDrawer = false
-                                dismiss()
+                                store.send(.dismissPaging)
                             }
                             .padding()
                             

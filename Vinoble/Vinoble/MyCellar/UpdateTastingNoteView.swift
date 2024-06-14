@@ -15,25 +15,33 @@
  Author : Diana
  Date : 2024.06.12 Wed
  Description : core function implementation day 2
+ - querying pressed item's information complete
  
+ Author : Diana
+ Date : 2024.06.13 Thurs
+ Description : core function implementation day 3
+ - update function complete
+ - calling image from cellarlist complete
  
  */
 
 import SwiftUI
 import ComposableArchitecture
+import SDWebImageSwiftUI
 
 struct UpdateTastingNoteView: View {
     
     @State var selectedImage: UIImage?
     @State var isShowingImagePicker = false
     let store: StoreOf<ProductFeature>
-    
     @Bindable var noteStore: StoreOf<TastingNoteFeature>
+    @Binding var isPresented : Bool
     
     // Init
-    init(store: StoreOf<ProductFeature>, noteStore: StoreOf<TastingNoteFeature>) {
+    init(store: StoreOf<ProductFeature>, noteStore: StoreOf<TastingNoteFeature>, isPresented: Binding<Bool>) {
         self.noteStore = noteStore
         self.store = store
+        self._isPresented = isPresented
        
     }
     
@@ -44,22 +52,15 @@ struct UpdateTastingNoteView: View {
                     HStack(alignment: .top, spacing: 20) {
                         VStack(alignment: .leading, spacing: 10) {
                             RoundedRectangle(cornerRadius: 10)
-                                .fill(Color.gray.opacity(0.3))
+                                .fill(Color.gray.opacity(0))
                                 .frame(width: 130, height: 205)
                                 .overlay {
-                                    if let selectedImage {
-                                        Image(uiImage: selectedImage)
-                                            .resizable()
-                                            .scaledToFill()
-                                            .frame(width: 130, height: 160)
-                                            .cornerRadius(10)
-                                    } else {
-                                        Image(systemName: "photo")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(width: 50, height: 50)
-                                            .foregroundColor(.gray)
-                                    }
+                                    WebImage(url: URL(string: noteStore.wineImage))
+                                        .resizable()
+                                        .indicator(.activity)
+                                        .scaledToFill()
+                                        .frame(width: 60, height: 60)
+//                                        .cornerRadius(20)
                                 }
                                 .onTapGesture {
                                     isShowingImagePicker = true
@@ -73,12 +74,12 @@ struct UpdateTastingNoteView: View {
                                     .foregroundColor(.white)
                                     .padding(.horizontal, 16)
                                     .padding(.vertical, 8)
-                                    .background(.theme)
+                                    .background(.gray)
                                     .bold()
                                     .cornerRadius(10)
                             }
+                            .disabled(true)
                         }
-                        
                         // Info TextField (Name, Price, Type)
                         VStack(alignment: .leading, spacing: 20) {
                             TextField("Wine Name",text: $noteStore.wineName)
@@ -118,11 +119,11 @@ struct UpdateTastingNoteView: View {
                     
                     // Sliders (Sugar, Body, Tannin)
                     VStack(alignment: .leading, spacing: 13) {
-                        SlidersField(value: $noteStore.wineSugar, label: "Sugar")
-                        SlidersField(value: $noteStore.wineBody, label: "Body")
-                        SlidersField(value: $noteStore.wineTannin, label: "Tannin")
-                        SlidersField(value: $noteStore.winepH, label: "pH")
-                             }
+                            SlidersField(value: $noteStore.wineSugar, label: "Sugar")
+                            SlidersField(value: $noteStore.wineBody, label: "Body")
+                            SlidersField(value: $noteStore.wineTannin, label: "Tannin")
+                            SlidersField(value: $noteStore.winepH, label: "pH")
+                            }
                              .padding(.horizontal, 20)
                              .padding(.top, 20)
 
@@ -137,9 +138,9 @@ struct UpdateTastingNoteView: View {
                         HStack {
                             Spacer()
                             Button(action: {
-                                // Update ACTION
+                                 // update action
                                 let updatedWine = Wine(
-                                    wineindex: noteStore.state.seq,
+                                    wineindex: noteStore.state.wineindex,
                                     name: noteStore.state.wineName,
                                     year: noteStore.state.wineYear,
                                     price: noteStore.state.winePrice,
@@ -149,7 +150,8 @@ struct UpdateTastingNoteView: View {
                                     type: noteStore.state.wineType,
                                     note: noteStore.state.wineNote,
                                     pH: noteStore.state.winepH,
-                                    alcohol: noteStore.state.wineAlcohol
+                                    alcohol: noteStore.state.wineAlcohol,
+                                    image: noteStore.state.wineImage
                                )
                                noteStore.send(.updateCellar(updatedWine))
                             }) {
@@ -163,9 +165,7 @@ struct UpdateTastingNoteView: View {
                                     .cornerRadius(10)
                             }
                             Spacer()
-
                         }
-                        
                     }
                     .padding(.horizontal, 20)
                     .padding(.top, 10)
@@ -181,9 +181,12 @@ struct UpdateTastingNoteView: View {
                              .foregroundColor(.theme)
                              .bold()
                      }
-            }
+                }
             }
         } // navigation view
+        .onChange(of: noteStore.state.updateSuccess){
+            isPresented = false
+        }
     } // body
 } // updatetastingnote view
 
@@ -210,5 +213,7 @@ struct SlidersField: View {
         ProductFeature()
     }, noteStore: Store(initialState: TastingNoteFeature.State(seq: 1)) {
         TastingNoteFeature()
-    })
+    },
+    isPresented: .constant(true)
+    )
 }

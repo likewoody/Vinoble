@@ -15,11 +15,21 @@
  Author : Diana
  Date : 2024.06.12 Wed
  Description : CRUD function implementation day 2
+ - db Query, insert function complete
+ 
+ Author : Diana
+ Date : 2024.06.13 Wed
+ Description : CRUD function implementation day 3
+ - update function completed
+ - calling image from db successful
  */
+
+
 
 // MyCellarView.swift
 import SwiftUI
 import ComposableArchitecture
+import SDWebImageSwiftUI
 
 struct MyCellarView: View {
     @State private var showUpdateTastingNote = false
@@ -30,9 +40,10 @@ struct MyCellarView: View {
     @State private var deletionIndex: Int?
     
     private func deleteItems(at offsets: IndexSet) {
-        deletionIndex = offsets.first
         isDeleteConfirmationShown = true
+        deletionIndex = offsets.first
     }
+
     
     init(store: StoreOf<ProductFeature>, noteStore: StoreOf<TastingNoteFeature>) {
         self.store = store
@@ -45,22 +56,28 @@ struct MyCellarView: View {
             List {
                 ForEach(noteStore.cellarList.indices, id: \.self) { index in
                     let wine = noteStore.cellarList[index]
-                    
                     VStack {
                         HStack {
                             RoundedRectangle(cornerRadius: 20)
-                                .foregroundStyle(.theme.opacity(0.2))
+                                .foregroundStyle(.theme.opacity(0.15))
                                 .frame(width: 100, height: 100)
-                                .padding(.trailing, 40)
-                            VStack(alignment: .leading, spacing: 10) {
+                                .overlay(
+                                    WebImage(url: URL(string: wine.image))
+                                        .resizable()
+                                        .indicator(.activity)
+                                        .scaledToFill()
+                                        .frame(width: 30, height: 30)
+                                )
+                            VStack(alignment: .leading, spacing: 15) {
                                 Text(wine.name)
                                     .bold()
                                 Text(wine.year)
                                 Text(wine.type)
                             }
+                            .padding(.leading, 30)
                         }
                     }
-                    .font(.system(size: 15, design: .serif))
+                    .font(.system(size: 16, design: .serif))
                     .onTapGesture {
                         noteStore.send(.setSelectedWine(wine))
                         selectedWine = wine
@@ -73,7 +90,7 @@ struct MyCellarView: View {
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Text("My Cellar")
-                        .font(.system(size: 23, design: .serif))
+                        .font(.system(size: 30, design: .serif))
                         .padding(.top, 20)
                         .foregroundColor(.theme)
                         .bold()
@@ -95,12 +112,18 @@ struct MyCellarView: View {
                 )
             }
             .sheet(isPresented: $showUpdateTastingNote) {
-                UpdateTastingNoteView(store: store, noteStore: noteStore)
+                UpdateTastingNoteView(store: store, noteStore: noteStore, isPresented: $showUpdateTastingNote)
+            }
+        }
+        .onChange(of: showUpdateTastingNote){ isPresented in
+            if !isPresented {
+                noteStore.send(.selectCellar)
+                noteStore.state.reset()
             }
         }
     }
 }
-    
+
     #Preview {
         MyCellarView(store: Store(initialState: ProductFeature.State()) {
             ProductFeature()
