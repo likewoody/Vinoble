@@ -348,7 +348,6 @@
 				C8B7BF682C13F5C800003C99 /* Second4Test.swift in Sources */,
 				C8BB9B862C19340400093024 /* SQLite.swift in Sources */,
 				E32D4A2B2C18528C0057A0C9 /* UserQuery.swift in Sources */,
-				7401CE122C192A6B00FDB4C0 /* NewTasteNoteTCA.swift in Sources */,
 				C85BF5322C130328005E548C /* MainLogin.swift in Sources */,
 				C832A2AA2C0EEFC0007EA2A2 /* MainView.swift in Sources */,
 				C89CE2042C19727800C95A4D /* Drawer.swift in Sources */,
