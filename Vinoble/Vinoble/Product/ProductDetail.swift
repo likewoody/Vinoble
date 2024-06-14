@@ -29,6 +29,7 @@ import SDWebImageSwiftUI
 struct ProductDetail: View {
     
     @Bindable var store: StoreOf<DetailFeature>
+    let noteStore: StoreOf<TastingNoteFeature>
     
 //    // 다른 곳에서도 사용할 수 있게끔 Color를 func으로 만든 것을 불러온다.
 //    let shareColor = ShareColor(store: Store(initialState: ProductFeature.State()){
@@ -36,10 +37,10 @@ struct ProductDetail: View {
 //    })
 
     // MARK: if start view, change navigation title
-    init(store: StoreOf<DetailFeature>) {
+    init(store: StoreOf<DetailFeature>, noteStore: StoreOf<TastingNoteFeature>) {
         // store 속성을 초기화합니다. 예를 들어, 기본값을 사용하거나 인자를 받을 수 있습니다.
         self.store = store
-        
+        self.noteStore = noteStore
 
 //        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: shareColor.initColorWithAlpha(), // Title color
 //                                                            
@@ -206,16 +207,29 @@ struct ProductDetail: View {
                             Spacer()
                             
                             // Create Taste Note
-                           
-                            Text("Create Taste Note")
-                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(Color.theme)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                                .bold()
-                        
-                        
+                            NavigationLink(destination: TastingNoteView(
+                                noteStore: noteStore,
+                                wineName: store.detailProduct[0].name,
+                                wineYear: formatNumberWithoutCommas(store.detailProduct[0].year),
+                                winePrice: store.detailProduct[0].price,
+                                wineType: store.detailProduct[0].wineType,
+                                wineSugar: store.detailProduct[0].sugar,
+                                wineBody: store.detailProduct[0].bodyPercent,
+                                wineTannin: store.detailProduct[0].tanning,
+                                winepH: store.detailProduct[0].pH,
+                                wineAlcohol: store.detailProduct[0].alcohol,
+                                wineImage: store.detailProduct[0].wineImage
+                            )) {
+                                Text("Create Taste Note")
+                                    .frame(maxWidth: .infinity)
+                                    .padding()
+                                    .background(Color.theme)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(10)
+                                    .bold()
+                            }
+                            .padding(.bottom,20)
+                            Spacer()
                             
                             Text("ABOUT THE PRODUCT")
                                 .bold()
@@ -449,6 +463,9 @@ struct ProductDetail: View {
         store: Store(initialState:
                         DetailFeature.State()){
             DetailFeature()
+        },
+        noteStore: Store(initialState: TastingNoteFeature.State()) {
+            TastingNoteFeature()
         }
     )
 }
