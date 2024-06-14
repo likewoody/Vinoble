@@ -8,11 +8,15 @@
 
 struct WishListModel{
     var id: Int
-    var wishlist: Int
+    var productID: Int
+    var isWish: Int
+    var userEmail: String
     
-    init(id: Int, wishlist: Int) {
+    init(id: Int, productID: Int, isWish: Int, userEmail: String) {
         self.id = id
-        self.wishlist = wishlist
+        self.productID = productID
+        self.isWish = isWish
+        self.userEmail = userEmail
     }
 }
 

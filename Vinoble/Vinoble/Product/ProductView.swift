@@ -26,6 +26,10 @@
  Data : 2024.06.12 Thursday
  Description : adding like button & draggesture
  
+ 7차
+ Data : 2024.06.13 Friday
+ Description : wishlist button and navigation with others
+ 
  */
 
 
@@ -40,29 +44,33 @@ struct ProductView: View {
     var body: some View{
         NavigationStack{
             VStack(content: {
-                HStack {
-                    Spacer(minLength: 150)
-                    Text("VINOBLE")
-                        .bold()
-                        .foregroundStyle(.theme)
-                    
-                    Spacer()
-                    Button(action: {
-                        // button action
-                        store.showDrawer.toggle()
-
-                    }, label: {
-                        Image(systemName: "person.circle")
-                    })
-                    .foregroundStyle(.gray)
-                    .padding(.trailing, 30)
-                    // forground 적용하기 위해서 분리해서 사용
-                }
-                .font(.system(size: 24))
-                
                 if store.showDrawer{
                     Drawer(store: store)
                 } else {
+                    
+                    HStack {
+                        Spacer(minLength: 150)
+                        Text("VINOBLE")
+                            .bold()
+                            .foregroundStyle(.theme)
+                            
+                        
+                        Spacer()
+                        Button(action: {
+                            // button action
+                            store.showDrawer.toggle()
+
+                        }, label: {
+                            Image(systemName: "person.circle")
+                        })
+                        .foregroundStyle(.gray)
+                        .padding(.trailing, 30)
+                        // forground 적용하기 위해서 분리해서 사용
+                    }
+                    .font(.system(size: 24))
+                    .padding(.top, 15)
+                    
+                    
                     // MARK: Search Product
                     RoundedRectangle(cornerRadius: 15)
                         .fill(Color.gray.opacity(0.1))
@@ -174,7 +182,9 @@ struct ProductView: View {
                             ScrollView {
                                 LazyVGrid(columns: Array(repeating: GridItem(), count: 2), content: {
                                     ForEach(store.products, id:\.index) { product in
-                                        NavigationLink(destination: ProductDetail(
+                                        NavigationLink(destination:
+//                                                        MainTabView()
+                                                        ProductDetail(
                                             store: Store(initialState: DetailFeature.State()){
                                                 DetailFeature()
                                             },

@@ -46,7 +46,7 @@ struct RecommendDomain{
                 
                 state.isLoading = true
                 return .run { send in
-                    let recommendations = await tryHttpSessionRecommend(httpURL: "http://192.168.10.15:5000/recommend?searchRecommend=\(searchRecommend)")
+                    let recommendations = await tryHttpAccessRecommend(httpURL: "http://127.0.0.1:5000/recommend?searchRecommend=\(searchRecommend)")
                     
                     
                     await send(.fetchResponse(recommendations))
@@ -66,7 +66,7 @@ struct RecommendDomain{
             case .fetchKeywords:
                 return .run { send in
                     
-                    let keywords = await tryHttpSessionKeyword(httpURL: "http://192.168.10.15:5000/topKeyowrds")
+                    let keywords = await tryHttpAccessKeyword(httpURL: "http://127.0.0.1:5000/topKeyowrds")
                     await send(.fetchResponseKeywords(keywords))
                 } // return
             case let .fetchResponseKeywords(keywords):
@@ -108,7 +108,7 @@ struct RecommendDomain{
     } // body
     
     // ---- Function ----
-    func tryHttpSessionRecommend(httpURL: String) async -> [Recommend] {
+    func tryHttpAccessRecommend(httpURL: String) async -> [Recommend] {
         do {
             let (data, _) = try await URLSession.shared.data(from: URL(string: httpURL)!)
             let recommendations = try JSONDecoder().decode([Recommend].self, from: data)
@@ -126,7 +126,7 @@ struct RecommendDomain{
     } // Recommend
     
     
-    func tryHttpSessionKeyword(httpURL: String) async -> [Keyword] {
+    func tryHttpAccessKeyword(httpURL: String) async -> [Keyword] {
         do {
             let (data, _) = try await URLSession.shared.data(from: URL(string: httpURL)!)
             let keywords = try JSONDecoder().decode([Keyword].self, from: data)
