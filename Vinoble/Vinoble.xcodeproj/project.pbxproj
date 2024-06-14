@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7401CE0D2C1929C800FDB4C0 /* Charts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7401CE0B2C1929C800FDB4C0 /* Charts.swift */; };
 		7401CE0E2C1929C800FDB4C0 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7401CE0C2C1929C800FDB4C0 /* ProductDetail.swift */; };
 		7401CE122C192A6B00FDB4C0 /* NewTasteNoteTCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7401CE0F2C192A6B00FDB4C0 /* NewTasteNoteTCA.swift */; };
 		74577E112C19A5AE002B362D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 74577E102C19A5AE002B362D /* FirebaseAnalytics */; };
@@ -56,7 +55,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7401CE0B2C1929C800FDB4C0 /* Charts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Charts.swift; sourceTree = "<group>"; };
 		7401CE0C2C1929C800FDB4C0 /* ProductDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
 		7401CE0F2C192A6B00FDB4C0 /* NewTasteNoteTCA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTasteNoteTCA.swift; sourceTree = "<group>"; };
 		7401CE102C192A6B00FDB4C0 /* LoginTCA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTCA.swift; sourceTree = "<group>"; };
@@ -180,7 +178,6 @@
 		C85BF5372C130579005E548C /* Product */ = {
 			isa = PBXGroup;
 			children = (
-				7401CE0B2C1929C800FDB4C0 /* Charts.swift */,
 				7401CE0C2C1929C800FDB4C0 /* ProductDetail.swift */,
 				C85BF5382C13058A005E548C /* ProductView.swift */,
 				C89CE2032C19727800C95A4D /* Drawer.swift */,
@@ -376,7 +373,6 @@
 				C8B7BF662C13F2E600003C99 /* MainTabView.swift in Sources */,
 				E3014E8F2C1927DD00CE4FD6 /* RegularExpression.swift in Sources */,
 				F20787872C1690F50011EA76 /* UpdateTastingNoteView.swift in Sources */,
-				7401CE0D2C1929C800FDB4C0 /* Charts.swift in Sources */,
 				C8445B092C185ED9001E64DF /* UserModel.swift in Sources */,
 				7401CE0E2C1929C800FDB4C0 /* ProductDetail.swift in Sources */,
 				C820C8E22C1AD193005ED5EE /* WishListModel.swift in Sources */,
