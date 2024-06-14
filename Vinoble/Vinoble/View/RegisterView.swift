@@ -18,7 +18,8 @@ struct RegisterView: View {
     @FocusState private var isFocused: Bool // 키보드를 내릴때 필요한 상태 변수
     @Environment(\.dismiss) private var dismiss // Register 버튼을 클릭하면 screen을 pop 하는 상태변수
     @State private var showAlert = false // Alert 표시 여부를 관리하는 상태 변수
-
+//    let userEmail = UserDefaults.standard.string(forKey: "userEmail") ?? ""
+    
     var body: some View {
         ZStack {
             Image("vinoble") // Assets Catalog에 추가된 이미지 이름

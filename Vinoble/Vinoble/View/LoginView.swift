@@ -87,6 +87,7 @@ struct LoginView: View {
                                 }else{
                                     // id, pw 제대로 입력
                                     self.isLoggedIn = true
+                                    UserDefaults.standard.set("userEmail", forKey: id)
                                 }
                             }else{
                                 // firebase request 실패
