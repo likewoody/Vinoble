@@ -22,6 +22,11 @@
  Description : CRUD function implementation day 3
  - update function completed
  - calling image from db successful
+ 
+ Author : Diana
+ Date : 2024.06.14 Fri
+ Description : finishing up
+ - passing on values from detail view
  */
 
 
