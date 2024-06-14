@@ -21,8 +21,7 @@ struct ProductFeature{
         
         // Drawer
         var showDrawer: Bool = false
-        var userEmail: String = "aaa"
-        var userPassword: String = "aaa"
+        var userEmail: String = ""
         var firebaseResult: Bool = false
         
         
@@ -53,9 +52,8 @@ struct ProductFeature{
         case fetchResponseUserInfo(String)
         case dismissPaging
         case likeButtonTapped(Int)
-        case sqliteWishList
-//        case addPageLoading
-
+        case searchWishlist
+        case searchedResultWish([WishListModel])
     }
     
     @Dependency(\.dismiss) var dismiss
@@ -74,11 +72,13 @@ struct ProductFeature{
                 let region = state.selectedRegion
                 let wineType = state.selectedWineType
                 
+                state.userEmail = UserDefaults.standard.string(forKey: "userEmail") ?? ""
+                
                 print(state.userEmail)
                 
                 return .run { send in
                     
-                    let products = await tryHttpSession(httpURL: "http://192.168.10.15:5000/selectVinoble?region=\(region)&wineType=\(wineType)")
+                    let products = await tryHttpSession(httpURL: "http://127.0.0.1:5000/selectVinoble?region=\(region)&wineType=\(wineType)")
                     
                     await send(.fetchResponse(products))
                 } // return
@@ -88,14 +88,15 @@ struct ProductFeature{
                 state.products = products
                 state.isLoading = false
                 
-                return .none
+                return .run { send in
+                    await send(.searchWishlist)
+                }
                 
             case .searchProductTapped:
                 let searchProduct = state.searchProduct
                 
-                
                 return .run { send in
-                    let products = await tryHttpSession(httpURL: "http://192.168.10.15:5000/searchProduct?searchProduct=\(searchProduct)")
+                    let products = await tryHttpSession(httpURL: "http://127.0.0.1:5000/searchProduct?searchProduct=\(searchProduct)")
                     
                     await send(.fetchResponse(products))
                 } // return
@@ -131,34 +132,37 @@ struct ProductFeature{
                 
             case let .likeButtonTapped(id):
                 let query = WishList()
+                let userEmail = state.userEmail
                 
-                if let _ = state.likeState[id] {
-                    _ = query.updateDB(wishlist: 0, id: id+1)
-                    state.likeState[id] = 0
-                } else{
-                    _ = query.updateDB(wishlist: 1, id: id+1)
-                    state.likeState[id] = 1
-                }
-                return .none
-                
-            case .sqliteWishList:
-                let query = WishList()
-                state.wishlist = query.queryDB()
-                
-                if state.wishlist.isEmpty && state.userEmail == "aaa" {
-                    // 처음 들어오는 데이터라면 데이터의 갯수만큼 데이터를 넣어준다.
-                    for i in 0..<state.products.count{
-                        _ = query.insertDB(wishlist: 0)
-                        state.likeState[i] = 0
-                    }
-                }
-                
-                for i in 0..<state.products.count{
-                    if state.likeState[i] == 1 {
-                        state.likeState[i] = 0
+                return .run { send in
+                    let datas = await query.queryDB()
+                    
+                    if datas.isEmpty{
+                        _ = await query.insertDB(productID: id, isWish: 1, userEmail: userEmail)
                     } else {
-                        state.likeState[i] = 1
+                        if datas[id].productID == 1 {
+                            _ = await query.updateDB(productID: id, isWish: 0, userEmail: userEmail)
+                        }else {
+                            _ = await query.updateDB(productID: id, isWish: 1, userEmail: userEmail)
+                        }
                     }
+                    
+                    await send(.searchWishlist)
+                }
+            case .searchWishlist:
+                let query = WishList()
+                
+                return .run { send in
+                    let datas = await query.queryDB()
+                    await send(.searchedResultWish(datas))
+                }
+            case let .searchedResultWish(searchedResultWish):
+                if state.userEmail == searchedResultWish[0].userEmail {
+                    print("\(searchedResultWish) searchResult SQLite")
+                    for i in 0..<searchedResultWish.count {
+                        state.likeState[i] = searchedResultWish[i].isWish
+                    }
+//                    state.wishlist = searchedResultWish
                 }
                 return .none
 
@@ -169,6 +173,8 @@ struct ProductFeature{
 //                return .run { send in
 //                    await send(.fetchProducts)
 //                }
+        
+            
             } // Switch
         
         } // Reduce

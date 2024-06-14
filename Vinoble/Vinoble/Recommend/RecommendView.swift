@@ -97,7 +97,10 @@ struct RecommendView: View {
                         }) // LazyVGrid
                         .padding([.trailing, .leading], 15)
                         
+                        
                     }) // VStack
+                    .frame(height: 100)
+                    
                     Divider()
                     
                     // MARK: Product list
@@ -152,10 +155,11 @@ struct RecommendView: View {
                     } // else
                     
                 } // VStack
-                .navigationTitle("VINOBLE")
-                .navigationBarTitleDisplayMode(.inline)
+                
                 
             } // VStack
+            .navigationTitle("VINOBLE")
+            .navigationBarTitleDisplayMode(.inline)
             .onAppear(perform: {
                 store.send(.fetchKeywords)
             })
