@@ -35,10 +35,7 @@ struct ProductFeature{
         // drag
         var offset: CGSize = CGSize()
         var isDrag: Bool = false
-        
-//        @Presents var detail: DetailFeature.State?
-        
-//        var path = StackState<DetailFeature.State>()
+    
     }
     
     enum Action: BindableAction{
@@ -74,11 +71,11 @@ struct ProductFeature{
                 
                 state.userEmail = UserDefaults.standard.string(forKey: "userEmail") ?? ""
                 
-                print(state.userEmail)
+                print("\(state.userEmail) : user email입니다.")
                 
                 return .run { send in
                     
-                    let products = await tryHttpSession(httpURL: "http://127.0.0.1:5000/selectVinoble?region=\(region)&wineType=\(wineType)")
+                    let products = await tryHttpProduct(httpURL: "http://127.0.0.1:5000/selectVinoble?region=\(region)&wineType=\(wineType)")
                     
                     await send(.fetchResponse(products))
                 } // return
@@ -96,7 +93,7 @@ struct ProductFeature{
                 let searchProduct = state.searchProduct
                 
                 return .run { send in
-                    let products = await tryHttpSession(httpURL: "http://127.0.0.1:5000/searchProduct?searchProduct=\(searchProduct)")
+                    let products = await tryHttpProduct(httpURL: "http://127.0.0.1:5000/searchProduct?searchProduct=\(searchProduct)")
                     
                     await send(.fetchResponse(products))
                 } // return
@@ -131,38 +128,34 @@ struct ProductFeature{
                 return .run {_ in await self.dismiss()}
                 
             case let .likeButtonTapped(id):
-                let query = WishList()
-                let userEmail = state.userEmail
                 
+                let userEmail = state.userEmail
+                let wishlist = state.wishlist
+
                 return .run { send in
-                    let datas = await query.queryDB()
-                    
-                    if datas.isEmpty{
-                        _ = await query.insertDB(productID: id, isWish: 1, userEmail: userEmail)
-                    } else {
-                        if datas[id].productID == 1 {
-                            _ = await query.updateDB(productID: id, isWish: 0, userEmail: userEmail)
-                        }else {
-                            _ = await query.updateDB(productID: id, isWish: 1, userEmail: userEmail)
+                    var localIsWish = 0
+                    for i in wishlist {
+                        if i.productID == id {
+                            localIsWish = i.isWish
+                            break
                         }
                     }
+                    _ = await tryHttpWishlistIU(httpURL: "http:127.0.0.1:5000/wishlist2?productID=\(id)&isWish=\(localIsWish)&userEmail=\(userEmail)")
                     
                     await send(.searchWishlist)
                 }
-            case .searchWishlist:
-                let query = WishList()
                 
+            case .searchWishlist:
+                
+                let userEmail = state.userEmail
                 return .run { send in
-                    let datas = await query.queryDB()
+                    let datas = await tryHttpWishlist(httpURL: "http://127.0.0.1:5000/wishlist?userEmail=\(userEmail)")
                     await send(.searchedResultWish(datas))
                 }
-            case let .searchedResultWish(searchedResultWish):
-                if state.userEmail == searchedResultWish[0].userEmail {
-                    print("\(searchedResultWish) searchResult SQLite")
-                    for i in 0..<searchedResultWish.count {
-                        state.likeState[i] = searchedResultWish[i].isWish
-                    }
-//                    state.wishlist = searchedResultWish
+            case let .searchedResultWish(wishlist):
+                state.wishlist = wishlist
+                for wish in state.wishlist{
+                    state.likeState[wish.productID] = wish.isWish
                 }
                 return .none
 
@@ -182,7 +175,7 @@ struct ProductFeature{
     } // body
     
     // --- Fucntions ----
-    func tryHttpSession(httpURL: String) async -> [Product] {
+    func tryHttpProduct(httpURL: String) async -> [Product] {
         do {
             let (data, _) = try await URLSession.shared.data(from: URL(string: httpURL)!)
             let products = try JSONDecoder().decode([Product].self, from: data)
@@ -191,12 +184,41 @@ struct ProductFeature{
 //            await send(.sendProducts(products))
             
         } catch {
-            print("JSON 디코딩 오류:", error)
+            print("product JSON 디코딩 오류:", error)
             // 오류를 적절하게 처리합니다 (예: 사용자에게 오류 메시지 표시)
             return []
             
         } // catch
+    } // products
 
+    func tryHttpWishlist(httpURL: String) async -> [WishListModel] {
+        do {
+            let (data, _) = try await URLSession.shared.data(from: URL(string: httpURL)!)
+            let wishlist = try JSONDecoder().decode([WishListModel].self, from: data)
+            
+            return wishlist
+    //            await send(.sendProducts(products))
+            
+        } catch {
+            print("wishlist JSON 디코딩 오류:", error)
+            // 오류를 적절하게 처리합니다 (예: 사용자에게 오류 메시지 표시)
+            return []
+            
+        } // catch
+    }
+    
+    func tryHttpWishlistIU(httpURL: String) async -> Bool{
+        
+        do {
+            _ = try await URLSession.shared.data(from: URL(string: httpURL)!)
+            return true
+            
+        } catch {
+            print("wishlist UI JSON 디코딩 오류:", error)
+            // 오류를 적절하게 처리합니다 (예: 사용자에게 오류 메시지 표시)
+            return false
+            
+        } // catch
     }
     
 } // ProductFeature
