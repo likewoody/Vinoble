@@ -8,13 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		7401CE0E2C1929C800FDB4C0 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7401CE0C2C1929C800FDB4C0 /* ProductDetail.swift */; };
-		7401CE122C192A6B00FDB4C0 /* NewTasteNoteTCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7401CE0F2C192A6B00FDB4C0 /* NewTasteNoteTCA.swift */; };
 		74577E112C19A5AE002B362D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 74577E102C19A5AE002B362D /* FirebaseAnalytics */; };
 		74577E132C19A5AE002B362D /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 74577E122C19A5AE002B362D /* FirebaseDatabase */; };
 		74577E152C19A5AE002B362D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 74577E142C19A5AE002B362D /* FirebaseFirestore */; };
 		C80A67AF2C19659200953402 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C80A67AE2C19659200953402 /* GoogleService-Info.plist */; };
 		C814DF452C1983E500CD9A74 /* QueryForTCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = C814DF442C1983E500CD9A74 /* QueryForTCA.swift */; };
-		C820C8E02C1AD134005ED5EE /* WishList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C820C8DF2C1AD134005ED5EE /* WishList.swift */; };
 		C820C8E22C1AD193005ED5EE /* WishListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C820C8E12C1AD193005ED5EE /* WishListModel.swift */; };
 		C832A2A82C0EEFC0007EA2A2 /* VinobleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C832A2A72C0EEFC0007EA2A2 /* VinobleApp.swift */; };
 		C832A2AA2C0EEFC0007EA2A2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C832A2A92C0EEFC0007EA2A2 /* MainView.swift */; };
@@ -60,7 +58,6 @@
 		7401CE102C192A6B00FDB4C0 /* LoginTCA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTCA.swift; sourceTree = "<group>"; };
 		C80A67AE2C19659200953402 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C814DF442C1983E500CD9A74 /* QueryForTCA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryForTCA.swift; sourceTree = "<group>"; };
-		C820C8DF2C1AD134005ED5EE /* WishList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishList.swift; sourceTree = "<group>"; };
 		C820C8E12C1AD193005ED5EE /* WishListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListModel.swift; sourceTree = "<group>"; };
 		C832A2A72C0EEFC0007EA2A2 /* VinobleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinobleApp.swift; sourceTree = "<group>"; };
 		C832A2A92C0EEFC0007EA2A2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -232,7 +229,6 @@
 				E3014E8C2C1927C400CE4FD6 /* UserInsert.swift */,
 				E3014E8E2C1927DD00CE4FD6 /* RegularExpression.swift */,
 				C814DF442C1983E500CD9A74 /* QueryForTCA.swift */,
-				C820C8DF2C1AD134005ED5EE /* WishList.swift */,
 			);
 			path = VM;
 			sourceTree = "<group>";
@@ -365,7 +361,6 @@
 				C86B200E2C14247A0061663A /* ProductTCA.swift in Sources */,
 				E3014E8D2C1927C400CE4FD6 /* UserInsert.swift in Sources */,
 				F2B8DB072C16F7B60083193E /* TastingNoteTCA.swift in Sources */,
-				C820C8E02C1AD134005ED5EE /* WishList.swift in Sources */,
 				C8B7BF602C13EFFB00003C99 /* WishListView.swift in Sources */,
 				F2413D902C193A9B00938526 /* CellarModel.swift in Sources */,
 				E3DAE1382C16851900799A06 /* RegisterView.swift in Sources */,

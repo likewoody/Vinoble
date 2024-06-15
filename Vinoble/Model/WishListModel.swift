@@ -6,7 +6,7 @@
 //
 
 
-struct WishListModel{
+struct WishListModel: Codable{
     var id: Int
     var productID: Int
     var isWish: Int
