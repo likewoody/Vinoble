@@ -22,68 +22,68 @@ struct WishListView: View {
     
     let store: StoreOf<ProductFeature>
     
-    // MARK: if start view, change navigation title
-    init(store: StoreOf<ProductFeature>) {
-        self.store = store
-        
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(.theme), // Title color
-                                                            
-            .font: UIFont.boldSystemFont(ofSize: 24.0) // Title font size
-        
-        ]
-    }
-    
     var body: some View {
         NavigationStack{
+            
+            HStack {
+                Spacer(minLength: 150)
+                Text("VINOBLE")
+                    .bold()
+                    .foregroundStyle(.theme)
+                Spacer()
+            } // HStack
+            .font(.system(size: 24))
+            .padding(.top, 15)
+            
             List{
-                if store.isLoading{
-                    ProgressView()
-                }else {
-                    ForEach(store.products, id:\.index) { product in
-                        NavigationLink(destination:
-                            ProductDetail(store: Store(initialState: DetailFeature.State()){
-                                   DetailFeature()
-                               },
-                               noteStore: Store(initialState: TastingNoteFeature.State()){
-                                   TastingNoteFeature()
-                               }, index: product.index)
-                        ) {
-                            HStack(content: {
-                                RoundedRectangle(cornerRadius: 20)
-                                    .id(product.index)
-                                    .foregroundStyle(.theme.opacity(0.2))
-                                    .frame(width: 120, height: 150)
-                                    .padding(.top, 30)
-                                    .overlay {
-                                        ZStack {
-                                            let url = URL(string: product.wineImage)
+                if !store.isEmpty {
+                    if store.isLoading{
+                        ProgressView()
+                    }else {
+                        ForEach(store.products, id:\.index) { product in
+                            NavigationLink(destination:
+                                ProductDetail(store: Store(initialState: DetailFeature.State()){
+                                       DetailFeature()
+                                   },
+                                   noteStore: Store(initialState: TastingNoteFeature.State()){
+                                       TastingNoteFeature()
+                                   }, index: product.index)
+                            ) {
+                                HStack(content: {
+                                    RoundedRectangle(cornerRadius: 20)
+                                        .id(product.index)
+                                        .foregroundStyle(.theme.opacity(0.2))
+                                        .frame(width: 120, height: 150)
+                                        .padding(.top, 30)
+                                        .overlay {
+                                            ZStack {
+                                                let url = URL(string: product.wineImage)
+                                                    
+                                                WebImage(url: url)
+                                                    .resizable()
+                                                    .frame(width: 50, height: 200)
+                                                    .padding(.bottom, 50)
                                                 
-                                            WebImage(url: url)
-                                                .resizable()
-                                                .frame(width: 50, height: 200)
-                                                .padding(.bottom, 50)
-                                            
-                                        } // ZStack
-                                        .padding(100)
-                                    } // overlay
-                                    .padding(.bottom, 5)
+                                            } // ZStack
+                                            .padding(100)
+                                        } // overlay
+                                        .padding(.bottom, 5)
+                                    
+                                    Text(product.name)
+                                        .foregroundStyle(.black)
+                                        .font(.system(size: 20))
+                                        .padding()
+                                }) // VStack
                                 
-                                Text(product.name)
-                                    .foregroundStyle(.black)
-                                    .font(.system(size: 20))
-                                    .padding()
-                            }) // VStack
-                            
-                        } // NavigationLink
+                            } // NavigationLink
+                             
+                        } // ForEach
                         
-                        
-                    } // ForEach
-                }
+                    } // loading
+                    
+                } // empty check
                 
             } // List
-            .navigationTitle("VINOBLE")
-            .navigationBarTitleDisplayMode(.inline)
-            
             
         } // Navigation Stack
         .onAppear(perform: {

@@ -18,19 +18,15 @@ struct ProductFeature{
         var isLoading: Bool = true
         var minIndex: Int = 0
         
-        
         // Drawer
         var showDrawer: Bool = false
         var userEmail: String = ""
         var firebaseResult: Bool = false
         
-        
-        // products load
-//        var lastCount: Int = 6
-        
         // wish
         var wishlist: [WishListModel] = []
         var likeState: [Int:Int] = [:]
+        var isEmpty: Bool = true
         
         // drag
         var offset: CGSize = CGSize()
@@ -91,9 +87,11 @@ struct ProductFeature{
                 } // return
                 
             case let .fetchResponse(products):
+                state.isEmpty = false
                 state.minIndex = products[0].index
                 state.products = products
                 state.isLoading = false
+                
                 
                 return .run { send in
                     await send(.searchWishlist)
@@ -155,15 +153,21 @@ struct ProductFeature{
                 }
                 
             case .searchOnlyWish:
-//                let userEmail = state.userEmail
+                state.userEmail = UserDefaults.standard.string(forKey: "userEmail") ?? ""
+                
+                
+                let userEmail = state.userEmail
                 // 테스트 할 때 id가 없어 error 발생해서 테스트용 아이디
-                let userEmail = "test@test.test"
+//                let userEmail = "test@test.test"
                 
                 print("userEmail \(userEmail)")
                 return .run { send in
                     let products = await tryHttpProduct(httpURL: "http://127.0.0.1:5000/onlyWish?userEmail=\(userEmail)")
                     print("send products data from searchOnly Wish to fetchResponse")
-                    await send(.fetchResponse(products))
+                    
+                    if !products.isEmpty {
+                        await send(.fetchResponse(products))
+                    }
                 }
                 
             case let .searchedResultWish(wishlist):
