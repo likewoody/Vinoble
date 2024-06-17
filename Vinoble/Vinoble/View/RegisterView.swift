@@ -13,8 +13,8 @@ struct RegisterView: View {
     @State private var result: Bool = true // Firebase Query Request가 완료 됬는지 확인하는 상태 변수
     @State private var passwordcheck = ""
     @State private var isValidEmail = true // 이메일 정규식에 맞는지에 대한 변수
-    @State private var isValidPw = true // 이메일 정규식에 맞는지에 대한 변수
-    @State private var isCheckPw = true
+    @State private var isValidPw = true // 패스워드 정규식에 맞는지에 대한 변수
+    @State private var isCheckPw = true // 패스워드가 같은지 확인하는 변수
     @FocusState private var isFocused: Bool // 키보드를 내릴때 필요한 상태 변수
     @Environment(\.dismiss) private var dismiss // Register 버튼을 클릭하면 screen을 pop 하는 상태변수
     @State private var showAlert = false // Alert 표시 여부를 관리하는 상태 변수

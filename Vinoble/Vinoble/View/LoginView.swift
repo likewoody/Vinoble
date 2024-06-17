@@ -66,10 +66,11 @@ struct LoginView: View {
                         .padding(.bottom, 10)
                         .focused($isFocused)
                     
-                    NavigationLink(destination: ProfileView()) {
+//                    NavigationLink(destination: ProfileView()) {
                         Text("Forgot Password?")
                             .frame(alignment: .leading)
-                    }
+                            .foregroundStyle(.blue)
+//                    }
                     .padding(.bottom, 50)
                     
                     Button {
@@ -87,7 +88,8 @@ struct LoginView: View {
                                 }else{
                                     // id, pw 제대로 입력
                                     self.isLoggedIn = true
-                                    UserDefaults.standard.set("userEmail", forKey: id)
+                                    UserDefaults.standard.set(id, forKey: "userEmail")
+                                    UserDefaults.standard.set(userInfo.documentId, forKey: "documentId")
                                 }
                             }else{
                                 // firebase request 실패
