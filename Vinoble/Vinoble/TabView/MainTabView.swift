@@ -52,7 +52,7 @@ struct MainTabView: View {
                             .frame(width: 30, height: 30)
 
 
-                        Second4Test()
+                        WishListView(store: store)
                             .tabItem {
                                 Image(systemName: "bookmark.fill")
                                 Text("Wish List")
