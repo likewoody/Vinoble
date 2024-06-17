@@ -72,7 +72,7 @@ struct ProductFeature{
                 
                 return .run { send in
                     
-                    let products = await tryHttpProduct(httpURL: "http://127.0.0.1:5000/selectVinoble?region=\(region)&wineType=\(wineType)")
+                    let products = await tryHttpProduct(httpURL: "http://192.168.10.15:5000/selectVinoble?region=\(region)&wineType=\(wineType)")
                     
                     await send(.fetchResponse(products))
                 } // return
@@ -81,7 +81,7 @@ struct ProductFeature{
                 let searchProduct = state.searchProduct
                 
                 return .run { send in
-                    let products = await tryHttpProduct(httpURL: "http://127.0.0.1:5000/searchProduct?searchProduct=\(searchProduct)")
+                    let products = await tryHttpProduct(httpURL: "http://192.168.10.15:5000/searchProduct?searchProduct=\(searchProduct)")
                     
                     await send(.fetchResponse(products))
                 } // return
