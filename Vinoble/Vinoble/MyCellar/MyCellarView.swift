@@ -57,6 +57,7 @@ struct MyCellarView: View {
         self.store = store
         self.noteStore = noteStore
         self.noteStore.send(.selectCellar(userid))
+        
     }
     
     var body: some View {
@@ -98,7 +99,7 @@ struct MyCellarView: View {
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Text("My Cellar")
-                        .font(.system(size: 30, design: .serif))
+                        .font(.system(size: 30))
                         .padding(.top, 20)
                         .foregroundColor(.theme)
                         .bold()
