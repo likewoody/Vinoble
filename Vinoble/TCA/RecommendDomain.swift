@@ -46,7 +46,7 @@ struct RecommendDomain{
                 
                 state.isLoading = true
                 return .run { send in
-                    let recommendations = await tryHttpAccessRecommend(httpURL: "http://127.0.0.1:5000/recommend?searchRecommend=\(searchRecommend)")
+                    let recommendations = await tryHttpAccessRecommend(httpURL: "http://192.168.10.15:5000/recommend?searchRecommend=\(searchRecommend)")
                     
                     
                     await send(.fetchResponse(recommendations))
@@ -66,7 +66,7 @@ struct RecommendDomain{
             case .fetchKeywords:
                 return .run { send in
                     
-                    let keywords = await tryHttpAccessKeyword(httpURL: "http://127.0.0.1:5000/topKeyowrds")
+                    let keywords = await tryHttpAccessKeyword(httpURL: "http://192.168.10.15:5000/topKeyowrds")
                     await send(.fetchResponseKeywords(keywords))
                 } // return
             case let .fetchResponseKeywords(keywords):
