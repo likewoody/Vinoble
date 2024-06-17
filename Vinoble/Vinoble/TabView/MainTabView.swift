@@ -40,7 +40,7 @@ struct MainTabView: View {
                             }
                             .tag(0)
 
-                        Second4Test()
+                        ProfileView()
                             .tabItem {
                                 Image(systemName: "person")
                                 Text("Profile")

@@ -43,4 +43,24 @@ struct UserInsert{
         
     } // func insertUser
     
+    func updatePw(documentId: String, userpw: String) async throws -> Bool{
+        result = false
+        
+        do{
+//            try await Task.sleep(nanoseconds: 5 * 1_000_000_000) // 3초 동안 대기
+
+            try await db.collection("user").document(documentId)
+                .updateData([
+                "userpw" : userpw,
+            ])
+            
+            result = true
+            
+        }catch{
+            result = false
+        }
+        return result
+
+    } // func updatePw
+    
 }
