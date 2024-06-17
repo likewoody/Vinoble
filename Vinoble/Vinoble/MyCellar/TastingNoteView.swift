@@ -40,6 +40,7 @@ struct TastingNoteView: View {
     @State var selectedImage: UIImage?
     @State var isShowingImagePicker = false
     @State var showingAlert = false
+    @FocusState private var isFocused: Bool // 키보드를 내릴때 필요한 상태 변수
     
     let userid = UserDefaults.standard.string(forKey: "userEmail") ?? "qwe@qwe.qwe"
 
@@ -167,6 +168,7 @@ struct TastingNoteView: View {
                         TextEditor(text: $noteStore.wineNote)
                             .frame(minHeight: 150)
                             .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.theme.opacity(0.5)))
+                            .focused($isFocused)
                             
                         HStack {
                             Spacer()

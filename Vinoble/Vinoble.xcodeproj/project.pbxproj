@@ -127,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				C8956A552C1863440034F313 /* Recommend */,
-				E3DAE1352C16851900799A06 /* View */,
+				E3DAE1352C16851900799A06 /* UserSign */,
 				F2B7884D2C1588D1001CF46D /* MyCellar */,
 				C8B7BF642C13F2D100003C99 /* TabView */,
 				C8B7BF5E2C13EFEE00003C99 /* WishList */,
@@ -233,14 +233,14 @@
 			path = VM;
 			sourceTree = "<group>";
 		};
-		E3DAE1352C16851900799A06 /* View */ = {
+		E3DAE1352C16851900799A06 /* UserSign */ = {
 			isa = PBXGroup;
 			children = (
 				E3DAE1322C16851900799A06 /* LoginView.swift */,
 				E3DAE1342C16851900799A06 /* RegisterView.swift */,
 				E3DAE1332C16851900799A06 /* ProfileView.swift */,
 			);
-			path = View;
+			path = UserSign;
 			sourceTree = "<group>";
 		};
 		F2B7884D2C1588D1001CF46D /* MyCellar */ = {

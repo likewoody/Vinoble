@@ -46,6 +46,7 @@ struct RegisterView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
                 TextField("Email", text: $id)
+                    .focused($isFocused)
                     .padding()
                     .keyboardType(.emailAddress)
                     .background(
@@ -53,7 +54,6 @@ struct RegisterView: View {
                             .fill(.gray.opacity(0.2))
                     )
                     .padding(.bottom, 15)
-                    .focused($isFocused)
                     .textInputAutocapitalization(.never) // 자동 대문자 비활성화
                     .onChange(of: id) { oldValue, newValue in
                         let regEx = RegularExpression()
@@ -75,13 +75,14 @@ struct RegisterView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
                 SecureField("Password", text: $password)
+                    .focused($isFocused)
+                    .textContentType(.newPassword)
                     .padding()
                     .background(
                         RoundedRectangle(cornerRadius: 10)
                             .fill(.gray.opacity(0.2))
                     )
                     .padding(.bottom, 30)
-                    .focused($isFocused)
                     .onChange(of: password) { oldValue, newValue in
                         let regEx = RegularExpression()
                         self.isValidPw = regEx.isValidPwFunc(newValue)
@@ -99,13 +100,14 @@ struct RegisterView: View {
                     )
                 
                 SecureField("Password Check", text: $passwordcheck)
+                    .focused($isFocused)
+                    .textContentType(.newPassword)
                     .padding()
                     .background(
                         RoundedRectangle(cornerRadius: 10)
                             .fill(.gray.opacity(0.2))
                     )
                     .padding(.bottom, 15)
-                    .focused($isFocused)
                     .onChange(of: passwordcheck) { oldValue, newValue in
                         isCheckPw = false
                         if newValue == password || passwordcheck.isEmpty{

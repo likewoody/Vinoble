@@ -39,6 +39,7 @@ struct UpdateTastingNoteView: View {
     let store: StoreOf<ProductFeature>
     @Bindable var noteStore: StoreOf<TastingNoteFeature>
     @Binding var isPresented : Bool
+    @FocusState private var isFocused: Bool // 키보드를 내릴때 필요한 상태 변수
     
     // Init
     init(store: StoreOf<ProductFeature>, noteStore: StoreOf<TastingNoteFeature>, isPresented: Binding<Bool>) {
@@ -139,6 +140,7 @@ struct UpdateTastingNoteView: View {
                         TextEditor(text: $noteStore.wineNote)
                             .frame(minHeight: 150)
                             .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.theme.opacity(0.5)))
+                            .focused($isFocused)
                         HStack {
                             Spacer()
                             Button(action: {

@@ -1,0 +1,771 @@
+,name,year,price,bodyPercent,Tanning,Sugar,Acidic
+0,"Roger Sabon
+Châteauneuf-du-Pape Le Secret Des Sabon 2020",2020,$250,78.0466%;,39.5604%;,16.5691%;,46.7192%;
+1,"E. Guigal
+Ermitage Ex-Voto 2018",2018,$500,82.7338%;,69.9444%;,13.4667%;,56.4577%;
+2,"Stéphane Usseglio
+Fragments Châteauneuf du Pape 2018",2018,$75,85%;,39.8291%;,0px;,44.3797%;
+3,"Paul Jaboulet Aîné
+Hermitage La Petite Chapelle 2014",2014,$300,85%;,67.2871%;,11.9874%;,53.9848%;
+4,"E. Guigal
+Côte-Rôtie La Mouline 2018",2018,$501.50,66.6169%;,64.1945%;,10.2499%;,64.353%;
+5,"E. Guigal
+Côte-Rôtie La Turque 2018",2018,$501.50,69.941%;,66.4626%;,10.2517%;,64.435%;
+6,"M. Chapoutier
+Ermitage l'Ermite 2011",2011,$905.09,81.8494%;,69.2983%;,10.3532%;,56.2876%;
+7,"Domaine Jean-Louis Chave
+Clos Florentin 2015",2015,$399.99,75.4618%;,52.5616%;,12.5493%;,54.532%;
+8,"Château de Beaucastel
+Hommage à Jacques Perrin Châteauneuf-du-Pape 2005",2005,$998,83.3728%;,39.9899%;,11.8831%;,45.2795%;
+9,"Domaine Jean-Louis Chave
+L'Hermitage 2014",2014,$833,80.8495%;,69.4019%;,8.80194%;,55.717%;
+10,"E. Guigal
+Côte-Rôtie La Landonne 2015",2015,$922,74.4159%;,70.7091%;,9.99265%;,64.9285%;
+11,"Domaine Jean-Louis Chave
+L'Hermitage 2020",2020,$499.99,80.8495%;,69.4019%;,8.80194%;,55.717%;
+12,"E. Guigal
+Côte-Rôtie La Landonne 2019",2019,$501.50,74.4159%;,70.7091%;,9.99265%;,64.9285%;
+13,"Clos Saint Jean
+Chateauneuf-du-Pape Sanctus Sanctorum 2015",2015,$530.95,85%;,40.5755%;,11.5164%;,44.3917%;
+14,"E. Guigal
+Côte-Rôtie La Mouline 2019",2019,$501.50,66.6169%;,64.1945%;,10.2499%;,64.353%;
+15,"E. Guigal
+Ermitage Ex-Voto 2010",2010,$395.95,82.7338%;,69.9444%;,13.4667%;,56.4577%;
+16,"E. Guigal
+Côte-Rôtie La Mouline 1986",1986,$419.99,66.6169%;,64.1945%;,10.2499%;,64.353%;
+17,"E. Guigal
+Côte-Rôtie La Turque 1998",1998,$866.24,69.941%;,66.4626%;,10.2517%;,64.435%;
+18,"Château de Beaucastel
+Hommage à Jacques Perrin Châteauneuf-du-Pape 2020",2020,$597.44,83.3728%;,39.9899%;,11.8831%;,45.2795%;
+19,"E. Guigal
+Côte-Rôtie La Turque 2017",2017,$438.59,69.941%;,66.4626%;,10.2517%;,64.435%;
+20,"Pegau
+Cuvée Da Capo Châteauneuf-du-Pape 2020",2020,$439.99,85%;,40.9855%;,19.5418%;,44.77%;
+21,"E. Guigal
+Côte-Rôtie La Turque 2016",2016,$627,69.941%;,66.4626%;,10.2517%;,64.435%;
+22,"Château de Beaucastel
+Hommage à Jacques Perrin Châteauneuf-du-Pape 2017",2017,$690,83.3728%;,39.9899%;,11.8831%;,45.2795%;
+23,"Domaine Jean-Louis Chave
+L'Hermitage 2012",2012,$833,80.8495%;,69.4019%;,8.80194%;,55.717%;
+24,"E. Guigal
+Côte-Rôtie La Mouline 2012",2012,$543,66.6169%;,64.1945%;,10.2499%;,64.353%;
+25,"Henri Bonneau
+Chateauneuf-du-Pape Réserve des Célestins 2009",2009,$790,79.5764%;,42.9762%;,17.9771%;,45.7554%;
+26,"Jean-Michel Gerin
+La Landonne Côte-Rôtie 2016",2016,$416,68.4601%;,59.1367%;,13.7056%;,66.4986%;
+27,"Paul Autard
+Juline Châteauneuf-du-Pape 2019",2019,$74.94,81.6464%;,42.0528%;,15.4206%;,41.7612%;
+28,"Jean-Michel Gerin
+Les Grandes Places Côte-Rôtie 2018",2018,$149.94,73.1031%;,63.6177%;,17.1175%;,63.7115%;
+29,"Clos Saint Jean
+Chateauneuf-du-Pape Sanctus Sanctorum 2017",2017,$560.50,85%;,40.5755%;,11.5164%;,44.3917%;
+30,"Thierry Allemand
+Cornas 'Reynard' 2019",2019,$530.95,80.3692%;,55.9627%;,5.56121%;,58.1666%;
+31,"Domaine Jean-Louis Chave
+Clos Florentin 2018",2018,$234.82,75.4618%;,52.5616%;,12.5493%;,54.532%;
+32,"Domaine de Marcoux
+Châteauneuf-du-Pape Vieilles Vignes 2019",2019,$200.55,83.5092%;,46.2699%;,18.4849%;,45.7734%;
+33,"Domaine Jean-Louis Chave
+Clos Florentin 2017",2017,$234.82,75.4618%;,52.5616%;,12.5493%;,54.532%;
+34,"E. Guigal
+Côte-Rôtie La Turque 2019",2019,$501.50,69.941%;,66.4626%;,10.2517%;,64.435%;
+35,"Château La Nerthe
+Cuvée des Cadettes Châteauneuf-du-Pape 2016",2016,$353.95,84.605%;,39.6536%;,12.6053%;,44.1185%;
+36,"Domaine Jean-Louis Chave
+Clos Florentin 2020",2020,$271.35,75.4618%;,52.5616%;,12.5493%;,54.532%;
+37,"E. Guigal
+Côte-Rôtie La Landonne 2008",2008,$346.95,74.4159%;,70.7091%;,9.99265%;,64.9285%;
+38,"Johann Michel
+Mère Michel 2019",2019,$170.09,81.5384%;,44.7115%;,17.5%;,57.8846%;
+39,"Domaine du Tunnel
+Pur Noir 2020",2020,$236.24,85%;,52.8542%;,20.151%;,52.4115%;
+40,"Guy Bernard
+Côte Brune Côte-Rôtie 2020",2020,$99.99,68.9175%;,58.4346%;,0px;,68.0982%;
+41,"E. Guigal
+Côte-Rôtie La Mouline 2017",2017,$438.59,66.6169%;,64.1945%;,10.2499%;,64.353%;
+42,"Pegau
+Cuvée Da Capo Châteauneuf-du-Pape 2015",2015,$576.29,85%;,40.9855%;,19.5418%;,44.77%;
+43,"E. Guigal
+Ermitage Ex-Voto 2017",2017,$407.99,82.7338%;,69.9444%;,13.4667%;,56.4577%;
+44,"Delas
+Les Bessards Hermitage 2014",2014,$229.99,85%;,67.9345%;,9.84127%;,53.7901%;
+45,"Pierre Usseglio
+Châteauneuf-du-Pape Cuvée de mon Aïeul 2018",2018,$79.99,85%;,41.0312%;,19.9819%;,43.1994%;
+46,"Domaine Jean-Louis Chave
+L'Hermitage 1998",1998,$749.99,80.8495%;,69.4019%;,8.80194%;,55.717%;
+47,"M. Chapoutier
+Ermitage l'Ermite 1997",1997,$279.99,81.8494%;,69.2983%;,10.3532%;,56.2876%;
+48,"E. Guigal
+Côte-Rôtie La Landonne 2017",2017,$567,74.4159%;,70.7091%;,9.99265%;,64.9285%;
+49,"E. Guigal
+Ermitage Ex-Voto 2015",2015,$461,82.7338%;,69.9444%;,13.4667%;,56.4577%;
+50,"Delas
+Les Bessards Hermitage 2013",2013,$448,85%;,67.9345%;,9.84127%;,53.7901%;
+51,"Pegau
+Cuvée Da Capo Châteauneuf-du-Pape 2016",2016,$790,85%;,40.9855%;,19.5418%;,44.77%;
+52,"E. Guigal
+Côte-Rôtie La Mouline 2014",2014,$533,66.6169%;,64.1945%;,10.2499%;,64.353%;
+53,"M. Chapoutier
+Châteauneuf-du-Pape Barbe Rac 2015",2015,$256.67,83.0157%;,39.587%;,14.459%;,44.8634%;
+54,"M. Chapoutier
+Ermitage l'Ermite 2018",2018,$980,81.8494%;,69.2983%;,10.3532%;,56.2876%;
+55,"Jean-Michel Gerin
+La Landonne Côte-Rôtie 2015",2015,$416,68.4601%;,59.1367%;,13.7056%;,66.4986%;
+56,"Domaine de La Chapelle
+Hermitage La Chapelle Rouge 2006",2006,$300.15,83.1154%;,67.4268%;,9.73907%;,54.61%;
+57,"Clos Saint Jean
+Chateauneuf-du-Pape La Combe Des Fous 2018",2018,$262.50,85%;,43.9023%;,16.0564%;,44.2861%;
+58,"Clos Saint Jean
+Chateauneuf-du-Pape Sanctus Sanctorum 2018",2018,$559.69,85%;,40.5755%;,11.5164%;,44.3917%;
+59,"Clos du Mont-Olivet
+Châteauneuf-du-Pape La Cuvée du Papet 2018",2018,$135.04,85%;,42.9088%;,17.1178%;,47.2335%;
+60,"Clos Saint Jean
+Châteauneuf-du-Pape Deus Ex Machina 2020",2020,$124.94,85%;,42.125%;,23.26%;,43.3378%;
+61,"Clos Saint Jean
+Chateauneuf-du-Pape La Combe Des Fous 2020",2020,$119.94,85%;,43.9023%;,16.0564%;,44.2861%;
+62,"Domaine de la Vieille Julienne
+Réservé Châteauneuf-du-Pape 2018",2018,$274.99,83.7002%;,41.2905%;,24.6458%;,45.3475%;
+63,"Ogier
+Clos de l'Oratoire des Papes Les Chorégies Châteauneuf-du-Pape 2019",2019,$142.99,77.0282%;,40.9164%;,8.77221%;,45.2242%;
+64,"Delas
+La Landonne Côte-Rôtie 2019",2019,$284.99,68.1933%;,66.917%;,14.8564%;,66.3782%;
+65,"Domaine du Vieux Télégraphe
+Châteauneuf-du-Pape (La Crau) 2019",2019,$99.99,82.4248%;,40.3363%;,8.72567%;,45.219%;
+66,"Château La Nerthe
+Châteauneuf-du-Pape 2020",2020,$84.99,83.2776%;,37.7941%;,7.91678%;,45.1038%;
+67,"Domaine de la Vieille Julienne
+Réservé Châteauneuf-du-Pape 2016",2016,$300,83.7002%;,41.2905%;,24.6458%;,45.3475%;
+68,"Domaine Bois de Boursan
+Cuvée des Felix Châteauneuf-du-Pape 2010",2010,$200,85%;,50.7418%;,4.39716%;,48.4381%;
+69,"Château La Nerthe
+Les Clavelles Châteauneuf du Pape 2015",2015,$271.35,66.5715%;,34.0026%;,11.7088%;,52.3918%;
+70,"Domaine de La Chapelle
+Hermitage La Chapelle Rouge 1991",1991,$649,83.1154%;,67.4268%;,9.73907%;,54.61%;
+71,"Domaine Jean-Louis Chave
+Saint-Joseph 2021",2021,$112.10,72.4663%;,49.3389%;,7.53913%;,55.1467%;
+72,"E. Guigal
+Saint-Joseph Vignes de L'Hospice 2019",2019,$105.02,75.2537%;,50.7448%;,9.77772%;,54.6425%;
+73,"La Boutinière
+Vieilles Vignes La Crau Grand Réserve Châteauneuf-du-Pape 2018",2018,$54.95,72.5%;,28.5%;,2.5%;,47.5%;
+74,"M. Chapoutier
+Côte-Rôtie La Mordorée 2015",2015,$153.95,69.3427%;,66.1683%;,5.99777%;,64.7653%;
+75,"Michel & Stéphane Ogier
+La Belle Hélène Côte-Rôtie 2017",2017,$625.79,71.3621%;,71.4033%;,8.59553%;,63.3428%;
+76,"Maison Denuziere
+Côte-Rôtie 2018",2018,$109.19,79.7881%;,80.2336%;,0.0847749%;,64.2595%;
+77,"Michel & Stéphane Ogier
+Lancement Côte-Rôtie 2016",2016,$625.79,72.765%;,63.8586%;,10.7637%;,64.6913%;
+78,"Clos Saint Jean
+Chateauneuf-du-Pape La Combe Des Fous 2021",2021,$136.49,85%;,43.9023%;,16.0564%;,44.2861%;
+79,"Château La Nerthe
+Châteauneuf-du-Pape 2019",2019,$73.45,83.2776%;,37.7941%;,7.91678%;,45.1038%;
+80,"Pères de l'Église
+L'Heritage de Pollus Châteauneuf-du-Pape 2019",2019,$68.24,85%;,44.7388%;,8.17164%;,46.4179%;
+81,"E. Guigal
+Château d'Ampuis Côte-Rôtie 2018",2018,$173.39,73.0045%;,66.6602%;,9.70693%;,64.9365%;
+82,"E. Guigal
+Saint-Joseph Vignes de L'Hospice 2018",2018,$96.89,75.2537%;,50.7448%;,9.77772%;,54.6425%;
+83,"Domaine Saint Préfert
+Collection Charles Giraud Châteauneuf-du-Pape 2019",2019,$168.29,85%;,41.7795%;,19.4809%;,44.3795%;
+84,"Alain Jaume
+Domaine Grand Veneur Châteauneuf-Du-Pape Vieilles Vignes 2010",2010,$329.99,85%;,43.9393%;,5.10871%;,44.7253%;
+85,"Domaine de La Chapelle
+Hermitage La Chapelle Rouge 1985",1985,$449.99,83.1154%;,67.4268%;,9.73907%;,54.61%;
+86,"Clos des Papes (Paul Avril)
+Châteauneuf-du-Pape 2006",2006,$299.99,81.8996%;,39.3383%;,14.0024%;,44.2708%;
+87,"Roger Sabon
+Châteauneuf-du-Pape Le Secret Des Sabon 2001",2001,$449.99,78.0466%;,39.5604%;,16.5691%;,46.7192%;
+88,"M. Chapoutier
+Côte-Rôtie La Mordorée 2014",2014,$399.99,69.3427%;,66.1683%;,5.99777%;,64.7653%;
+89,"Château de Beaucastel
+Châteauneuf-du-Pape 2009",2009,$229.99,83.2174%;,39.8547%;,10.6892%;,45.0798%;
+90,"Delas
+Les Bessards Hermitage 2016",2016,$448,85%;,67.9345%;,9.84127%;,53.7901%;
+91,"Château de Beaucastel
+Châteauneuf-du-Pape 2020",2020,$179.99,83.2174%;,39.8547%;,10.6892%;,45.0798%;
+92,"Jean-Luc Colombo
+Syrah Cornas Les Ruchets 2009",2009,$96,85%;,50.2869%;,9.1738%;,56.1419%;
+93,"Rotem & Mounir Saouma
+Arioso Châteauneuf-du-Pape 2019",2019,$203.99,75.4475%;,39.1928%;,17.6076%;,48.3246%;
+94,"Château de Nalys
+Châteauneuf-du-Pape Rouge 2018",2018,$119.99,83.6389%;,38.808%;,9.13121%;,44.7517%;
+95,"Domaine du Vieux Télégraphe
+Châteauneuf-du-Pape (La Crau) 2020",2020,$101.99,82.4248%;,40.3363%;,8.72567%;,45.219%;
+96,"Nicolas Champagneux
+Les Grandes Places Côte Rôtie 2015",2015,$118.33,73.5034%;,62.9184%;,0px;,66.733%;
+97,"d'Arbousset
+Lirac 2017",2017,$29.99,67.9049%;,50.8472%;,8.91341%;,56.1837%;
+98,"Domaine Garon
+Lancement Côte-Rôtie 2016",2016,$166.99,67.3511%;,63.6513%;,7.80573%;,66.2548%;
+99,"Rotem & Mounir Saouma
+Omnia Châteauneuf-du-Pape 2017",2017,$149.99,78.2383%;,39.6449%;,8.45092%;,45.4603%;
+100,"Domaine du Vieux Lazaret
+Cuvée Exceptionnelle Châteauneuf-du-Pape 2016",2016,$174.99,84.8211%;,38.4035%;,12.4306%;,43.2552%;
+101,"Château de Beaucastel
+Châteauneuf-du-Pape 2006",2006,$199.99,83.2174%;,39.8547%;,10.6892%;,45.0798%;
+102,"Jean-Luc Colombo
+Syrah Cornas La Louvée 2013",2013,$122.67,75.0205%;,47.2005%;,5.15082%;,54.3777%;
+103,"Château de Saint Cosme
+Gigondas Le Poste 2021",2021,$175.99,62.5517%;,51.3938%;,16.3194%;,56.8169%;
+104,"Rotem & Mounir Saouma
+Arioso Châteauneuf-du-Pape 2017",2017,$249.99,75.4475%;,39.1928%;,17.6076%;,48.3246%;
+105,"Nicolas Champagneux
+Les Grandes Places Côte Rôtie 2016",2016,$118.33,73.5034%;,62.9184%;,0px;,66.733%;
+106,"Domaine de la Solitude - Famille Lancon
+Châteauneuf-du-Pape Cuvée Barberini 2016",2016,$104.99,85%;,39.0621%;,17.1404%;,43.2967%;
+107,"Rotem & Mounir Saouma
+Arioso Châteauneuf-du-Pape 2020",2020,$229.99,75.4475%;,39.1928%;,17.6076%;,48.3246%;
+108,"Château de la Font du Loup
+Chateauneuf-du-Pape Rouge 2020",2020,$69.99,81.5186%;,39.7631%;,6.94953%;,46.7445%;
+109,"Domaine Garon
+Lancement Côte-Rôtie 2013",2013,$136.99,67.3511%;,63.6513%;,7.80573%;,66.2548%;
+110,"Jean-Michel Gerin
+Les Grandes Places Côte-Rôtie 2019",2019,$192,73.1031%;,63.6177%;,17.1175%;,63.7115%;
+111,"Jean-Michel Gerin
+Champin le Seigneur Côte-Rôtie 2017",2017,$80,70.1467%;,67.0028%;,6.40203%;,64.9755%;
+112,"M. Chapoutier
+Ermitage Le Méal 2011",2011,$659.17,82.9412%;,67.4531%;,14.5911%;,55.5257%;
+113,"Domaine Brun Avril
+Châteauneuf-du-Pape Rouge 2019",2019,$55,84.9386%;,39.5589%;,0.653793%;,45.1627%;
+114,"Francois Villard
+Côte-Rôtie Le Gallet Blanc 2017",2017,$80,74.9826%;,65.8136%;,6.67641%;,63.3228%;
+115,"Clos du Mont-Olivet
+Châteauneuf-du-Pape La Cuvée du Papet 2015",2015,$177.24,85%;,42.9088%;,17.1178%;,47.2335%;
+116,"Domaine de Cristia
+Châteauneuf-du-Pape Vieilles Vignes 2020",2020,$131.75,83.3359%;,39.6296%;,20.706%;,42.3198%;
+117,"Domaine de la Solitude - Famille Lancon
+Châteauneuf-du-Pape Cuvée Barberini 2020",2020,$93.95,85%;,39.0621%;,17.1404%;,43.2967%;
+118,"Château Mont-Redon
+Le Plateau Châteauneuf-du-Pape 2017",2017,$244.76,80.0888%;,40.1521%;,7.30425%;,47.0465%;
+119,"Vignobles Mayard
+La Crau de ma Mère Châteauneuf-du-Pape Rouge 2020",2020,$74.27,85%;,41.1242%;,10.4812%;,44.292%;
+120,"Domaine Jean-Louis Chave
+Hermitage Selection Farconnet 2020",2020,$98.60,85%;,69.0974%;,6.74481%;,55.4596%;
+121,"Domaine La Barroche
+Châteauneuf-du-Pape 2020",2020,$71.40,85%;,41.948%;,12.8143%;,43.6772%;
+122,"Domaine de Cristia
+Châteauneuf-du-Pape Renaissance 2020",2020,$99.99,85%;,38.6655%;,12.9217%;,40.9537%;
+123,"Domaine Saint Préfert
+Domaine Isabel Ferrando Colombis Châteauneuf-du-Pape 2020",2020,$195.50,84.802%;,43.3389%;,15.1412%;,46.4238%;
+124,"Château Mont-Redon
+Châteauneuf-du-Pape 2020",2020,$70.34,85%;,38.4515%;,6.41407%;,43.9535%;
+125,"Laurent Fayolle
+Les Diognières Hermitage 2021",2021,$118.16,85%;,57.2817%;,0px;,56.5079%;
+126,"Domaine Georges Vernay
+Blonde du Seigneur Côte-Rôtie 2019",2019,$146.15,69.2503%;,66.7818%;,5.97317%;,64.8773%;
+127,"Domaine de la Solitude - Famille Lancon
+Châteauneuf-du-Pape Cornelia Constanza 2020",2020,$119.27,81.2009%;,43.97%;,22.6227%;,50.3302%;
+128,"Clos du Mont-Olivet
+Châteauneuf-du-Pape La Cuvée du Papet 2019",2019,$140.10,85%;,42.9088%;,17.1178%;,47.2335%;
+129,"Domaine Olivier Hillaire
+Châteauneuf-du-Pape 2020",2020,$44.94,85%;,36.8048%;,6.55735%;,41.4485%;
+130,"Pierre Usseglio
+Châteauneuf-du-Pape 2019",2019,$49.94,84.5346%;,39.5271%;,9.93002%;,44.4859%;
+131,"Domaine Giraud
+Grenaches de Pierre Châteauneuf-du-Pape 2020",2020,$129.94,83.3051%;,42.673%;,19.6502%;,45.341%;
+132,"Domaine de La Chapelle
+Hermitage La Chapelle Rouge 2020",2020,$179.94,83.1154%;,67.4268%;,9.73907%;,54.61%;
+133,"Domaine de Beaurenard
+Châteauneuf-du-Pape 2020",2020,$54.94,84.5972%;,41.9308%;,6.78568%;,44.479%;
+134,"Pierre Gaillard
+Côte-Rôtie Rose Pourpre 2018",2018,$134.94,69.9661%;,66.1144%;,7.11668%;,65.0173%;
+135,"M. Chapoutier
+Châteauneuf-du-Pape La Bernardine 2020",2020,$56.99,82.6599%;,38.4786%;,7.20969%;,44.5317%;
+136,"Delas
+Domaine des Tourettes Hermitage Rouge 2019",2019,$101.99,84.5011%;,68.8611%;,8.14373%;,55.9865%;
+137,"Pegau
+Châteauneuf-du-Pape Cuvée Laurence 2018",2018,$102.99,83.5078%;,40.4617%;,13.9384%;,44.3571%;
+138,"Ogier
+Clos de l'Oratoire des Papes Châteauneuf-du-Pape 2021",2021,$76.99,84.1766%;,38.5062%;,7.62827%;,45.19%;
+139,"Le Vieux Donjon
+Châteauneuf-du-Pape 2020",2020,$69.99,83.7684%;,40.0149%;,10.5809%;,43.9631%;
+140,"Domaine des Espiers
+Gigondas Les Grames 2019",2019,$31.99,67.971%;,46.0533%;,7.27899%;,51.3726%;
+141,"Clos des Papes (Paul Avril)
+Châteauneuf-du-Pape 2020",2020,$145,81.8996%;,39.3383%;,14.0024%;,44.2708%;
+142,"Domaine de la Janasse
+Châteauneuf-du-Pape Vieilles Vignes 2019",2019,$119.99,85%;,42.0881%;,17.4804%;,44.0526%;
+143,"Domaine du Vieux Télégraphe
+Châteauneuf-du-Pape (La Crau) 2021",2021,$89.99,82.4248%;,40.3363%;,8.72567%;,45.219%;
+144,"Domaine Jean-Louis Chave
+Saint-Joseph 2020",2020,$105.02,85%;,40.7434%;,5.44852%;,42.0191%;
+145,"Domaine Jean-Louis Chave
+Hermitage Selection Farconnet 2019",2019,$88.45,85%;,69.0974%;,6.74481%;,55.4596%;
+146,"Domaine de La Chapelle
+Hermitage La Chapelle Rouge 2019",2019,$223.02,83.1154%;,67.4268%;,9.73907%;,54.61%;
+147,"Auguste Clape
+Renaissance Cornas 2018",2018,$105.02,83.1458%;,52.7518%;,6.52017%;,56.8761%;
+148,"Alain Jaume
+Domaine Grand Veneur Châteauneuf-Du-Pape Les Origines 2018",2018,$70.75,85%;,42.4578%;,12.004%;,42.878%;
+149,"Bernard Burgaud
+Côte-Rôtie 2019",2019,$82.55,70.9512%;,64.152%;,6.54445%;,63.6708%;
+150,"Delas
+Domaine des Tourettes Hermitage Rouge 2020",2020,$104.95,84.5011%;,68.8611%;,8.14373%;,55.9865%;
+151,"Château de Saint Cosme
+Saint Cosme Côte-Rotie 2020",2020,$120.99,71.064%;,68.5065%;,6.537%;,64.8061%;
+152,"M. Chapoutier
+Crozes-Ermitage Les Varonniers 2017",2017,$99.98,63.7708%;,51.2941%;,8.65578%;,46.5254%;
+153,"E. Guigal
+Châteauneuf-du-Pape 2001",2001,$69.99,84.6865%;,40.7267%;,6.61612%;,45.141%;
+154,"Domaine de la Janasse
+Châteauneuf-du-Pape Chaupin 2020",2020,$99.99,82.2499%;,40.5419%;,17.6465%;,44.6634%;
+155,"M. Chapoutier
+Côte-Rôtie La Mordorée 2007",2007,$115.95,69.3427%;,66.1683%;,5.99777%;,64.7653%;
+156,"Domaine de La Chapelle
+Hermitage La Chapelle Rouge 2009",2009,$269.95,83.1154%;,67.4268%;,9.73907%;,54.61%;
+157,"Le Clos des Cazaux
+Prestige 2020",2020,$49.99,67.6143%;,44.0044%;,3.38889%;,49.843%;
+158,"Alain Jaume
+Domaine Grand Veneur Châteauneuf-Du-Pape Vieilles Vignes 2021",2021,$141.74,85%;,43.9393%;,5.10871%;,44.7253%;
+159,"La Boutinière
+Châteauneuf-du-Pape Rouge 2020",2020,$52.49,83.0601%;,37.2028%;,4.21383%;,47.3101%;
+160,"Yves Cuilleron
+Côte-Rôtie Bassenon 2020",2020,$98.69,71.2426%;,66.6807%;,5.25286%;,66.5802%;
+161,"Domaine du Père Caboche
+Châteauneuf-du-Pape 2022",2022,$34.60,85%;,40.0601%;,9.67762%;,44.0673%;
+162,"Château Pesquie
+Ventoux Artemia 2020",2020,$36.74,66.816%;,48.6745%;,13.5012%;,54.8884%;
+163,"Domaine de Saje
+Châteauneuf-du-Pape Rouge 2021",2021,$53.54,85%;,33.3252%;,0px;,41.0622%;
+164,"Paul Autard
+Châteauneuf-du-Pape 2020",2020,$47.24,85%;,39.3746%;,6.73618%;,45.5976%;
+165,"Pères de l'Église
+Le Calice de Saint Pierre Châteauneuf-du-Pape Rouge 2022",2022,$48.29,82.8158%;,38.2891%;,9.19918%;,46.4709%;
+166,"Clos des Papes (Paul Avril)
+Châteauneuf-du-Pape 2021",2021,$131.24,81.8996%;,39.3383%;,14.0024%;,44.2708%;
+167,"Louis Barruol
+La Boisselée Côte-Rôtie 2019",2019,$102.89,75.1942%;,69.4771%;,4.75598%;,68.4353%;
+168,"Louis Barruol
+La Pierrelle Hermitage 2020",2020,$97.64,85%;,76.3996%;,10.5181%;,54.4985%;
+169,"Château de Saint Cosme
+Gigondas Le Claux 2021",2021,$119.99,65.0874%;,53.6339%;,11.3159%;,55.2799%;
+170,"Château de Saint Cosme
+Saint Cosme Côte-Rotie 2021",2021,$69.99,71.064%;,68.5065%;,6.537%;,64.8061%;
+171,"Francois Villard
+Côte-Rôtie Le Gallet Blanc 2018",2018,$91.79,74.9826%;,65.8136%;,6.67641%;,63.3228%;
+172,"Domaine Lafond
+Châteauneuf-du-Pape Roc Epine 2017",2017,$50.99,82.0381%;,36.994%;,6.82043%;,45.7951%;
+173,"Alain Jaume
+Domaine Grand Veneur Châteauneuf-Du-Pape Vieilles Vignes 2019",2019,$94.99,85%;,43.9393%;,5.10871%;,44.7253%;
+174,"Pegau
+Châteauneuf-du-Pape Cuvée Laurence 2019",2019,$125.99,83.5078%;,40.4617%;,13.9384%;,44.3571%;
+175,"Domaine Jamet
+Côte-Rôtie 2008",2008,$289.99,71.4479%;,68.9926%;,7.55839%;,65.6606%;
+176,"Pegau
+Cuvée Réservée Châteauneuf-du-Pape Rouge 2020",2020,$79.99,85%;,42.4106%;,12.0861%;,44.4954%;
+177,"Domaine de Saje
+Châteauneuf-du-Pape Rouge 2019",2019,$49.99,85%;,33.3252%;,0px;,41.0622%;
+178,"Jean Baptiste Souillard
+Côteaux de Bassenon Côte-Rôtie 2017",2017,$109.99,70.6743%;,76.8256%;,0px;,68.3553%;
+179,"Pegau
+Cuvée Réservée Châteauneuf-du-Pape Rouge 2020",2020,$79.99,85%;,42.4106%;,12.0861%;,44.4954%;
+180,"Château de Beaucastel
+Châteauneuf-du-Pape 1995",1995,$343,83.2174%;,39.8547%;,10.6892%;,45.0798%;
+181,"Domaine du Vieux Télégraphe
+Télégramme Châteauneuf-du-Pape 2020",2020,$72.99,82.0464%;,40.35%;,5.56647%;,47.0839%;
+182,"E. Guigal
+Ermitage Ex-Voto 2013",2013,$518,82.7338%;,69.9444%;,13.4667%;,56.4577%;
+183,"Château de Beaucastel
+Châteauneuf-du-Pape 2001",2001,$271,83.2174%;,39.8547%;,10.6892%;,45.0798%;
+184,"Clos du Caillou
+La Réserve Châteauneuf-du-Pape 2020",2020,$340,82.9909%;,40.5243%;,18.2929%;,42.0424%;
+185,"Domaine Philippe et Vincent Jaboulet
+Cornas 2017",2017,$91.99,83.4781%;,46.2292%;,14.9848%;,52.4382%;
+186,"Domaine Alain Verset
+Cornas 2017",2017,$56.99,83.1789%;,53.9465%;,6.47987%;,57.4998%;
+187,"Jean-Luc Colombo
+Syrah Cornas Les Ruchets 2015",2015,$106.67,85%;,50.2869%;,9.1738%;,56.1419%;
+188,"Domaine de Cristia
+Châteauneuf-du-Pape Renaissance 2017",2017,$333.33,85%;,38.6655%;,12.9217%;,40.9537%;
+189,"Domaine du Vieux Télégraphe
+Télégramme Châteauneuf-du-Pape 2019",2019,$74.99,82.0464%;,40.35%;,5.56647%;,47.0839%;
+190,"Domaine Courbis
+La Sabarotte Cornas 2019",2019,$79.92,85%;,54.9437%;,10.337%;,55.9986%;
+191,"Jean-Luc Colombo
+Syrah Cornas Les Ruchets 2013",2013,$100.33,85%;,50.2869%;,9.1738%;,56.1419%;
+192,"M. Chapoutier
+Côte-Rôtie La Mordorée 2016",2016,$367.50,69.3427%;,66.1683%;,5.99777%;,64.7653%;
+193,"E. Guigal
+Hermitage 2018",2018,$99.99,84.1013%;,68.6774%;,5.78623%;,55.108%;
+194,"M. Chapoutier
+Hermitage Monier de la Sizeranne 2018",2018,$183.33,80.8965%;,66.781%;,8.96783%;,54.7082%;
+195,"Domaine Jean-Michel Stéphan
+Côte-Rôtie Côteaux de Bassenon 2020",2020,$184,71.3102%;,68.5555%;,9.25551%;,64.9992%;
+196,"Jean-Luc Colombo
+Syrah Cornas Les Ruchets 2018",2018,$122.67,85%;,50.2869%;,9.1738%;,56.1419%;
+197,"Dionysos
+La Trilougio Cairanne 2021",2021,$35.17,74.2826%;,54.2964%;,6.1749%;,58.7302%;
+198,"Jean-Michel Gerin
+La Viallière Côte-Rôtie 2017",2017,$96,71.7089%;,69.5083%;,1.63488%;,63.3173%;
+199,"Paul Jaboulet Aîné
+Hermitage 'La Maison Bleue' 2016",2016,$80,85%;,67.9348%;,8.14653%;,56.1344%;
+200,"M. Chapoutier
+Côte-Rôtie Les Bécasses 2019",2019,$128.33,70.6343%;,68.0481%;,8.1868%;,65.3146%;
+201,"Rotem & Mounir Saouma
+Omnia Châteauneuf-du-Pape 2019",2019,$129.99,78.2383%;,39.6449%;,8.45092%;,45.4603%;
+202,"Château de Saint Cosme
+Gigondas Le Claux 2020",2020,$175.99,65.0874%;,53.6339%;,11.3159%;,55.2799%;
+203,"Château de Nalys
+Châteauneuf-du-Pape Rouge 2017",2017,$109.99,83.6389%;,38.808%;,9.13121%;,44.7517%;
+204,"Domaine de Châteaumar
+Secret de Nos Vignes Châteauneuf-du-Pape 2021",2021,$50,85%;,38.7176%;,7.3472%;,43.4917%;
+205,"Jean Baptiste Souillard
+Côteaux de Bassenon Côte-Rôtie 2014",2014,$115.99,70.6743%;,76.8256%;,0px;,68.3553%;
+206,"Domaine Duclaux
+Châteauneuf-du-Pape Rouge 2018",2018,$49.99,84.2382%;,37.4045%;,7.42838%;,43.1034%;
+207,"Paul Jaboulet Aîné
+Hermitage 'La Maison Bleue' 2015",2015,$74.17,85%;,67.9348%;,8.14653%;,56.1344%;
+208,"Rotem & Mounir Saouma
+Omnia Châteauneuf-du-Pape 2018",2018,$129.99,78.2383%;,39.6449%;,8.45092%;,45.4603%;
+209,"Domaine de Beaurenard
+Gran Partita Châteauneuf-du-Pape 2015",2015,$160,85%;,43.2131%;,4.31219%;,46.6724%;
+210,"Château de la Font du Loup
+Legend Châteauneuf du Pape 2021",2021,$105.99,82.4025%;,41.2375%;,2.5975%;,43.8025%;
+211,"Domaine de Beaurenard
+Châteauneuf-du-Pape Boisrenard 2021",2021,$113.50,80.6425%;,40.3792%;,6.12042%;,42.8809%;
+212,"Jean Luc Jamet
+Terrasses Côte-Rôtie 2017",2017,$116.50,72.6645%;,66.8653%;,8.64193%;,63.9808%;
+213,"Jean-Luc Colombo
+Syrah Cornas Les Ruchets 2011",2011,$149.99,85%;,50.2869%;,9.1738%;,56.1419%;
+214,"Domaine Bois de Boursan
+Châteauneuf-du-Pape 2019",2019,$69.99,83.0837%;,45.7257%;,2.22835%;,46.6126%;
+215,"Christophe Semaska
+Lancement Côte-Rôtie 2016",2016,$174.95,55.9952%;,76.2937%;,11.4053%;,66.1384%;
+216,"Jean-Michel Gerin
+Les Grandes Places Côte-Rôtie 2016",2016,$188.99,73.1031%;,63.6177%;,17.1175%;,63.7115%;
+217,"Pierre Jean Villa
+Côte-Rôtie 'Fongeant' 2020",2020,$172.50,76.9016%;,76.1201%;,10.8228%;,66.1043%;
+218,"Pierre Usseglio
+Châteauneuf-du-Pape Cuvée de mon Aïeul 2019",2019,$114,85%;,41.0312%;,19.9819%;,43.1994%;
+219,"Château de Saint Cosme
+Gigondas Hominis Fides 2021",2021,$160.01,64.3479%;,52.7842%;,7.26797%;,55.355%;
+220,"Domaine de la Janasse
+Côtes du Rhône Les Garrigues 2019",2019,$57.75,68.6995%;,50.4609%;,3.48378%;,54.7238%;
+221,"Clos du Mont-Olivet
+Châteauneuf-du-Pape La Cuvée du Papet 2016",2016,$163.18,85%;,42.9088%;,17.1178%;,47.2335%;
+222,"Domaine Alain Verset
+Cornas 2020",2020,$67.52,83.1789%;,53.9465%;,6.47987%;,57.4998%;
+223,"Clos du Mont-Olivet
+Châteauneuf-du-Pape 2018",2018,$78.78,82.5381%;,42.822%;,9.15967%;,45.2899%;
+224,"Clusel-Roch
+Côte-Rôtie Champon 2020",2020,$139.40,64.3533%;,82.2603%;,0px;,71.1178%;
+225,"Château de Rouanne
+Guerin Vinsobres 2019",2019,$57.38,55%;,48.75%;,17.5%;,48.75%;
+226,"Alain Graillot
+La Guiraude Crozes-Hermitage 2020",2020,$83.27,65.097%;,54.1805%;,5.85018%;,48.932%;
+227,"Vidal Fleury
+Côte-Rotie Brune Et Blonde 2019",2019,$106.90,71.098%;,69.9155%;,8.40067%;,63.5554%;
+228,"Domaine Chante Cigale
+Pi Châteauneuf-du-Pape 2020",2020,$91.80,85%;,51.2952%;,0px;,42.5%;
+229,"Piaugier
+Gigondas 2020",2020,$39.38,63.5973%;,50.7662%;,7.19238%;,55.0954%;
+230,"Château de Saint Cosme
+Saint Cosme Châteauneuf-du-Pape 2020",2020,$79.89,85%;,44.249%;,8.77257%;,46.298%;
+231,"Stephane Vedeau
+J. Boutin Arena Mica Hermitage 2022",2022,$95.66,80.0459%;,61.4245%;,11.5398%;,50.7133%;
+232,"Domaine La Barroche
+Châteauneuf-du-Pape 2019",2019,$71.40,85%;,41.948%;,12.8143%;,43.6772%;
+233,"Château de Rouanne
+Guerin Vinsobres 2020",2020,$85.51,55%;,48.75%;,17.5%;,48.75%;
+234,"Domaine Philippe et Vincent Jaboulet
+Ermitage Rouge 2014",2014,$87.78,83.3351%;,66.7183%;,3.53002%;,52.554%;
+235,"Domaine de la Solitude - Famille Lancon
+Gigondas Bellecoste 2021",2021,$51.75,67.4167%;,54.5%;,5.30556%;,51.6667%;
+236,"Francois Villard
+Côte-Rôtie Le Gallet Blanc 2021",2021,$110.50,74.9826%;,65.8136%;,6.67641%;,63.3228%;
+237,"Vincent Paris
+Cornas 'La Geynale' 2022",2022,$101.28,85%;,54.203%;,4.99856%;,55.3692%;
+238,"Piedlong
+Châteauneuf-du-Pape 2021",2021,$86.65,81.4463%;,38.9791%;,8.04807%;,46.2366%;
+239,"Domaine Saint Préfert
+Châteauneuf-du-Pape 2020",2020,$117.30,81.8076%;,38.5892%;,4.90058%;,44.5489%;
+240,"Coursodon
+Saint-Joseph L'Olivaie 2022",2022,$73.14,77.1004%;,48.3508%;,15.0274%;,51.0712%;
+241,"Château de Saint Cosme
+Gigondas 2020",2020,$68.63,66.5193%;,51.9377%;,8.9478%;,54.402%;
+242,"Domaine Saint Préfert
+Châteauneuf-du-Pape 2021",2021,$110.50,81.8076%;,38.5892%;,4.90058%;,44.5489%;
+243,"Domaine Giraud
+Les Gallimardes Châteauneuf-du-Pape 2020",2020,$114.94,85%;,43.2157%;,21.0172%;,41.7978%;
+244,"Domaine Santa Duc
+Châteauneuf du Pape 'Les Saintes Vierges' 2019",2019,$74.94,76.7048%;,40.009%;,1.6052%;,52.9152%;
+245,"Domaine Courbis
+La Cotte Sud Saint-Joseph 2020",2020,$49.94,74.9688%;,54.6146%;,14.6997%;,54.158%;
+246,"Domaine Courbis
+Champelrose Cornas 2020",2020,$49.94,85%;,50.4691%;,10.7152%;,54.6165%;
+247,"Domaine Giraud
+Les Gallimardes Châteauneuf-du-Pape 2019",2019,$109.94,85%;,43.2157%;,21.0172%;,41.7978%;
+248,"Domaine de Cristia
+Châteauneuf-du-Pape 2019",2019,$39.94,84.4997%;,36.4305%;,11.1647%;,42.4457%;
+249,"Château Sixtine
+Châteauneuf-du-Pape 2020",2020,$49.94,85%;,40.1639%;,12.4682%;,45.3162%;
+250,"Domaine Monier Perréol
+Terre Blanche Saint-Joseph 2021",2021,$69.94,76.462%;,52.1934%;,3.49029%;,54.8139%;
+251,"Domaine Garon
+Les Triotes Côte-Rôtie 2018",2018,$59.94,73.0906%;,67.4905%;,8.5763%;,64.9008%;
+252,"Paul Jaboulet Aîné
+Hermitage 'La Maison Bleue' 2020",2020,$59.94,85%;,67.9348%;,8.14653%;,56.1344%;
+253,"Domaine Courbis
+Saint-Joseph Les Royes Rouge 2020",2020,$49.94,74.735%;,46.4338%;,13.4622%;,53.3165%;
+254,"Domaine Courbis
+Les Eygats Cornas 2020",2020,$69.94,80.9376%;,53.3733%;,6.48109%;,57.1392%;
+255,"Domaine Lionnet
+Terre Brûlée Cornas 2020",2020,$67.94,85%;,53.7309%;,7.67763%;,56.3706%;
+256,"Domaine Santa Duc
+La Crau Ouest Châteauneuf-du-Pape 2019",2019,$132.99,79.8406%;,44.3005%;,6.00896%;,49.384%;
+257,"Château de Saint Cosme
+Saint Cosme Saint Joseph 2019",2019,$41.99,76.7051%;,50.6861%;,5.50057%;,55.5354%;
+258,"Château Fortia
+Tradition Châteauneuf-du-Pape 2019",2019,$44.99,83.4337%;,36.5383%;,7.27858%;,44.7792%;
+259,"Domaine Santa Duc
+Gigondas Les Hautes Garrigues 2020",2020,$84.99,66.7042%;,49.9484%;,10.4193%;,55.9595%;
+260,"Le Vieux Donjon
+Châteauneuf-du-Pape 2021",2021,$69.99,83.7684%;,40.0149%;,10.5809%;,43.9631%;
+261,"Château de Saint Cosme
+Saint Cosme Châteauneuf-du-Pape 2019",2019,$64.99,79.8406%;,44.3005%;,6.00896%;,49.384%;
+262,"Château de Nalys
+Saintes Pierres de Nalys Châteauneuf-du-Pape Rouge 2018",2018,$59.99,82.5473%;,41.01%;,10.4231%;,48.5808%;
+263,"Domaine de la Solitude - Famille Lancon
+Châteauneuf-du-Pape 2022",2022,$49.99,80.7265%;,37.2329%;,7.72286%;,43.6808%;
+264,"Château de Saint Cosme
+Gigondas 2019",2019,$58.99,66.5193%;,51.9377%;,8.9478%;,54.402%;
+265,"Domaine de la Vieille Julienne
+Les Hauts-Lieux Châteauneuf-du-Pape 2020",2020,$87.99,85%;,46.8189%;,4.278%;,47.0773%;
+266,"Famille Perrin
+Gigondas La Gille 2019",2019,$40.99,63.346%;,47.8225%;,7.1108%;,52.8731%;
+267,"Domaine de la Vieille Julienne
+Les Trois Sources Châteauneuf-du-Pape 2020",2020,$75,83.1935%;,46.796%;,11.503%;,46.6067%;
+268,"Paul Jaboulet Aîné
+Hermitage 'La Maison Bleue' 2019",2019,$76.70,85%;,67.9348%;,8.14653%;,56.1344%;
+269,"Pierre Usseglio
+Châteauneuf-du-Pape 2020",2020,$58.95,84.5346%;,39.5271%;,9.93002%;,44.4859%;
+270,"Domaine de La Chapelle
+Hermitage La Chapelle Rouge 2018",2018,$223.02,83.1154%;,67.4268%;,9.73907%;,54.61%;
+271,"Domaine Santa Duc
+Gigondas Aux Lieux-Dits 2020",2020,$47.15,63.7691%;,51.7327%;,6.45856%;,54.5654%;
+272,"Clos du Caillou
+La Réserve Châteauneuf-du-Pape 2017",2017,$200.55,82.9909%;,40.5243%;,18.2929%;,42.0424%;
+273,"Bernard Burgaud
+Côte-Rôtie 2020",2020,$53.05,70.9512%;,64.152%;,6.54445%;,63.6708%;
+274,"Auguste Clape
+Renaissance Cornas 2019",2019,$116.82,83.1458%;,52.7518%;,6.52017%;,56.8761%;
+275,"Vincent Paris
+Granit 60 Vieilles Vignes Cornas 2019",2019,$70.75,85%;,54.4831%;,8.61868%;,54.9741%;
+276,"E. Guigal
+Côte-Rôtie Brune & Blonde de Guigal 2019",2019,$94.35,73.3237%;,66.2092%;,5.10272%;,64.4942%;
+277,"Vincent Paris
+Cornas 'La Geynale' 2021",2021,$82.55,85%;,54.203%;,4.99856%;,55.3692%;
+278,"Jean-Luc Colombo
+Syrah Cornas Terres Brûlées 2018",2018,$68.95,84.6498%;,51.5233%;,9.60499%;,55.4989%;
+279,"Bernard Gripa
+Saint-Joseph Rouge 2020",2020,$49.99,70.967%;,49.4639%;,7.23338%;,54.7372%;
+280,"Brotte
+Châteauneuf-du-Pape Domaine Barville Rouge 2021",2021,$42.98,85%;,38.9886%;,4.92365%;,44.3495%;
+281,"Domaine de la Charbonnière
+Châteauneuf-du-Pape 2020",2020,$51.44,85%;,40.024%;,10.5804%;,44.3628%;
+282,"Bosquet des Papes
+Châteauneuf-du-Pape (Cuvée Tradition) 2021",2021,$52.49,85%;,40.9902%;,5.02526%;,45.4807%;
+283,"Domaine du Tunnel
+Vin Noir Cornas 2020",2020,$104.99,85%;,53.3501%;,12.7967%;,55.3863%;
+284,"Berthet-Rayne
+Cuvée Cadiac Châteauneuf-du-Pape 2017",2017,$69.29,76.0596%;,44.6026%;,25.8973%;,39.8427%;
+285,"St Patrice
+Vieilles Vignes Châteauneuf-du-Pape 2016",2016,$89.24,82.983%;,38.017%;,15.6358%;,41.2173%;
+286,"Xavier Vignon
+Châteauneuf-du-Pape 2019",2019,$57.74,84.7149%;,41.1917%;,5.87969%;,46.3796%;
+287,"Maison Denuziere
+Cornas 2018",2018,$61.94,78.4981%;,54.8404%;,3.86347%;,58.1484%;
+288,"Domaine de l'Arnesque
+Côtes du Rhône Villages 'Plan de Dieu' 2019",2019,$19.94,64.7145%;,52.3936%;,19.5621%;,55.8927%;
+289,"Château Gigognan
+Bois des Moines Côtes du Rhône Villages 2017",2017,$24.14,70.0638%;,46.6623%;,2.11016%;,55.8395%;
+290,"Boutinot
+La Côte Sauvage Cairanne 2019",2019,$28.34,65.9543%;,42.9339%;,8.78048%;,50.9526%;
+291,"Domaine de Saje
+Châteauneuf-du-Pape Rouge 2020",2020,$32.54,85%;,33.3252%;,0px;,41.0622%;
+292,"Domaine du Tunnel
+Cornas 2020",2020,$174.29,82.8837%;,48.3079%;,9.9885%;,54.2324%;
+293,"Château Fortia
+Cuvée Du Baron Châteauneuf-du-Pape 2020",2020,$45.14,85%;,37.9372%;,6.89171%;,42.9733%;
+294,"Berthet-Rayne
+Châteauneuf-du-Pape Rouge 2020",2020,$46.19,84.947%;,38.2025%;,5.49968%;,43.0806%;
+295,"Domaine Faury
+Côte-Rôtie 2020",2020,$73.49,74.9282%;,67.2886%;,0px;,61.4807%;
+296,"Yves Cuilleron
+Cornas Le Village 2020",2020,$148.04,80.1973%;,48.6438%;,10.661%;,57.2548%;
+297,"André Brunel
+Châteauneuf-du-Pape 2020",2020,$68.24,84.3561%;,37.44%;,15.3277%;,42.4315%;
+298,"Alain Jaume
+Domaine Grand Veneur Châteauneuf-Du-Pape Les Origines 2020",2020,$62.95,85%;,42.4578%;,12.004%;,42.878%;
+299,"André Brunel
+Les Cailloux Châteauneuf-du-Pape 2020",2020,$66.14,83.6445%;,40.2005%;,9.45792%;,44.9477%;
+300,"Clos du Caillou
+Châteauneuf-du-Pape Les Safres 2020",2020,$71.39,85%;,39.8505%;,16.6391%;,45.3418%;
+301,"Bernard Magrez
+Châteauneuf-du-Pape Rouge 2021",2021,$34.64,85%;,43.2744%;,8.10526%;,44.1429%;
+302,"Château de Saint Cosme
+Saint Cosme Châteauneuf-du-Pape 2021",2021,$71.39,85%;,44.249%;,8.77257%;,46.298%;
+303,"Berthet-Rayne
+Châteauneuf-du-Pape Rouge 2021",2021,$56.69,84.947%;,38.2025%;,5.49968%;,43.0806%;
+304,"Brotte
+Châteauneuf-du-Pape Les Hauts de Barville Rouge 2019",2019,$39.89,84.4089%;,37.4792%;,4.68298%;,44.6368%;
+305,"Château de Nalys
+Saintes Pierres de Nalys Châteauneuf-du-Pape Rouge 2019",2019,$69.29,82.5473%;,41.01%;,10.4231%;,48.5808%;
+306,"Domaine du Tunnel
+Saint-Joseph 2019",2019,$133.34,74.609%;,48.2865%;,9.77233%;,55.3515%;
+307,"Yves Cuilleron
+Saint-Joseph Cavanos 2020",2020,$93.44,72.3132%;,47.7419%;,4.31044%;,57.9064%;
+308,"Brotte
+Châteauneuf-du-Pape Domaine Barville Rouge 2019",2019,$39.89,85%;,38.9886%;,4.92365%;,44.3495%;
+309,"Franck Balthazar
+Cornas 'Chaillot' 2020",2020,$162.74,84.7431%;,51.7994%;,7.52431%;,55.6347%;
+310,"Franck Balthazar
+Cornas Cuvée Casimir Balthazar 2020",2020,$109.19,85%;,52.4563%;,6.01294%;,53.479%;
+311,"Piaugier
+Gigondas 2019",2019,$45.14,63.5973%;,50.7662%;,7.19238%;,55.0954%;
+312,"Alain Jaume
+Domaine Grand Veneur Châteauneuf-du-Pape 'Le Miocène' 2021",2021,$49.34,81.9451%;,42.5114%;,9.01717%;,45.0232%;
+313,"Yves Cuilleron
+Côte-Rôtie Madinière 2020",2020,$98.69,69.5897%;,64.1831%;,5.76412%;,66.1531%;
+314,"Domaine de la Solitude - Famille Lancon
+Châteauneuf-du-Pape 2021",2021,$49.95,80.7265%;,37.2329%;,7.72286%;,43.6808%;
+315,"Domaine du Tunnel
+Vin Noir Cornas 2019",2019,$100.79,85%;,53.3501%;,12.7967%;,55.3863%;
+316,"E. Guigal
+Côte-Rôtie Brune & Blonde de Guigal 2020",2020,$104.99,73.3237%;,66.2092%;,5.10272%;,64.4942%;
+317,"E. Guigal
+Hermitage 2020",2020,$104.99,84.1013%;,68.6774%;,5.78623%;,55.108%;
+318,"Domaine de la Janasse
+Châteauneuf-du-Pape Vieilles Vignes 2021",2021,$115.49,85%;,42.0881%;,17.4804%;,44.0526%;
+319,"Domaine de la Mordorée
+La Dame Voyageuse Châteauneuf-du-Pape 2021",2021,$94.99,82.1956%;,42.2083%;,17.1337%;,47.3649%;
+320,"Domaine de Beaurenard
+Châteauneuf-du-Pape Boisrenard 2020",2020,$122.39,80.6425%;,40.3792%;,6.12042%;,42.8809%;
+321,"Domaine Saint Préfert
+Réserve Auguste Favier Châteauneuf-du-Pape 2019",2019,$83.63,83.7972%;,40.2814%;,14.6406%;,42.8996%;
+322,"Domaine de Beaurenard
+Châteauneuf-du-Pape 2019",2019,$71.39,84.5972%;,41.9308%;,6.78568%;,44.479%;
+323,"Domaine Saint Préfert
+Domaine Isabel Ferrando Colombis Châteauneuf-du-Pape 2019",2019,$168.29,84.802%;,43.3389%;,15.1412%;,46.4238%;
+324,"Jean Baptiste Souillard
+Cornas Saint-Pierre 2015",2015,$109.99,85%;,55.2908%;,9.79386%;,51.864%;
+325,"Château de la Font du Loup
+Chateauneuf-du-Pape Rouge 2022",2022,$59.99,81.5186%;,39.7631%;,6.94953%;,46.7445%;
+326,"Marc Sorrel
+Hermitage 2015",2015,$239.99,77.8998%;,67.4108%;,9.43113%;,54.6822%;
+327,"Colline Saint-Jean
+Vacqueyras 2015",2015,$64.99,69.408%;,47.8028%;,7.47059%;,52.9951%;
+328,"Domaine du Colombier
+Hermitage Rouge 2010",2010,$179.99,85%;,69.0596%;,10.9242%;,52.8832%;
+329,"Domaine du Tunnel
+Cornas 2016",2016,$89.99,82.8837%;,48.3079%;,9.9885%;,54.2324%;
+330,"Paul Autard
+Châteauneuf-du-Pape 1994",1994,$78.99,85%;,39.3746%;,6.73618%;,45.5976%;
+331,"Château de la Font du Loup
+Les Demoiselles de la Font du Loup Chateauneuf du Pape 2022",2022,$49.99,66.9714%;,43.8954%;,5.08376%;,55.8032%;
+332,"Domaine du Tunnel
+Cornas 2019",2019,$89.99,82.8837%;,48.3079%;,9.9885%;,54.2324%;
+333,"Pegau
+Cuvée Réservée Châteauneuf-du-Pape Rouge 2021",2021,$89.99,85%;,42.4106%;,12.0861%;,44.4954%;
+334,"La Bastide Saint Dominique
+Châteauneuf du Pape Rouge 2019",2019,$63.24,85%;,38.7507%;,3.25057%;,43.2383%;
+335,"Olivier & Lafont
+Gigondas 2019",2019,$24.99,67.3886%;,43.1706%;,11.2304%;,55.8025%;
+336,"Bosquet des Papes
+Châteauneuf-du-Pape (Cuvée Tradition) 2020",2020,$99.99,85%;,40.9902%;,5.02526%;,45.4807%;
+337,"Château de Saint Cosme
+Gigondas 2021",2021,$49.99,66.5193%;,51.9377%;,8.9478%;,54.402%;
+338,"Château de Saint Cosme
+Saint Cosme Saint Joseph 2020",2020,$42.99,76.7051%;,50.6861%;,5.50057%;,55.5354%;
+339,"Lavau
+Châteauneuf-du-Pape 2019",2019,$49.44,85%;,44.6446%;,9.27797%;,46.0302%;
+340,"André Brunel
+Les Cailloux Cuvée Centenaire Châteauneuf-du-Pape 2019",2019,$299,81.3608%;,40.7594%;,17.7157%;,44.0232%;
+341,"Château de Beaucastel
+Châteauneuf-du-Pape 2021",2021,$109.95,83.2174%;,39.8547%;,10.6892%;,45.0798%;
+342,"Delas
+Haute Pierre Châteauneuf-du-Pape 2019",2019,$58.95,83.8763%;,40.4701%;,7.06119%;,46.5973%;
+343,"E. Guigal
+Château d'Ampuis Côte-Rôtie 2016",2016,$317,73.0045%;,66.6602%;,9.70693%;,64.9365%;
+344,"Famille Perrin
+Châteauneuf-du-Pape Les Sinards Rouge 2020",2020,$56.97,83.866%;,37.5741%;,7.69015%;,43.9064%;
+345,"Domaine Charité
+La Fleur de Capucine Châteauneuf-du-Pape 2018",2018,$56.99,85%;,41.9038%;,5.77492%;,38.2405%;
+346,"Jean-Luc Colombo
+Châteauneuf-du-Pape Les Bartavelles 2016",2016,$58.33,85%;,38.9989%;,5.15845%;,45.1588%;
+347,"Rotem & Mounir Saouma
+Amph III Crau Châteauneuf-du-Pape 2021",2021,$199.99,67.8623%;,46.4855%;,0px;,48.5072%;
+348,"Domaine Philippe et Vincent Jaboulet
+Ermitage Rouge 2011",2011,$119.99,83.3351%;,66.7183%;,3.53002%;,52.554%;
+349,"Rotem & Mounir Saouma
+Omnia Châteauneuf-du-Pape 2020",2020,$129.99,78.2383%;,39.6449%;,8.45092%;,45.4603%;
+350,"Domaine du Père Caboche
+Vieilles Vignes Elisabeth Chambellan Châteauneuf-du-Pape 2022",2022,$33.33,85%;,38.432%;,5.60246%;,45.4159%;
+351,"Domaine du Coulet - Matthieu Barret
+Brise Cailloux Cornas 2020",2020,$72,85%;,51.88%;,8.80976%;,56.6946%;
+352,"Domaine du Vieux Télégraphe
+Télégramme Châteauneuf-du-Pape 2021",2021,$57.65,82.0464%;,40.35%;,5.56647%;,47.0839%;
+353,"Château de Nalys
+Châteauneuf-du-Pape Rouge 2019",2019,$129.99,83.6389%;,38.808%;,9.13121%;,44.7517%;
+354,"Rotem & Mounir Saouma
+Amph III Crau Châteauneuf-du-Pape 2019",2019,$199.99,67.8623%;,46.4855%;,0px;,48.5072%;
+355,"Domaine de la Solitude - Famille Lancon
+Châteauneuf-du-Pape Cuvée Barberini 2017",2017,$129.99,85%;,39.0621%;,17.1404%;,43.2967%;
+356,"Domaine du Coulet - Matthieu Barret
+Billes Noires Cornas 2017",2017,$126.33,81.7929%;,50.0895%;,6.23008%;,55.3483%;
+357,"Domaine Faury
+Emporium Côte-Rôtie 2019",2019,$111.99,73.2766%;,61.0312%;,18.6375%;,59.0922%;
+358,"Cave de Tain
+Arènes Sauvages Cornas Rouge 2017",2017,$107.99,85%;,49.0214%;,4.19192%;,55.1491%;
+359,"Jean-Luc Colombo
+Syrah Cornas Les Ruchets 2016",2016,$122.67,85%;,50.2869%;,9.1738%;,56.1419%;
+360,"Domaine Jean-Michel Stéphan
+Côte-Rôtie Côteaux de Tupin 2020",2020,$184,76.8288%;,69.2749%;,10.9426%;,65.1175%;
+361,"Domaine Garon
+Jardins de Rome Syrah de Seyssuel 2020",2020,$54.99,63.5735%;,58.9523%;,0px;,62.708%;
+362,"Piedlong
+Châteauneuf-du-Pape 2020",2020,$79.99,81.4463%;,38.9791%;,8.04807%;,46.2366%;
+363,"Château Mont-Redon
+Châteauneuf-du-Pape 2019",2019,$47.85,85%;,38.4515%;,6.41407%;,43.9535%;
+364,"Biscarelle
+Châteauneuf-du-Pape 2019",2019,$49.99,85%;,48.4951%;,5.45%;,49.2004%;
+365,"Comte de Lauze
+Châteauneuf-du-Pape Rouge 2017",2017,$39.99,84.3183%;,43.4028%;,7.24818%;,47.5717%;
+366,"Rotem & Mounir Saouma
+Amph III Crau Châteauneuf-du-Pape 2017",2017,$279.99,67.8623%;,46.4855%;,0px;,48.5072%;
+367,"Jean-Luc Colombo
+Syrah Cornas La Louvée 2012",2012,$248,75.0205%;,47.2005%;,5.15082%;,54.3777%;
+368,"Domaine Raspail-Ay
+Gigondas 2019",2019,$61.17,66.013%;,50.1916%;,7.43884%;,52.5064%;
+369,"Domaine du Vieux Lazaret
+Châteauneuf-du-Pape 2020",2020,$64.99,83.9381%;,37.9986%;,7.38732%;,45.3013%;
+370,"Château de Saint Cosme
+Gigondas Hominis Fides 2020",2020,$169.99,64.3479%;,52.7842%;,7.26797%;,55.355%;
+371,"Louis Bernard
+Châteauneuf-du-Pape 2020",2020,$64.99,85%;,36.8472%;,5.74764%;,42.7724%;
+372,"M. Chapoutier
+Châteauneuf-du-Pape La Bernardine 2019",2019,$68.83,82.6599%;,38.4786%;,7.20969%;,44.5317%;
+373,"Domaine Chante Cigale
+Châteauneuf-du-Pape 2021",2021,$49.99,85%;,39.8999%;,6.74783%;,44.6681%;
+374,"Vincent Paris
+Granit 30 Cornas 2021",2021,$56.08,85%;,51.6097%;,8.70077%;,56.7274%;
+375,"Cellier des Princes
+Le Blason du Prince Châteauneuf-du-Pape 2021",2021,$37.50,84.8209%;,40.5533%;,4.01546%;,45.2808%;
+376,"Clos des Brusquieres
+Châteauneuf-du-Pape 2021",2021,$50.25,85%;,39.5602%;,10.4182%;,44.2152%;
+377,"Vignobles Mayard
+Clos du Calvaire Châteauneuf-du-Pape 2020",2020,$58.99,85%;,39.8518%;,6.80126%;,45.1785%;
+378,"Château de Saint Cosme
+Gigondas 2018",2018,$59.99,66.5193%;,51.9377%;,8.9478%;,54.402%;
+379,"Les Alliés
+Châteauneuf-du-Pape 2020",2020,$38.50,83.144%;,42.8094%;,4.51827%;,44.7899%;
+380,"Barton & Guestier
+Les Roches Noires Châteauneuf-du-Pape 2021",2021,$59.15,84.9751%;,42.8805%;,6.0828%;,45.7967%;
+381,"Clos Saint Jean
+Chateauneuf-du-Pape La Combe Des Fous 2015",2015,$131.24,85%;,43.9023%;,16.0564%;,44.2861%;
+382,"Château Pesquie
+Ventoux Artemia 2019",2019,$54.99,66.816%;,48.6745%;,13.5012%;,54.8884%;
+383,"Domaine de la Janasse
+Châteauneuf-du-Pape Vieilles Vignes 2020",2020,$130.01,85%;,42.0881%;,17.4804%;,44.0526%;
+384,"Pegau
+Cuvée Réservée Châteauneuf-du-Pape Rouge 2019",2019,$99.20,85%;,42.4106%;,12.0861%;,44.4954%;
