@@ -181,7 +181,7 @@ struct UpdateTastingNoteView: View {
                      ToolbarItem(placement: .principal) {
                          Text("Update Tasting Note")
                              .padding(.top, 15)
-                             .font(.system(size: 25, design: .serif))
+                             .font(.system(size: 25))
                              .foregroundColor(.theme)
                              .bold()
                      }

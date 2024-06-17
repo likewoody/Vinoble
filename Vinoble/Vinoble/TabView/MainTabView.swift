@@ -19,7 +19,8 @@ struct MainTabView: View {
     @State var selection: Int = 0
     
     let store: StoreOf<ProductFeature>
-    
+    let noteStore: StoreOf<TastingNoteFeature>
+    let userid = UserDefaults.standard.string(forKey: "userEmail") ?? "qwe@qwe.qwe"
     
     // 다른 곳에서도 사용할 수 있게끔 Color를 func으로 만든 것을 불러온다.
     var body: some View {
@@ -51,7 +52,6 @@ struct MainTabView: View {
                         Circle()
                             .frame(width: 30, height: 30)
 
-
                         WishListView(store: store)
                             .tabItem {
                                 Image(systemName: "bookmark.fill")
@@ -59,10 +59,10 @@ struct MainTabView: View {
                             }
                             .tag(3)
 
-                        Second4Test()
+                        MyCellarView(store: store, noteStore: noteStore)
                             .tabItem {
                                 Image(systemName: "tablecells")
-                                Text("My Celler")
+                                Text("My Cellar")
                             }
                             .tag(4)
                     } // Group
@@ -71,6 +71,11 @@ struct MainTabView: View {
                     .toolbarColorScheme(.dark, for: .tabBar)
                     
                 }) // TabView
+                .onChange(of: selection) { newValue in
+                    if newValue == 4 {
+                        noteStore.send(.selectCellar(userid))
+                    }
+                }
                 
                 GeometryReader(content: { geometry in
                     
@@ -123,5 +128,7 @@ struct MainTabView: View {
 #Preview {
     MainTabView(store: Store(initialState: ProductFeature.State()){
         ProductFeature()
+    }, noteStore: Store(initialState: TastingNoteFeature.State()){
+        TastingNoteFeature()
     })
 }
