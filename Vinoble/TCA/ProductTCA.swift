@@ -18,19 +18,15 @@ struct ProductFeature{
         var isLoading: Bool = true
         var minIndex: Int = 0
         
-        
         // Drawer
         var showDrawer: Bool = false
         var userEmail: String = ""
         var firebaseResult: Bool = false
         
-        
-        // products load
-//        var lastCount: Int = 6
-        
         // wish
         var wishlist: [WishListModel] = []
         var likeState: [Int:Int] = [:]
+        var isEmpty: Bool = true
         
         // drag
         var offset: CGSize = CGSize()
@@ -51,6 +47,7 @@ struct ProductFeature{
         case likeButtonTapped(Int)
         case searchWishlist
         case searchedResultWish([WishListModel])
+        case searchOnlyWish
     }
     
     @Dependency(\.dismiss) var dismiss
@@ -80,15 +77,6 @@ struct ProductFeature{
                     await send(.fetchResponse(products))
                 } // return
                 
-            case let .fetchResponse(products):
-                state.minIndex = products[0].index
-                state.products = products
-                state.isLoading = false
-                
-                return .run { send in
-                    await send(.searchWishlist)
-                }
-                
             case .searchProductTapped:
                 let searchProduct = state.searchProduct
                 
@@ -97,6 +85,17 @@ struct ProductFeature{
                     
                     await send(.fetchResponse(products))
                 } // return
+                
+            case let .fetchResponse(products):
+                state.isEmpty = false
+                state.minIndex = products[0].index
+                state.products = products
+                state.isLoading = false
+                
+                
+                return .run { send in
+                    await send(.searchWishlist)
+                }
                 
             case let .wineTypeButtonTapped(wineType):
                 state.selectedWineType = wineType
@@ -152,6 +151,25 @@ struct ProductFeature{
                     let datas = await tryHttpWishlist(httpURL: "http://127.0.0.1:5000/wishlist?userEmail=\(userEmail)")
                     await send(.searchedResultWish(datas))
                 }
+                
+            case .searchOnlyWish:
+                state.userEmail = UserDefaults.standard.string(forKey: "userEmail") ?? ""
+                
+                
+                let userEmail = state.userEmail
+                // 테스트 할 때 id가 없어 error 발생해서 테스트용 아이디
+//                let userEmail = "test@test.test"
+                
+                print("userEmail \(userEmail)")
+                return .run { send in
+                    let products = await tryHttpProduct(httpURL: "http://127.0.0.1:5000/onlyWish?userEmail=\(userEmail)")
+                    print("send products data from searchOnly Wish to fetchResponse")
+                    
+                    if !products.isEmpty {
+                        await send(.fetchResponse(products))
+                    }
+                }
+                
             case let .searchedResultWish(wishlist):
                 state.wishlist = wishlist
                 for wish in state.wishlist{
@@ -222,6 +240,3 @@ struct ProductFeature{
     }
     
 } // ProductFeature
-                              
-                              
-
