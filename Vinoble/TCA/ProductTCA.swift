@@ -72,7 +72,7 @@ struct ProductFeature{
                 
                 return .run { send in
                     
-                    let products = await tryHttpProduct(httpURL: "http://127.0.0.1:5000/selectVinoble?region=\(region)&wineType=\(wineType)")
+                    let products = await tryHttpProduct(httpURL: "http://192.168.10.15:5000/selectVinoble?region=\(region)&wineType=\(wineType)")
                     
                     await send(.fetchResponse(products))
                 } // return
@@ -81,7 +81,7 @@ struct ProductFeature{
                 let searchProduct = state.searchProduct
                 
                 return .run { send in
-                    let products = await tryHttpProduct(httpURL: "http://127.0.0.1:5000/searchProduct?searchProduct=\(searchProduct)")
+                    let products = await tryHttpProduct(httpURL: "http://192.168.10.15:5000/searchProduct?searchProduct=\(searchProduct)")
                     
                     await send(.fetchResponse(products))
                 } // return
@@ -139,7 +139,7 @@ struct ProductFeature{
                             break
                         }
                     }
-                    _ = await tryHttpWishlistIU(httpURL: "http:127.0.0.1:5000/wishlist2?productID=\(id)&isWish=\(localIsWish)&userEmail=\(userEmail)")
+                    _ = await tryHttpWishlistIU(httpURL: "http://192.168.10.15:5000/wishlist2?productID=\(id)&isWish=\(localIsWish)&userEmail=\(userEmail)")
                     
                     await send(.searchWishlist)
                 }
@@ -148,7 +148,7 @@ struct ProductFeature{
                 
                 let userEmail = state.userEmail
                 return .run { send in
-                    let datas = await tryHttpWishlist(httpURL: "http://127.0.0.1:5000/wishlist?userEmail=\(userEmail)")
+                    let datas = await tryHttpWishlist(httpURL: "http://192.168.10.15:5000/wishlist?userEmail=\(userEmail)")
                     await send(.searchedResultWish(datas))
                 }
                 
@@ -162,7 +162,7 @@ struct ProductFeature{
                 
                 print("userEmail \(userEmail)")
                 return .run { send in
-                    let products = await tryHttpProduct(httpURL: "http://127.0.0.1:5000/onlyWish?userEmail=\(userEmail)")
+                    let products = await tryHttpProduct(httpURL: "http://192.168.10.15:5000/onlyWish?userEmail=\(userEmail)")
                     print("send products data from searchOnly Wish to fetchResponse")
                     
                     if !products.isEmpty {
