@@ -35,10 +35,11 @@ import ComposableArchitecture
 import SDWebImageSwiftUI
 
 struct TastingNoteView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     @State var selectedImage: UIImage?
     @State var isShowingImagePicker = false
     @State var showingAlert = false
-    @State var navigateToCellar = false
     
     let userid = UserDefaults.standard.string(forKey: "userEmail") ?? "qwe@qwe.qwe"
 
@@ -199,21 +200,17 @@ struct TastingNoteView: View {
                              .bold()
                      }
                 }
-                
-                // Add the NavigationLink here
-                NavigationLink(destination: MyCellarView(store: productStore, noteStore: noteStore).navigationBarBackButtonHidden(true), isActive: $navigateToCellar) {
-                    EmptyView()
-                }
             }
         } // navigation view
         .onChange(of: noteStore.state.insertSuccess) { newValue in
             if newValue {
+                noteStore.send(.selectCellar(userid))
                 showingAlert = true
             }
         }
         .alert("Added to My Cellar!", isPresented: $showingAlert) {
             Button("OK", action: {
-                navigateToCellar = true
+                presentationMode.wrappedValue.dismiss()
             })
         }
     } // body

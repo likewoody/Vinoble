@@ -117,6 +117,8 @@ struct LoginView: View {
                     .navigationDestination(isPresented: $isLoggedIn) { // Bool 값에 대한 목적지 뷰 설정
                         MainTabView(store: Store(initialState: ProductFeature.State()){
                             ProductFeature()
+                        }, noteStore: Store(initialState: TastingNoteFeature.State()){
+                            TastingNoteFeature()
                         })
                         .navigationBarBackButtonHidden(true)
                     }
