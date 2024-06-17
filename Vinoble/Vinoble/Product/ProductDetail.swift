@@ -25,12 +25,15 @@
 import SwiftUI
 import ComposableArchitecture
 import SDWebImageSwiftUI
+import MapKit
 
 struct ProductDetail: View {
     
     @Bindable var store: StoreOf<DetailFeature>
     let noteStore: StoreOf<TastingNoteFeature>
     let index: Int
+    
+    @State var map = MapCameraPosition.region(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 48.8566, longitude: 2.3522), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)))
     
 //    // 다른 곳에서도 사용할 수 있게끔 Color를 func으로 만든 것을 불러온다.
 //    let shareColor = ShareColor(store: Store(initialState: ProductFeature.State()){
@@ -43,7 +46,8 @@ struct ProductDetail: View {
         self.store = store
         self.noteStore = noteStore
         self.index = index
-
+                
+        
 //        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: shareColor.initColorWithAlpha(), // Title color
 //                                                            
 //            .font: UIFont.boldSystemFont(ofSize: 24.0)	 // Title font size
@@ -385,8 +389,20 @@ struct ProductDetail: View {
                                 Text("\(store.detailProduct[0].winery), France")
                                 
                                 Spacer()
+                                
                             })
                             
+                            if store.isLoading{
+                                ProgressView()
+                            }else{
+                                Map(position: $map) {
+                                    Marker(store.detailProduct[0].winery, systemImage: "wineglass", coordinate: CLLocationCoordinate2D(latitude: store.detailProduct[0].lat, longitude: store.detailProduct[0].lng))
+                                }
+                                    .frame(width: 350, height: 350, alignment: .center)
+                                    .onAppear(perform: {
+                                        map = MapCameraPosition.region(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: store.detailProduct[0].lat, longitude: store.detailProduct[0].lng), span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)))
+                                    })
+                            }
                         })
                         .padding()
                     }
@@ -397,7 +413,6 @@ struct ProductDetail: View {
         .onAppear(perform: {
             store.send(.fetchDetailProducts(index))
         })
-
         
         
     } // body
@@ -433,6 +448,6 @@ struct ProductDetail: View {
         },
         noteStore: Store(initialState: TastingNoteFeature.State()) {
             TastingNoteFeature()
-        }, index: 900
+        }, index: 100
     )
 }
